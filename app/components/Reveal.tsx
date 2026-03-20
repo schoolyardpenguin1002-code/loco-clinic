@@ -37,7 +37,7 @@ export default function Reveal({ children, className = "", delay = 0 }: RevealPr
   return (
     <div
       ref={ref}
-      className={`reveal ${visible ? "reveal-visible" : "reveal-hidden"} ${className}`}
+      className={`reveal w-full ${visible ? "reveal-visible" : "reveal-hidden"} ${className}`}
       style={
         visible
           ? ({ transitionDelay: `${delay}ms` } as React.CSSProperties)

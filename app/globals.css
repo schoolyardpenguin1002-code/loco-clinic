@@ -36,6 +36,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.02em;
+  /* ページ全体を中央基準に（子は max-w + mx-auto で幅を決める） */
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* 花鳥風月フォント専用クラス */
@@ -43,32 +46,32 @@ body {
   font-family: var(--font-shippori-mincho), "游明朝", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "HG明朝E", "MS P明朝", "MS 明朝", serif !important;
 }
 
-/* 見出しスタイル（Montserrat） */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-montserrat), sans-serif !important;
+/* 見出し：!important を外し Tailwind の text-center / サイズが効くように */
+:where(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-montserrat), sans-serif;
   font-weight: 600;
   letter-spacing: 0.05em;
   line-height: 1.3;
   color: #1d1d1f;
 }
 
-h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem) !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.08em !important;
+:where(h1) {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
-h2 {
-  font-size: clamp(2rem, 4vw, 3rem) !important;
-  letter-spacing: 0.06em !important;
+:where(h2) {
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 0.06em;
 }
 
-h3 {
-  font-size: clamp(1.5rem, 3vw, 2rem) !important;
+:where(h3) {
+  font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
-h4 {
-  font-size: clamp(1.25rem, 2.5vw, 1.5rem) !important;
+:where(h4) {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
 }
 
 /* ボタン・リンクのホバーエフェクト（Apple風） */
@@ -110,17 +113,43 @@ html {
   scroll-padding-top: 80px;
 }
 
-/* テキストの読みやすさ向上 */
+/* 本文：幅制限は長文ページ用クラスだけにする（グローバル p だと全体が左に張り付いて見える） */
 p {
-  max-width: 75ch;
   line-height: 1.8 !important;
   font-size: 16px !important;
 }
 
-/* Apple風の余白調整 */
+/* 長文ブロック用（ポリシー・ブログ記事など） */
+.prose-measure p {
+  max-width: min(75ch, 100%);
+  margin-inline: auto;
+}
+
+/* 左揃えが正しいブロック用（FAQ回答・フォーム説明など） */
+p.text-left-balance,
+.text-left-balance p {
+  margin-inline: 0;
+  max-width: none;
+}
+
+/* トップのカード・グリッド：本文を中央揃え（グローバル p の max-width を打ち消す） */
+.balance-center-card p {
+  max-width: none !important;
+  margin-inline: 0 !important;
+  text-align: center !important;
+}
+
+.balance-center-card h3 {
+  text-align: center !important;
+}
+
+/* Apple風の余白調整 — container は max-width + 中央 */
 .container {
-  padding-left: clamp(1rem, 5vw, 3rem);
-  padding-right: clamp(1rem, 5vw, 3rem);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1rem, 4vw, 2.5rem);
+  padding-right: clamp(1rem, 4vw, 2.5rem);
 }
 
 /* アニメーション */
@@ -211,5 +240,53 @@ p {
     transition: none !important;
     transform: none !important;
     opacity: 1 !important;
+  }
+}
+
+/* ========== 別方式：中央レイアウト（マーケページ一括） ========== */
+.marketing-layout {
+  text-align: center;
+}
+
+.marketing-layout .section-inner {
+  width: 100%;
+  max-width: 80rem; /* = max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 4vw, 2.5rem);
+  padding-right: clamp(1.25rem, 4vw, 2.5rem);
+  box-sizing: border-box;
+}
+
+/* 画面幅いっぱいの帯（背景・ヒーロー） */
+.marketing-layout .section-bleed {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+
+/* グリッド・フレックスの子はデフォルトで中央（カード内もバランスよく） */
+.marketing-layout .section-inner .grid,
+.marketing-layout .section-inner .flex {
+  justify-content: center;
+}
+
+/* 院長ブロックなど「ここだけ左」 */
+.marketing-layout .md-text-left-panel {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .marketing-layout .md-text-left-panel {
+    text-align: left;
+  }
+
+  /* 2カラムなど「PCでは左基準のグリッド」 */
+  .marketing-layout .section-inner .md-grid-left {
+    justify-content: start;
   }
 }

@@ -107,7 +107,7 @@ export default function FAQPage() {
 
       {/* ヒーローセクション */}
       <section className="relative pt-32 pb-20 px-6 bg-gradient-to-br from-[#ffecd1] via-[#f5ebe0] to-white">
-        <div className="container mx-auto max-w-6xl text-center">
+        <div className="w-full max-w-6xl mx-auto px-5 sm:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold font-heading text-gray-800 mb-6 leading-tight tracking-wide">
             よくある質問
           </h1>
@@ -120,7 +120,7 @@ export default function FAQPage() {
 
       {/* FAQ */}
       <section className="py-20 px-6 bg-white">
-        <div className="container mx-auto max-w-4xl space-y-16">
+        <div className="w-full max-w-4xl mx-auto px-5 sm:px-8 space-y-16">
           {faqs.map((faqCategory, categoryIndex) => (
             <div key={categoryIndex}>
               <h2 className="text-3xl font-bold font-heading text-gray-800 mb-8 pb-4 border-b-2 border-[#d4af37]">
@@ -180,7 +180,7 @@ export default function FAQPage() {
 
       {/* CTA */}
       <section className="py-20 px-6 bg-[#f5ebe0]">
-        <div className="container mx-auto max-w-3xl text-center">
+        <div className="w-full max-w-3xl mx-auto px-5 sm:px-8 text-center">
           <h2 className="text-4xl font-bold text-gray-800 mb-6">
             その他ご不明点がございましたら
           </h2>
@@ -207,7 +207,7 @@ export default function FAQPage() {
 
       {/* フッター */}
       <footer className="bg-gray-900 text-white py-12 px-6">
-        <div className="container mx-auto max-w-6xl">
+        <div className="w-full max-w-6xl mx-auto px-5 sm:px-8">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="text-xl font-bold text-[#d4af37] mb-4">LOCO CLINIC</h3>

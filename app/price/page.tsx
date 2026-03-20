@@ -67,7 +67,7 @@ export default function PricePage() {
 
       {/* ヒーローセクション */}
       <section className="relative pt-32 pb-20 px-6 bg-gradient-to-br from-[#ffecd1] via-[#f5ebe0] to-white">
-        <div className="container mx-auto max-w-6xl text-center">
+        <div className="w-full max-w-6xl mx-auto px-5 sm:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
             料金表
           </h1>
@@ -80,7 +80,7 @@ export default function PricePage() {
 
       {/* 料金表 */}
       <section className="py-20 px-6 bg-white">
-        <div className="container mx-auto max-w-6xl space-y-16">
+        <div className="w-full max-w-6xl mx-auto px-5 sm:px-8 space-y-16">
           {priceList.map((category, index) => (
             <div key={index}>
               <h2 className="text-3xl font-bold text-gray-800 mb-8 pb-4 border-b-2 border-[#d4af37]">
@@ -113,7 +113,7 @@ export default function PricePage() {
 
       {/* お支払い方法 */}
       <section className="py-20 px-6 bg-[#f5ebe0]">
-        <div className="container mx-auto max-w-5xl">
+        <div className="w-full max-w-5xl mx-auto px-5 sm:px-8">
           <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center">
             お支払い方法
           </h2>
@@ -145,7 +145,7 @@ export default function PricePage() {
 
       {/* 注意事項 */}
       <section className="py-20 px-6 bg-white">
-        <div className="container mx-auto max-w-5xl">
+        <div className="w-full max-w-5xl mx-auto px-5 sm:px-8">
           <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center">
             ご予約・キャンセルについて
           </h2>
@@ -174,7 +174,7 @@ export default function PricePage() {
 
       {/* CTA */}
       <section className="py-20 px-6 bg-[#f5ebe0]">
-        <div className="container mx-auto max-w-3xl text-center">
+        <div className="w-full max-w-3xl mx-auto px-5 sm:px-8 text-center">
           <h2 className="text-4xl font-bold text-gray-800 mb-6">
             まずはお気軽にご相談ください
           </h2>
@@ -201,7 +201,7 @@ export default function PricePage() {
 
       {/* フッター */}
       <footer className="bg-gray-900 text-white py-12 px-6">
-        <div className="container mx-auto max-w-6xl">
+        <div className="w-full max-w-6xl mx-auto px-5 sm:px-8">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="text-xl font-bold text-[#d4af37] mb-4">LOCO CLINIC</h3>

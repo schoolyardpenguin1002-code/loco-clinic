@@ -37,9 +37,11 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${montserrat.variable} ${notoSansJP.variable} ${shipporiMincho.variable} antialiased`}
+        className={`${montserrat.variable} ${notoSansJP.variable} ${shipporiMincho.variable} antialiased min-h-screen w-full`}
       >
-        {children}
+        <div className="relative w-full min-h-screen flex flex-col items-stretch">
+          {children}
+        </div>
       </body>
     </html>
   );

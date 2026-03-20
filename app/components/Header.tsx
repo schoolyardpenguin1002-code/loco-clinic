@@ -34,7 +34,7 @@ export default function Header() {
           : "bg-white/80 backdrop-blur-md border-b border-[#d4af37]/10"
       }`}
     >
-      <nav className="container mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
+      <nav className="w-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-5 flex items-center justify-between">
         {/* ロゴ */}
         <Link
           href="/"
@@ -107,7 +107,7 @@ export default function Header() {
           isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
-        <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
+        <div className="w-full max-w-7xl mx-auto px-5 sm:px-8 py-8 flex flex-col gap-6">
           {navItems.map((item, index) => (
             <Link
               key={item.href}

@@ -38,11 +38,11 @@ export default function ArtmakePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white w-full max-w-[100vw] overflow-x-hidden">
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-32 md:pt-48 md:pb-48 px-6 bg-[#fdfbf8]">
+      <section className="relative pt-40 pb-32 md:pt-48 md:pb-48 px-5 sm:px-8 lg:px-12 bg-[#fdfbf8]">
         <div className="max-w-7xl mx-auto text-center">
           <span className="text-xs font-heading tracking-[0.3em] text-[#d4af37] uppercase mb-8 block">Featured</span>
           <h1 className="text-6xl md:text-8xl font-light font-japanese mb-12 text-[#1a1a1a] tracking-wider" style={{ fontFamily: 'var(--font-shippori-mincho), serif' }}>
@@ -56,7 +56,7 @@ export default function ArtmakePage() {
       </section>
 
       {/* What is Art Make */}
-      <section className="py-32 md:py-48 px-6 bg-white">
+      <section className="py-32 md:py-48 px-5 sm:px-8 lg:px-12 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-light font-japanese mb-16 text-[#1a1a1a] text-center tracking-wider" style={{ fontFamily: 'var(--font-shippori-mincho), serif' }}>
             アートメイクとは
@@ -88,7 +88,7 @@ export default function ArtmakePage() {
       </section>
 
       {/* Artists Section */}
-      <section className="py-32 md:py-48 px-6 bg-[#fdfbf8]">
+      <section className="py-32 md:py-48 px-5 sm:px-8 lg:px-12 bg-[#fdfbf8]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24">
             <h2 className="text-5xl md:text-7xl font-light font-japanese mb-8 text-[#1a1a1a] tracking-wider" style={{ fontFamily: 'var(--font-shippori-mincho), serif' }}>
@@ -135,7 +135,7 @@ export default function ArtmakePage() {
       </section>
 
       {/* Menu Types */}
-      <section className="py-32 md:py-48 px-6 bg-white">
+      <section className="py-32 md:py-48 px-5 sm:px-8 lg:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24">
             <h2 className="text-5xl md:text-7xl font-light font-japanese mb-8 text-[#1a1a1a] tracking-wider" style={{ fontFamily: 'var(--font-shippori-mincho), serif' }}>
@@ -175,7 +175,7 @@ export default function ArtmakePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-32 md:py-48 px-6 bg-[#1a1a1a] text-white">
+      <section className="py-32 md:py-48 px-5 sm:px-8 lg:px-12 bg-[#1a1a1a] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-6xl font-light font-japanese mb-12 leading-relaxed" style={{ fontFamily: 'var(--font-shippori-mincho), serif' }}>
             理想の自分に<br />

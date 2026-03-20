@@ -8,7 +8,7 @@ export default function CancelPolicyPage() {
 
       {/* ヒーローセクション */}
       <section className="relative pt-32 pb-20 px-6 bg-gradient-to-br from-[#ffecd1] via-[#f5ebe0] to-white">
-        <div className="container mx-auto max-w-4xl text-center">
+        <div className="w-full max-w-4xl mx-auto px-5 sm:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold font-heading text-gray-800 mb-6 leading-tight tracking-wide">
             キャンセルポリシー
           </h1>
@@ -20,8 +20,8 @@ export default function CancelPolicyPage() {
 
       {/* ポリシー内容 */}
       <section className="py-20 px-6 bg-white">
-        <div className="container mx-auto max-w-4xl">
-          <div className="bg-gradient-to-br from-white to-[#fdfbf8] border border-[#d4af37]/20 rounded-3xl p-8 md:p-12 shadow-xl">
+        <div className="w-full max-w-4xl mx-auto px-5 sm:px-8">
+          <div className="text-left-balance bg-gradient-to-br from-white to-[#fdfbf8] border border-[#d4af37]/20 rounded-3xl p-8 md:p-12 shadow-xl">
             
             {/* ポリシー本文 */}
             <div className="space-y-8 mb-12">
@@ -126,7 +126,7 @@ export default function CancelPolicyPage() {
 
       {/* フッター */}
       <footer className="bg-gray-900 text-white py-12 px-6">
-        <div className="container mx-auto max-w-6xl">
+        <div className="w-full max-w-6xl mx-auto px-5 sm:px-8">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="text-xl font-bold text-[#d4af37] mb-4">LOCO CLINIC</h3>

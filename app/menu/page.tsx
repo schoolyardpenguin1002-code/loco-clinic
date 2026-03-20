@@ -43,11 +43,11 @@ export default function MenuPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white w-full max-w-[100vw] overflow-x-hidden">
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-32 md:pt-48 md:pb-48 px-6 bg-[#fdfbf8]">
+      <section className="relative pt-40 pb-32 md:pt-48 md:pb-48 px-5 sm:px-8 lg:px-12 bg-[#fdfbf8]">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-6xl md:text-8xl font-light font-japanese mb-12 text-[#1a1a1a] tracking-wider" style={{ fontFamily: 'var(--font-shippori-mincho), serif' }}>
             Treatment Menu
@@ -60,11 +60,11 @@ export default function MenuPage() {
       </section>
 
       {/* Menu Categories */}
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 w-full">
         {menuCategories.map((category, categoryIndex) => (
           <section
             key={category.id}
-            className={`py-32 md:py-48 ${categoryIndex % 2 === 0 ? 'bg-white' : 'bg-[#fdfbf8]'} -mx-6 px-6`}
+            className={`py-32 md:py-48 ${categoryIndex % 2 === 0 ? 'bg-white' : 'bg-[#fdfbf8]'} -mx-5 sm:-mx-8 lg:-mx-12 px-5 sm:px-8 lg:px-12`}
           >
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16 md:mb-24">
@@ -102,7 +102,7 @@ export default function MenuPage() {
       </div>
 
       {/* CTA */}
-      <section className="py-32 md:py-48 px-6 bg-[#1a1a1a] text-white">
+      <section className="py-32 md:py-48 px-5 sm:px-8 lg:px-12 bg-[#1a1a1a] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-6xl font-light font-japanese mb-12 leading-relaxed" style={{ fontFamily: 'var(--font-shippori-mincho), serif' }}>
             まずは、<br />
