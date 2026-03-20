@@ -271,19 +271,21 @@ export default function Home() {
         <div className="section-inner flex flex-col items-center">
           <Reveal className="text-center mb-24 w-full">
             <h2
-              className="text-5xl md:text-7xl font-light font-japanese mb-8 text-[#1a1a1a] tracking-wider text-center"
+              className="text-5xl md:text-7xl font-light font-japanese mb-12 text-[#1a1a1a] tracking-wider text-center"
               style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
             >
               Artists
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 font-light text-center max-w-2xl mx-auto">
-              プロフェッショナルな技術者たち
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 w-full justify-items-center md:justify-items-stretch">
-            {["澤田 望美", "上原 実紅", "山本 りな", "鈴木 ゆき"].map((name, i) => (
-              <Reveal key={name} delay={i * 100} className="w-full max-w-xs md:max-w-none">
+            {[
+              { name: "澤田 望美", instagram: "https://www.instagram.com/nozomi_akari_glow" },
+              { name: "上原 実紅", instagram: "https://www.instagram.com/miku39_artmake/" },
+              { name: "山本 りな", instagram: null },
+              { name: "鈴木 ゆき", instagram: null }
+            ].map((artist, i) => (
+              <Reveal key={artist.name} delay={i * 100} className="w-full max-w-xs md:max-w-none">
                 <div className="group w-full text-center">
                   <div className="aspect-[3/4] bg-gradient-to-br from-[#f5ebe0] to-[#ffecd1] rounded-sm overflow-hidden mb-4 relative">
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -295,8 +297,19 @@ export default function Home() {
                     className="text-base font-japanese text-[#1a1a1a] text-center mb-1"
                     style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                   >
-                    {name}
+                    {artist.name}
                   </p>
+                  {artist.instagram && (
+                    <a
+                      href={artist.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs text-gray-500 hover:text-[#d4af37] transition-colors duration-300 mb-1"
+                    >
+                      <span>Instagram</span>
+                      <span aria-hidden>→</span>
+                    </a>
+                  )}
                   <p className="text-xs text-gray-500 font-light text-center">Specialist</p>
                 </div>
               </Reveal>
