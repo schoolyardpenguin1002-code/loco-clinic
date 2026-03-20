@@ -1,5 +1,15 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## LOCO CLINIC — 表示が真っ白・接続エラーになるとき
+
+- **PCスリープ直後**は `ERR_NETWORK_IO_SUSPENDED` や途中までのHTMLで真っ白になることがあります。**タブを閉じてから** `http://localhost:3000` を開き直すか、**Cmd+Shift+R** で再読み込みしてください。
+- **Chromeの容量（メモリ）**: DevTools を開いたまま・「What's new」パネルを開いたままにすると重くなります。**DevToolsは使わないときは閉じる**と負荷が下がります（サイトのコードがディスクを食うわけではありません）。
+- ビルドキャッシュを捨てたいとき: `npm run clean` のあと `npm run dev` または `npm run build`。
+
+## Vercel でデプロイ
+
+手順は **[docs/VERCELデプロイ.md](./docs/VERCELデプロイ.md)** を参照（GitHub 連携 or `npx vercel`）。
+
 ## Getting Started
 
 First, run the development server:
