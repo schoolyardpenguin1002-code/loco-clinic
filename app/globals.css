@@ -290,3 +290,44 @@ p.text-left-balance,
     justify-content: start;
   }
 }
+
+/* Pick up（Swiper）— 清潔感のあるナビ・ページネーション */
+.pickup-swiper .pickup-swiper-inner .swiper-slide {
+  height: auto;
+}
+
+.pickup-swiper .swiper-button-prev,
+.pickup-swiper .swiper-button-next {
+  color: #1a1a1a;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: 0;
+  top: auto;
+  bottom: 0;
+}
+
+.pickup-swiper .swiper-button-prev:after,
+.pickup-swiper .swiper-button-next:after {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.pickup-swiper .swiper-button-prev:hover,
+.pickup-swiper .swiper-button-next:hover {
+  color: #d4af37;
+}
+
+.pickup-swiper .swiper-pagination {
+  bottom: 0 !important;
+}
+
+.pickup-swiper .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background: #ccc;
+  opacity: 1;
+}
+
+.pickup-swiper .swiper-pagination-bullet-active {
+  background: #d4af37;
+}

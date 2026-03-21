@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Header from "./components/Header";
+import PickUpSlider from "./components/PickUpSlider";
 import Reveal from "./components/Reveal";
 
 export default function Home() {
@@ -314,6 +315,29 @@ export default function Home() {
                 </div>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pick up */}
+      <section id="pickup" className="section-bleed py-32 md:py-48 bg-white border-t border-[#d4af37]/10">
+        <div className="section-inner flex flex-col items-center">
+          <Reveal className="text-center mb-12 w-full md:mb-16">
+            <span className="text-xs font-heading tracking-[0.3em] text-[#d4af37] uppercase mb-6 block text-center">
+              Featured
+            </span>
+            <h2
+              className="text-5xl md:text-7xl font-light font-japanese mb-6 text-[#1a1a1a] tracking-wider text-center"
+              style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
+            >
+              Pick up
+            </h2>
+            <p className="text-lg text-gray-600 font-light text-center max-w-2xl mx-auto">
+              注目のトピック
+            </p>
+          </Reveal>
+          <div className="w-full">
+            <PickUpSlider />
           </div>
         </div>
       </section>
