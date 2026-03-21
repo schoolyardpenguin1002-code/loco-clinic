@@ -1,125 +1,65 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "../components/Header";
+import MenuBrowseTabs from "../components/menu/MenuBrowseTabs";
+
+export const metadata: Metadata = {
+  title: "施術メニュー | LOCO CLINIC",
+  description:
+    "糸リフト・注入・美肌ケアなど、LOCO CLINICの施術メニューをご紹介します。",
+};
 
 export default function MenuPage() {
-  const menuCategories = [
-    {
-      id: 'thread',
-      name: '糸リフト・スレッド',
-      description: 'メスを使わない、自然なリフトアップ',
-      items: [
-        { name: 'ショッピングスレッド', price: '¥55,000' },
-        { name: 'VOVリフトプレミアム', price: '¥88,000' },
-        { name: 'テスリフトソフト', price: '¥110,000' },
-        { name: 'ウルトラVリフト', price: '¥165,000' },
-      ],
-    },
-    {
-      id: 'injection',
-      name: '注入・肌育',
-      description: 'ヒアルロン酸・ボトックスで立体的な美しさを',
-      items: [
-        { name: 'ヒアルロン酸（ジュビダームビスタ）', price: '¥66,000' },
-        { name: 'ボトックス（アラガン）', price: '¥33,000' },
-        { name: 'プロファイロ', price: '¥88,000' },
-        { name: '水光注射（ベーシック）', price: '¥22,000' },
-        { name: '水光注射（プレミアム）', price: '¥44,000' },
-        { name: 'ベビーコラーゲン', price: '¥110,000' },
-      ],
-    },
-    {
-      id: 'skin',
-      name: '美肌・ピーリング',
-      description: '肌質改善と透明感のある美肌へ',
-      items: [
-        { name: 'ハイドラフェイシャル', price: '¥16,500' },
-        { name: 'マッサージピール', price: '¥16,500' },
-        { name: 'ダーマペン4', price: '¥22,000' },
-        { name: 'ピコトーニング', price: '¥16,500' },
-        { name: 'ピコフラクショナル', price: '¥33,000' },
-        { name: 'ポテンツァ', price: '¥55,000' },
-      ],
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-white w-full max-w-[100vw] overflow-x-hidden">
+    <div className="min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-white">
       <Header />
+      <main className="marketing-layout w-full">
+        {/* Hero */}
+        <section className="section-bleed relative bg-[#fdfbf8] pb-24 pt-40 md:pb-32 md:pt-48">
+          <div className="section-inner !max-w-5xl !mx-auto flex w-full flex-col items-center text-center">
+            <p className="font-heading mb-6 text-[10px] tracking-[0.35em] text-[#d4af37] md:text-xs">
+              MENU
+            </p>
+            <h1
+              className="mb-0 font-japanese text-4xl font-light tracking-wider text-[#1a1a1a] md:text-6xl lg:text-7xl"
+              style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
+            >
+              施術メニュー
+            </h1>
+          </div>
+        </section>
 
-      {/* Hero Section */}
-      <section className="relative pt-40 pb-32 md:pt-48 md:pb-48 px-5 sm:px-8 lg:px-12 bg-[#fdfbf8]">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-6xl md:text-8xl font-light font-japanese mb-12 text-[#1a1a1a] tracking-wider" style={{ fontFamily: 'var(--font-shippori-mincho), serif' }}>
-            Treatment Menu
-          </h1>
-          <p className="text-lg md:text-xl text-gray-600 font-light leading-loose max-w-3xl mx-auto">
-            あなたの理想を叶える、<br className="md:hidden" />
-            多彩な施術メニュー
-          </p>
-        </div>
-      </section>
+        <section className="section-bleed bg-white py-20 md:py-28">
+          <div className="section-inner !max-w-5xl !mx-auto flex w-full flex-col items-center">
+            <MenuBrowseTabs />
+          </div>
+        </section>
 
-      {/* Menu Categories */}
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 w-full">
-        {menuCategories.map((category, categoryIndex) => (
-          <section
-            key={category.id}
-            className={`py-32 md:py-48 ${categoryIndex % 2 === 0 ? 'bg-white' : 'bg-[#fdfbf8]'} -mx-5 sm:-mx-8 lg:-mx-12 px-5 sm:px-8 lg:px-12`}
-          >
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16 md:mb-24">
-                <span className="text-xs font-heading tracking-[0.3em] text-[#d4af37] uppercase mb-6 block">
-                  {String(categoryIndex + 1).padStart(2, '0')}
-                </span>
-                <h2 className="text-4xl md:text-6xl font-light font-japanese mb-6 text-[#1a1a1a] tracking-wider" style={{ fontFamily: 'var(--font-shippori-mincho), serif' }}>
-                  {category.name}
-                </h2>
-                <p className="text-base md:text-lg text-gray-600 font-light">
-                  {category.description}
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-8">
-                {category.items.map((item, index) => (
-                  <div
-                    key={index}
-                    className="group bg-white hover:bg-[#fdfbf8] border border-gray-100 hover:border-[#d4af37]/30 rounded-sm p-8 transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
-                  >
-                    <div className="flex justify-between items-start">
-                      <h3 className="text-lg md:text-xl font-light text-[#1a1a1a] leading-relaxed flex-1 pr-4">
-                        {item.name}
-                      </h3>
-                      <span className="text-2xl font-heading font-bold text-[#d4af37] whitespace-nowrap">
-                        {item.price}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        ))}
-      </div>
-
-      {/* CTA */}
-      <section className="py-32 md:py-48 px-5 sm:px-8 lg:px-12 bg-[#1a1a1a] text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-light font-japanese mb-12 leading-relaxed" style={{ fontFamily: 'var(--font-shippori-mincho), serif' }}>
-            まずは、<br />
-            無料カウンセリングから
-          </h2>
-          <p className="text-base md:text-lg text-gray-300 font-light mb-16 leading-loose">
-            お客様一人ひとりに合わせた<br />
-            最適なプランをご提案します。
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-16 py-6 bg-white text-[#1a1a1a] font-heading text-sm tracking-widest uppercase rounded-none hover:bg-[#d4af37] hover:text-white transition-all duration-500 shadow-2xl hover:-translate-y-1"
-          >
-            ご予約・お問い合わせ
-          </Link>
-        </div>
-      </section>
+        {/* CTA */}
+        <section className="section-bleed bg-[#1a1a1a] py-32 text-white md:py-48">
+          <div className="section-inner !max-w-4xl !mx-auto text-center">
+            <h2
+              className="mb-12 font-japanese text-3xl font-light leading-relaxed md:text-5xl"
+              style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
+            >
+              まずは、
+              <br />
+              無料カウンセリングから
+            </h2>
+            <p className="mb-16 text-base font-light leading-loose text-gray-300 md:text-lg">
+              お客様一人ひとりに合わせた
+              <br />
+              最適なプランをご提案します。
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block rounded-none bg-white px-12 py-5 font-heading text-sm tracking-widest text-[#1a1a1a] uppercase shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:bg-[#d4af37] hover:text-white md:px-16 md:py-6"
+            >
+              ご予約・お問い合わせ
+            </Link>
+          </div>
+        </section>
+      </main>
     </div>
   );
 }

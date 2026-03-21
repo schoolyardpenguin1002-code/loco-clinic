@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Noto_Sans_JP, Shippori_Mincho } from "next/font/google";
+import SonnerToaster from "./components/SonnerToaster";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -41,6 +42,7 @@ export default function RootLayout({
       >
         <div className="relative w-full min-h-screen flex flex-col items-stretch">
           {children}
+          <SonnerToaster />
         </div>
       </body>
     </html>
