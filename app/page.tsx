@@ -1,3 +1,4 @@
+import { Instagram } from "lucide-react";
 import Link from "next/link";
 import Header from "./components/Header";
 import PickUpSlider from "./components/PickUpSlider";
@@ -294,23 +295,25 @@ export default function Home() {
                     </div>
                     <div className="absolute inset-0 bg-[#d4af37]/0 group-hover:bg-[#d4af37]/10 transition-all duration-500" />
                   </div>
-                  <p
-                    className="text-base font-japanese text-[#1a1a1a] text-center mb-1"
-                    style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
-                  >
-                    {artist.name}
-                  </p>
-                  {artist.instagram && (
-                    <a
-                      href={artist.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs text-gray-500 hover:text-[#d4af37] transition-colors duration-300 mb-1"
+                  <div className="mb-1 flex items-center justify-center gap-1.5">
+                    <p
+                      className="text-base font-japanese text-[#1a1a1a] text-center"
+                      style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                     >
-                      <span>Instagram</span>
-                      <span aria-hidden>→</span>
-                    </a>
-                  )}
+                      {artist.name}
+                    </p>
+                    {artist.instagram && (
+                      <a
+                        href={artist.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${artist.name}のInstagramプロフィールを新しいタブで開く`}
+                        className="inline-flex shrink-0 items-center justify-center rounded-full p-1.5 text-gray-500 transition-colors duration-300 hover:text-[#d4af37] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d4af37]"
+                      >
+                        <Instagram className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+                      </a>
+                    )}
+                  </div>
                   <p className="text-xs text-gray-500 font-light text-center">Specialist</p>
                 </div>
               </Reveal>

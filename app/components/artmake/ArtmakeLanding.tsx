@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   Gem,
   Heart,
+  Instagram,
   Shield,
   Sparkles,
   Syringe,
@@ -291,29 +292,29 @@ export default function ArtmakeLanding() {
                     <span className="block text-center font-heading text-[10px] tracking-[0.35em] text-[#d4af37] md:text-left md:text-xs">
                       {artist.role}
                     </span>
-                    <h3
-                      className="mt-4 text-center font-japanese text-2xl font-light text-[#1a1a1a] md:text-left md:text-3xl"
-                      style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
-                    >
-                      {artist.name}
-                    </h3>
+                    <div className="mt-4 flex flex-wrap items-center justify-center gap-2 md:justify-start">
+                      <h3
+                        className="text-center font-japanese text-2xl font-light text-[#1a1a1a] md:text-left md:text-3xl"
+                        style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
+                      >
+                        {artist.name}
+                      </h3>
+                      <a
+                        href={artist.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${artist.name}のInstagramプロフィールを新しいタブで開く`}
+                        className="inline-flex shrink-0 items-center justify-center rounded-full p-2 text-gray-500 transition-colors duration-300 hover:text-[#d4af37] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d4af37]"
+                      >
+                        <Instagram className="h-5 w-5 md:h-6 md:w-6" strokeWidth={1.75} aria-hidden />
+                      </a>
+                    </div>
                     <p className="mt-2 text-center text-xs font-light text-gray-500 md:text-left">
                       {artist.speciality}
                     </p>
                     <p className="mt-6 text-sm font-light leading-loose text-gray-600 md:text-base">
                       {artist.description}
                     </p>
-                    <div className="mt-6 flex justify-center md:justify-start">
-                      <a
-                        href={artist.instagram}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 font-heading text-xs tracking-widest text-gray-500 transition-colors hover:text-[#d4af37]"
-                      >
-                        Instagram
-                        <span aria-hidden>→</span>
-                      </a>
-                    </div>
                   </div>
                 </div>
               ))}
