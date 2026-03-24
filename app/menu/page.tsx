@@ -44,7 +44,7 @@ export default function MenuPage() {
             >
               まずは、
               <br />
-              無料カウンセリングから
+              ご相談から
             </h2>
             <p className="mb-16 text-base font-light leading-loose text-gray-300 md:text-lg">
               お客様一人ひとりに合わせた

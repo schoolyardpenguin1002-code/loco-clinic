@@ -66,7 +66,6 @@ export default function Home() {
             ご相談ください
           </h2>
           <p className="text-base md:text-lg text-gray-600 font-light mb-16 leading-loose">
-            カウンセリングは無料です。<br />
             あなたの理想を、お聞かせください。
           </p>
           <Link

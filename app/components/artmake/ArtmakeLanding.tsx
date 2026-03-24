@@ -549,7 +549,7 @@ export default function ArtmakeLanding() {
               ご予約・ご相談
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-left text-sm font-light leading-relaxed text-gray-600">
-              無料カウンセリングで、あなたに合ったデザインをご提案します。
+              カウンセリングにて、あなたに合ったデザインをご提案します。
             </p>
             <div className="mx-auto mt-12 flex max-w-lg flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6">
               <a

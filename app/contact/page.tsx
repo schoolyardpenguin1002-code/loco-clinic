@@ -33,7 +33,7 @@ export default function ContactPage() {
           </h1>
           <p className="text-lg md:text-xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed">
             まずはお気軽にご相談ください。<br />
-            無料カウンセリングも承っております。
+            カウンセリングのご予約も承っております。
           </p>
         </div>
       </section>

@@ -179,7 +179,7 @@ export default function PricePage() {
             まずはお気軽にご相談ください
           </h2>
           <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-            無料カウンセリングで、お見積もりをお出しします。<br />
+            カウンセリングにて、お見積もりをお出しします。<br />
             お気軽にお問い合わせください。
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
