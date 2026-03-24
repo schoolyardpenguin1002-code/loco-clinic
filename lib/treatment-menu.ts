@@ -22,7 +22,7 @@ export const TREATMENT_MENU_GROUPS: TreatmentMenuGroup[] = [
       { id: "tarumi-lift", label: "たるみリフト" },
       { id: "houreisen-lift", label: "ほうれい線リフト" },
       { id: "customize-lift", label: "カスタマイズリフト" },
-      { id: "total-lift", label: "トータルリフト" },
+      { id: "total-lift", label: "ポニーテールリフト" },
     ],
   },
   {
