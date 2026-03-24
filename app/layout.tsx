@@ -3,6 +3,7 @@ import { Montserrat, Noto_Sans_JP, Shippori_Mincho } from "next/font/google";
 import SonnerToaster from "./components/SonnerToaster";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -45,6 +46,7 @@ export default function RootLayout({
           {children}
           <SonnerToaster />
           <Analytics />
+          <SpeedInsights />
         </div>
       </body>
     </html>
