@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { CONSULTATION_FEE_SENTENCE } from "@/lib/consultation-fee";
 
 type FAQ = {
   question: string;
@@ -27,6 +28,10 @@ export default function FAQAccordion() {
       question: "支払い方法は何がありますか？",
       answer:
         "現金、クレジットカード（VISA / MasterCard）、電子決済（PayPay、QuickPayなど）に対応しております。",
+    },
+    {
+      question: "カウンセリング料はかかりますか？",
+      answer: `はい。${CONSULTATION_FEE_SENTENCE}`,
     },
     {
       question: "駐車場はありますか？",
@@ -67,7 +72,7 @@ export default function FAQAccordion() {
     },
     {
       question: "男性でも施術は受けられますか？",
-      answer: "もちろん可能です。近年、男性の方のご利用も増えています。お気軽にご相談ください。",
+      answer: `もちろん可能です。近年、男性の方のご利用も増えています。お気軽にご相談ください。${CONSULTATION_FEE_SENTENCE}`,
     },
   ];
 

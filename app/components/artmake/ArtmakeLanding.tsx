@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { CONSULTATION_FEE_SENTENCE } from "@/lib/consultation-fee";
 import {
   Gem,
   Heart,
@@ -41,6 +42,10 @@ const artists = [
 
 const faqItems: FaqItem[] = [
   {
+    q: "カウンセリング料はかかりますか？",
+    a: `はい。${CONSULTATION_FEE_SENTENCE}`,
+  },
+  {
     q: "施術の持続期間はどのくらいですか？",
     a: "個人差はありますが、一般的に眉は1〜2年、リップは2〜3年程度を目安に色素が徐々に薄くなっていきます。肌質・ライフスタイル・UVケアにも影響されます。",
   },
@@ -60,7 +65,11 @@ const faqItems: FaqItem[] = [
 
 const flowSteps = [
   { step: 1, title: "ご予約", desc: "Web・LINE・お電話にてご予約ください。" },
-  { step: 2, title: "カウンセリング", desc: "ご希望やライフスタイルを伺い、デザインをご提案します。" },
+  {
+    step: 2,
+    title: "カウンセリング",
+    desc: `ご希望やライフスタイルを伺い、デザインをご提案します。${CONSULTATION_FEE_SENTENCE}`,
+  },
   { step: 3, title: "デザイン確定", desc: "シミュレーションをしながら形・色を決定します。" },
   { step: 4, title: "施術", desc: "衛生管理を徹底し、丁寧に施術を行います。" },
   { step: 5, title: "アフターケア", desc: "術後の説明とフォローを行います。ご安心ください。" },
@@ -549,7 +558,7 @@ export default function ArtmakeLanding() {
               ご予約・ご相談
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-left text-sm font-light leading-relaxed text-gray-600">
-              カウンセリングにて、あなたに合ったデザインをご提案します。
+              カウンセリングにて、あなたに合ったデザインをご提案します。{CONSULTATION_FEE_SENTENCE}
             </p>
             <div className="mx-auto mt-12 flex max-w-lg flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6">
               <a

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CONSULTATION_FEE_SENTENCE } from "@/lib/consultation-fee";
 import Header from "../components/Header";
 import MenuBrowseTabs from "../components/menu/MenuBrowseTabs";
 
@@ -46,11 +47,12 @@ export default function MenuPage() {
               <br />
               ご相談から
             </h2>
-            <p className="mb-16 text-base font-light leading-loose text-gray-300 md:text-lg">
+            <p className="mb-8 text-base font-light leading-loose text-gray-300 md:text-lg">
               お客様一人ひとりに合わせた
               <br />
               最適なプランをご提案します。
             </p>
+            <p className="mb-16 text-sm font-light text-gray-400">{CONSULTATION_FEE_SENTENCE}</p>
             <Link
               href="/contact"
               className="inline-block rounded-none bg-white px-12 py-5 font-heading text-sm tracking-widest text-[#1a1a1a] uppercase shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:bg-[#d4af37] hover:text-white md:px-16 md:py-6"

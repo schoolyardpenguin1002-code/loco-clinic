@@ -1,5 +1,6 @@
 import { Instagram } from "lucide-react";
 import Link from "next/link";
+import { CONSULTATION_FEE_SENTENCE } from "@/lib/consultation-fee";
 import Header from "./components/Header";
 import PickUpSlider from "./components/PickUpSlider";
 import Reveal from "./components/Reveal";
@@ -491,6 +492,9 @@ export default function Home() {
             <br />
             ご相談ください
           </h2>
+          <p className="mb-6 text-center text-base font-light text-gray-600 max-w-2xl md:text-lg">
+            {CONSULTATION_FEE_SENTENCE}
+          </p>
           <p className="text-base md:text-lg text-gray-600 font-light mb-16 leading-loose text-center max-w-2xl">
             あなたの理想を、お聞かせください。
           </p>

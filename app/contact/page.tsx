@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { CONSULTATION_FEE_SENTENCE } from "@/lib/consultation-fee";
 import Header from "../components/Header";
 
 export default function ContactPage() {
@@ -33,7 +34,7 @@ export default function ContactPage() {
           </h1>
           <p className="text-lg md:text-xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed">
             まずはお気軽にご相談ください。<br />
-            カウンセリングのご予約も承っております。
+            カウンセリングのご予約も承っております。{CONSULTATION_FEE_SENTENCE}
           </p>
         </div>
       </section>
@@ -199,7 +200,9 @@ export default function ContactPage() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#d4af37] font-bold flex-shrink-0">●</span>
-                <span>初診の方は、カウンセリングのご予約からお願いいたします。</span>
+                <span>
+                  初診の方は、カウンセリングのご予約からお願いいたします。{CONSULTATION_FEE_SENTENCE}
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#d4af37] font-bold flex-shrink-0">●</span>

@@ -1,8 +1,13 @@
 import Link from "next/link";
+import { CONSULTATION_FEE_SENTENCE } from "@/lib/consultation-fee";
 import Header from "../components/Header";
 
 export default function PricePage() {
   const priceList = [
+    {
+      category: "カウンセリング",
+      items: [{ name: "カウンセリング", price: "¥5,000", note: "税別" }],
+    },
     {
       category: "アートメイク",
       items: [
@@ -73,7 +78,7 @@ export default function PricePage() {
           </h1>
           <p className="text-lg md:text-xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed">
             明確な料金設定で、安心してご利用いただけます。<br />
-            ※全て税込価格です。
+            ※{CONSULTATION_FEE_SENTENCE}その他の施術メニューは税込価格です。
           </p>
         </div>
       </section>
@@ -179,7 +184,8 @@ export default function PricePage() {
             まずはお気軽にご相談ください
           </h2>
           <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-            カウンセリングにて、お見積もりをお出しします。<br />
+            カウンセリングにて、お見積もりをお出しします。{CONSULTATION_FEE_SENTENCE}
+            <br />
             お気軽にお問い合わせください。
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { CONSULTATION_FEE_SENTENCE } from "@/lib/consultation-fee";
 import Header from "../components/Header";
 
 type FAQItem = {
@@ -31,6 +32,10 @@ const faqs: FAQCategory[] = [
       {
         question: "支払い方法は何がありますか？",
         answer: "現金、クレジットカード（VISA / MasterCard）、電子決済（PayPay、QuickPayなど）に対応しております。",
+      },
+      {
+        question: "カウンセリング料はかかりますか？",
+        answer: `はい。${CONSULTATION_FEE_SENTENCE}`,
       },
     ],
   },
@@ -85,7 +90,7 @@ const faqs: FAQCategory[] = [
       },
       {
         question: "男性でも施術は受けられますか？",
-        answer: "もちろん可能です。近年、男性の方のご利用も増えています。お気軽にご相談ください。",
+        answer: `もちろん可能です。近年、男性の方のご利用も増えています。お気軽にご相談ください。${CONSULTATION_FEE_SENTENCE}`,
       },
     ],
   },
@@ -114,6 +119,8 @@ export default function FAQPage() {
           <p className="text-lg md:text-xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed">
             お客様からよくいただくご質問をまとめました。<br />
             その他ご不明点がございましたら、お気軽にお問い合わせください。
+            <br />
+            <span className="text-base text-gray-600">{CONSULTATION_FEE_SENTENCE}</span>
           </p>
         </div>
       </section>
@@ -186,7 +193,8 @@ export default function FAQPage() {
           </h2>
           <p className="text-lg text-gray-600 mb-10 leading-relaxed">
             お気軽にお問い合わせください。<br />
-            専門スタッフが丁寧にお答えいたします。
+            専門スタッフが丁寧にお答えいたします。<br />
+            <span className="text-base text-gray-600">{CONSULTATION_FEE_SENTENCE}</span>
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
