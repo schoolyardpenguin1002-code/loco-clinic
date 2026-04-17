@@ -102,8 +102,6 @@ export default function Home() {
               </h2>
               <div className="space-y-6 text-base md:text-lg text-gray-700 font-light leading-loose">
                 <p>
-                  美容医療の世界に身を置いて15年。
-                  <br />
                   数多くの患者様と向き合う中で、確信したことがあります。
                 </p>
                 <p>
