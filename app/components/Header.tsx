@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
+import { LINE_ADD_FRIEND_URL } from "@/lib/line";
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -69,6 +71,15 @@ export default function Header() {
               {item.name}
             </Link>
           ))}
+          <a
+            href={LINE_ADD_FRIEND_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#06C755] text-[10px] font-bold leading-none text-white shadow-sm transition hover:bg-[#05b34c] hover:shadow-md"
+            aria-label="公式LINEを開く"
+          >
+            LINE
+          </a>
           <Link
             href="/contact"
             className="px-8 py-3 bg-[#d4af37] text-white rounded-full text-xs font-heading font-semibold tracking-widest uppercase hover:bg-[#c19b2f] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
@@ -130,11 +141,22 @@ export default function Header() {
               {item.name}
             </Link>
           ))}
+          <a
+            href={LINE_ADD_FRIEND_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsMenuOpen(false)}
+            className="inline-flex h-11 w-11 items-center justify-center self-start rounded-full bg-[#06C755] text-xs font-bold text-white shadow-sm transition hover:bg-[#05b34c] animate-fadeIn"
+            style={{ animationDelay: `${navItems.length * 50}ms` }}
+            aria-label="公式LINEを開く"
+          >
+            LINE
+          </a>
           <Link
             href="/contact"
             onClick={() => setIsMenuOpen(false)}
-            className="mt-4 px-8 py-4 bg-[#d4af37] text-white rounded-full text-sm font-heading font-semibold tracking-wide text-center hover:bg-[#c19b2f] transition-all duration-300 hover:shadow-lg animate-fadeIn"
-            style={{ animationDelay: `${navItems.length * 50}ms` }}
+            className="mt-2 px-8 py-4 bg-[#d4af37] text-white rounded-full text-sm font-heading font-semibold tracking-wide text-center hover:bg-[#c19b2f] transition-all duration-300 hover:shadow-lg animate-fadeIn"
+            style={{ animationDelay: `${(navItems.length + 1) * 50}ms` }}
           >
             ご予約・お問い合わせ
           </Link>

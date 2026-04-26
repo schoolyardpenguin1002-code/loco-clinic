@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { CONSULTATION_FEE_SENTENCE } from "@/lib/consultation-fee";
+import { LINE_ADD_FRIEND_URL } from "@/lib/line";
 import {
   Gem,
   Heart,
@@ -18,8 +19,6 @@ import {
 import FaqAccordion, { type FaqItem } from "./FaqAccordion";
 import ImagePlaceholder from "./ImagePlaceholder";
 import RevealOnScroll from "./RevealOnScroll";
-
-const LINE_URL = "https://lin.ee/Q8CPXPZ";
 
 const artists = [
   {
@@ -562,7 +561,7 @@ export default function ArtmakeLanding() {
             </p>
             <div className="mx-auto mt-12 flex max-w-lg flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6">
               <a
-                href={LINE_URL}
+                href={LINE_ADD_FRIEND_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center border border-[#1a1a1a] bg-[#1a1a1a] px-10 py-5 font-heading text-sm tracking-[0.2em] text-white transition-colors hover:border-[#d4af37] hover:bg-[#d4af37]"
