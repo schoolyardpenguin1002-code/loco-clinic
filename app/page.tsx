@@ -469,6 +469,11 @@ export default function Home() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/concerns" className="hover:text-[#d4af37] transition">
+                    お悩みからさがす
+                  </Link>
+                </li>
+                <li>
                   <Link href="/artmake" className="hover:text-[#d4af37] transition">
                     アートメイク
                   </Link>

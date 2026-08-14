@@ -157,6 +157,184 @@ export const PRICE_GROUPS: PriceGroup[] = [
   },
 ];
 
+// お悩みからさがす（/concerns）用の詳細マッピング
+// 各種美容クリニックで一般的な「悩み→推奨施術」の対応を、当院で提供中のメニューだけに絞って構成
+export type ConcernPick = {
+  title: string;
+  why: string;
+  priceHint: string;
+  href: string; // /price#groupId など
+};
+export type ConcernDetail = {
+  id: string;
+  label: string;
+  desc: string;
+  picks: ConcernPick[];
+};
+export type ConcernSection = {
+  id: string;
+  title: string;
+  en: string;
+  concerns: ConcernDetail[];
+};
+
+export const CONCERN_SECTIONS: ConcernSection[] = [
+  {
+    id: "face",
+    title: "顔のかたち・たるみのお悩み",
+    en: "FACE LINE",
+    concerns: [
+      {
+        id: "sagging",
+        label: "頬のたるみ・フェイスラインのもたつき",
+        desc: "年齢とともに脂肪を支える組織がゆるみ、頬の位置が下がってフェイスラインの輪郭がぼやけてきます。物理的に引き上げる施術と、肌のハリを育てる施術の組み合わせが効果的です。",
+        picks: [
+          { title: "糸リフト", why: "コグ（突起）付きの糸でたるみを物理的に引き上げる、当院の中心メニューです。", priceHint: "9,000円〜／本", href: "/thread-lift" },
+          { title: "ショッピングリフト", why: "細い糸を多数入れて、肌のハリと引き締めを土台から。糸リフトとの併用もおすすめです。", priceHint: "20,000円〜", href: "/price#shopping" },
+          { title: "リフトアップボトックス", why: "輪郭まわりの筋肉にアプローチし、フェイスラインをすっきり見せます。", priceHint: "18,000円", href: "/price#botox" },
+        ],
+      },
+      {
+        id: "nasolabial",
+        label: "ほうれい線・マリオネットライン",
+        desc: "頬のたるみが原因で深くなる線と、ボリューム不足でできる溝では、適した施術が変わります。カウンセリングで原因を見極めてご提案します。",
+        picks: [
+          { title: "糸リフト", why: "たるみが原因の線に。頬を引き上げて溝を浅くします。", priceHint: "9,000円〜／本", href: "/thread-lift" },
+          { title: "ヒアルロン酸（ほうれい線）", why: "溝そのものにボリュームを足して、直接なめらかに整えます。", priceHint: "30,000円／1cc", href: "/price#hyaluronic" },
+        ],
+      },
+      {
+        id: "double-chin",
+        label: "二重あご・あご下のもたつき",
+        desc: "あご下は脂肪がつきやすく、たるみも重なって輪郭がぼやけやすい部位です。脂肪と皮膚、それぞれへのアプローチがあります。",
+        picks: [
+          { title: "脂肪溶解注射（カベリン）", why: "気になる脂肪に直接アプローチします。", priceHint: "10,000円／8cc", href: "/price#lipolysis" },
+          { title: "糸リフト", why: "あご下のもたつきを引き上げて、フェイスラインを整えます。", priceHint: "9,000円〜／本", href: "/thread-lift" },
+        ],
+      },
+      {
+        id: "ela",
+        label: "エラの張り・食いしばり",
+        desc: "咬筋（噛む筋肉）の発達によるエラ張りは、ボトックスで筋肉をゆるめることで輪郭の変化を目指せます。食いしばり・歯ぎしりのお悩みにも。",
+        picks: [
+          { title: "エラボトックス", why: "咬筋に注入して張りをやわらげ、すっきりした輪郭へ。", priceHint: "10,000円／40単位", href: "/price#botox" },
+        ],
+      },
+      {
+        id: "volume",
+        label: "こけ・凹み・横顔のバランス",
+        desc: "こめかみや頬のこけ、あごの後退などは、ボリュームを補うことで若々しい印象と整った横顔ラインを目指せます。",
+        picks: [
+          { title: "ヒアルロン酸", why: "こめかみ・頬・あごなど、部位ごとにボリュームを補います。", priceHint: "30,000円〜／1cc", href: "/price#hyaluronic" },
+          { title: "ボライト", why: "全顔にうるおいとハリを与えるヒアルロン酸です。", priceHint: "30,000円〜", href: "/price#hyaluronic" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "aging",
+    title: "シワ・目元のお悩み",
+    en: "WRINKLES & EYES",
+    concerns: [
+      {
+        id: "wrinkle",
+        label: "額・眉間・目尻の表情ジワ",
+        desc: "表情を動かしたときにできるシワは、筋肉の動きをやわらげるボトックスが第一選択です。無表情でも残る深い溝にはヒアルロン酸を検討します。",
+        picks: [
+          { title: "ボトックス", why: "表情の動きでできるシワの第一選択。自然な表情を残しながら調整します。", priceHint: "4,000円〜／1部位", href: "/price#botox" },
+          { title: "ヒアルロン酸", why: "深く刻まれた溝にボリュームを足してなめらかに。", priceHint: "30,000円〜／1cc", href: "/price#hyaluronic" },
+        ],
+      },
+      {
+        id: "eye",
+        label: "目元のたるみ・小じわ・クマ",
+        desc: "目のまわりは皮膚がもっとも薄くデリケートな部位。専用の細い糸や目元専用の注入で、負担を抑えながらケアします。",
+        picks: [
+          { title: "アイスレッド", why: "目元まわり専用の細い糸で、ハリと引き締めを。", priceHint: "14,000円〜／10本", href: "/price#eye-thread" },
+          { title: "ジャルプロ ヤングアイ", why: "目元専用の肌育注射。小じわ・ちりめんじわに。", priceHint: "1回 40,000円", href: "/price#skin-injection" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "skin",
+    title: "肌質のお悩み",
+    en: "SKIN QUALITY",
+    concerns: [
+      {
+        id: "pore",
+        label: "毛穴の開き・ハリ不足",
+        desc: "毛穴の目立ちは、肌のハリ低下と皮脂・角質の影響が重なって起こります。肌そのものを内側から育てる注入治療が向いています。",
+        picks: [
+          { title: "肌育注射", why: "コラーゲン生成を促し、じっくり肌質を育てます。", priceHint: "1回 30,000円〜", href: "/price#skin-injection" },
+          { title: "水光注射", why: "薬剤を細かく行き渡らせ、うるおいとハリを全顔に。", priceHint: "1回 20,000円〜", href: "/price#water-light" },
+          { title: "ショッピングリフト", why: "細い糸の刺激でコラーゲンを促し、ハリの土台を作ります。", priceHint: "20,000円〜", href: "/price#shopping" },
+        ],
+      },
+      {
+        id: "spot",
+        label: "くすみ・色ムラ・美白ケア",
+        desc: "古い角質によるくすみと、メラニンによる色ムラ。それぞれに合わせて、外側からのケアと内側への成分導入を組み合わせます。",
+        picks: [
+          { title: "美白水光注射", why: "美白成分を肌に直接届けます。", priceHint: "1回 20,000円", href: "/price#water-light" },
+          { title: "ピーリング", why: "古い角質を取り除き、くすみ・ごわつきに。", priceHint: "8,000円〜", href: "/price#peeling" },
+          { title: "エレクトロポレーション", why: "針を使わず、トラネキサム酸などの有効成分を導入します。", priceHint: "5,500円〜", href: "/price#electro" },
+        ],
+      },
+      {
+        id: "acne",
+        label: "ニキビ・ざらつき・毛穴の汚れ",
+        desc: "毛穴の詰まりと炎症が繰り返される肌には、角質・皮脂のコントロールと肌質改善の両面からアプローチします。",
+        picks: [
+          { title: "ハイドラジェントル", why: "水流で毛穴の汚れ・角栓をやさしく洗浄します。", priceHint: "8,000円", href: "/price#peeling" },
+          { title: "ピーリング", why: "ターンオーバーを整え、繰り返すニキビ・ざらつきに。", priceHint: "10,000円〜", href: "/price#peeling" },
+          { title: "肌育注射", why: "ニキビ跡の凹凸・赤みには肌質を育てる注入を。", priceHint: "1回 30,000円〜", href: "/price#skin-injection" },
+        ],
+      },
+      {
+        id: "dry",
+        label: "乾燥・ツヤ不足",
+        desc: "うるおい不足はシワ・くすみなど多くのお悩みの入り口です。肌の内側に水分保持成分を届けて、ツヤのある肌を目指します。",
+        picks: [
+          { title: "水光注射", why: "ヒアルロン酸などを均一に注入し、内側からうるおいを。", priceHint: "1回 20,000円〜", href: "/price#water-light" },
+          { title: "ボライト", why: "肌の水分保持力を高める注入用ヒアルロン酸です。", priceHint: "30,000円〜", href: "/price#hyaluronic" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "body",
+    title: "体・毎日のお悩み",
+    en: "BODY & DAILY",
+    concerns: [
+      {
+        id: "sweat",
+        label: "脇汗・におい",
+        desc: "汗を作る神経の働きをボトックスでやわらげることで、汗の量を抑えることを目指します。季節を問わないお悩みに。",
+        picks: [
+          { title: "脇ボトックス", why: "汗の量にアプローチ。効果は数ヶ月持続します。", priceHint: "18,000円／80単位", href: "/price#botox" },
+        ],
+      },
+      {
+        id: "shoulder",
+        label: "肩こり・肩の張り",
+        desc: "肩の筋肉（僧帽筋）の張りにボトックスを注入し、こりの緩和と首元をすっきり見せることを目指します。",
+        picks: [
+          { title: "肩ボトックス", why: "張りの強い僧帽筋をゆるめます。", priceHint: "29,000円／100単位", href: "/price#botox" },
+        ],
+      },
+      {
+        id: "makeup",
+        label: "毎朝のメイク時間を短くしたい",
+        desc: "眉・リップ・ヘアラインのアートメイクで、すっぴんの印象そのものを整えます。毎朝のメイク時間と、ふとした瞬間の自信が変わります。",
+        picks: [
+          { title: "アートメイク", why: "眉・リップ・ヘアライン。自然な仕上がりを丁寧にデザインします。", priceHint: "詳細はアートメイクページへ", href: "/artmake" },
+        ],
+      },
+    ],
+  },
+];
+
 export type Concern = { id: string; label: string; lead: string; picks: { title: string; groupId: string; why: string }[] };
 
 export const CONCERNS: Concern[] = [

@@ -21,7 +21,7 @@ export default function Header() {
 
   const navItems = [
     { name: "糸リフト", href: "/thread-lift", featured: true },
-    { name: "施術メニュー", href: "/menu" },
+    { name: "お悩みからさがす", href: "/concerns" },
     { name: "料金表", href: "/price" },
     { name: "アートメイク", href: "/artmake" },
     { name: "よくある質問", href: "/faq" },
