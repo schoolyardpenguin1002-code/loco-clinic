@@ -157,7 +157,7 @@ export default function Home() {
                 title: "糸リフト",
                 subtitle: "Thread Lift",
                 desc: "メスを使わない、自然なリフトアップ",
-                link: "/menu",
+                link: "/thread-lift",
               },
               {
                 title: "アートメイク",
@@ -204,44 +204,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Cases */}
-      <section className="section-bleed py-32 md:py-48 bg-white">
-        <div className="section-inner flex flex-col items-center">
-          <Reveal className="text-center mb-24 w-full">
-            <h2
-              className="text-5xl md:text-7xl font-light font-japanese mb-8 text-[#1a1a1a] tracking-wider text-center"
-              style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
-            >
-              Cases
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600 font-light text-center max-w-2xl mx-auto">
-              当院の施術による変化
-            </p>
-          </Reveal>
-
-          <div className="flex md:grid md:grid-cols-3 gap-6 md:gap-8 overflow-x-auto pb-4 md:pb-0 w-full max-w-7xl justify-center md:justify-stretch snap-x snap-mandatory md:snap-none [scrollbar-width:thin]">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <Reveal
-                key={item}
-                delay={(item % 3) * 100}
-                className="shrink-0 w-[min(78vw,320px)] max-w-sm md:w-auto md:max-w-none md:shrink-0 snap-center flex justify-center md:block"
-              >
-                <div className="group cursor-pointer w-full max-w-[280px] md:max-w-none mx-auto">
-                  <div className="aspect-square bg-gradient-to-br from-[#f5ebe0] to-[#ffecd1] rounded-sm overflow-hidden mb-4 relative">
-                    <div className="absolute inset-0 flex items-center justify-center motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-105">
-                      <span className="text-sm text-gray-400 font-light">Before / After</span>
-                    </div>
-                    <div className="absolute inset-0 bg-[#1a1a1a]/0 group-hover:bg-[#1a1a1a]/10 transition-all duration-500" />
-                  </div>
-                  <p className="text-sm text-gray-600 font-light text-center">施術例 {item}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Art Make Special */}
+      {/* Thread Lift Special */}
       <section className="section-bleed py-32 md:py-48 bg-[#1a1a1a] text-white">
         <Reveal className="section-inner flex flex-col items-center">
           <span className="text-xs font-heading tracking-[0.3em] text-[#d4af37] uppercase mb-8 block">
@@ -251,16 +214,47 @@ export default function Home() {
             className="text-5xl md:text-7xl font-light font-japanese mb-12 tracking-wider text-center w-full"
             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
           >
+            糸リフト
+          </h2>
+          <p className="text-lg md:text-xl text-gray-300 font-light leading-loose max-w-3xl mx-auto mb-8 text-center">
+            切らずに、たるみを引き上げる。
+            <br />
+            当院は糸リフトを中心とした施術を行っています。
+          </p>
+          <p className="text-base text-gray-400 font-light leading-loose max-w-2xl mx-auto mb-16 text-center">
+            素材と持続期間の異なる4種類の糸から、
+            <br className="md:hidden" />
+            「どれくらい持たせたいか」でお選びいただけます。
+          </p>
+          <Link
+            href="/thread-lift"
+            className="inline-block px-12 py-5 bg-white text-[#1a1a1a] font-heading text-sm tracking-widest uppercase rounded-none hover:bg-[#d4af37] hover:text-white transition-all duration-500 shadow-2xl hover:-translate-y-1"
+          >
+            View more
+          </Link>
+        </Reveal>
+      </section>
+
+      {/* Art Make */}
+      <section className="section-bleed py-32 md:py-48 bg-[#fdfbf8]">
+        <Reveal className="section-inner flex flex-col items-center">
+          <span className="text-xs font-heading tracking-[0.3em] text-[#d4af37] uppercase mb-8 block">
+            Art Make
+          </span>
+          <h2
+            className="text-4xl md:text-6xl font-light font-japanese mb-10 text-[#1a1a1a] tracking-wider text-center w-full"
+            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
+          >
             アートメイク
           </h2>
-          <p className="text-lg md:text-xl text-gray-300 font-light leading-loose max-w-3xl mx-auto mb-16 text-center">
-            눈眉・リップ・ヘアライン。
+          <p className="text-lg md:text-xl text-gray-600 font-light leading-loose max-w-3xl mx-auto mb-12 text-center">
+            眉・リップ・ヘアライン。
             <br />
             毎朝の時間と、素顔の印象を変えていきます。
           </p>
           <Link
             href="/artmake"
-            className="inline-block px-12 py-5 bg-white text-[#1a1a1a] font-heading text-sm tracking-widest uppercase rounded-none hover:bg-[#d4af37] hover:text-white transition-all duration-500 shadow-2xl hover:-translate-y-1"
+            className="inline-block px-12 py-5 bg-[#1a1a1a] text-white font-heading text-sm tracking-widest uppercase rounded-none hover:bg-[#d4af37] transition-all duration-500 hover:-translate-y-1"
           >
             View more
           </Link>
@@ -311,21 +305,21 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 w-full justify-items-center md:justify-items-stretch">
             {[
               {
-                date: "2026.03.01",
+                date: "2026.08.14",
                 category: "お知らせ",
-                title: "春のキャンペーンのご案内",
+                title: "糸リフトのご案内ページを公開しました",
                 excerpt:
-                  "肌育・注入メニューを中心に、期間限定の特典をご用意しました。",
+                  "4種類の糸の違いと選び方、当日の流れ・リスクまでまとめてご覧いただけます。",
               },
               {
-                date: "2026.02.15",
-                category: "コラム",
-                title: "アートメイク後のケアについて",
+                date: "2026.08.14",
+                category: "お知らせ",
+                title: "料金表を見やすくリニューアルしました",
                 excerpt:
-                  "施術後の経過をより美しく保つためのホームケアのポイントをご紹介します。",
+                  "お悩みから探せる料金表になりました。すべて税込表示です。",
               },
               {
-                date: "2026.02.01",
+                date: "2026.08.01",
                 category: "お知らせ",
                 title: "診療時間のご案内",
                 excerpt:
@@ -470,6 +464,11 @@ export default function Home() {
               </h4>
               <ul className="space-y-3 text-sm font-light flex flex-col items-center md:items-start">
                 <li>
+                  <Link href="/thread-lift" className="hover:text-[#d4af37] transition">
+                    糸リフト
+                  </Link>
+                </li>
+                <li>
                   <Link href="/artmake" className="hover:text-[#d4af37] transition">
                     アートメイク
                   </Link>
@@ -491,11 +490,6 @@ export default function Home() {
                 Information
               </h4>
               <ul className="space-y-3 text-sm font-light flex flex-col items-center md:items-start">
-                <li>
-                  <Link href="/#news" className="hover:text-[#d4af37] transition">
-                    最新情報
-                  </Link>
-                </li>
                 <li>
                   <Link href="/faq" className="hover:text-[#d4af37] transition">
                     よくある質問

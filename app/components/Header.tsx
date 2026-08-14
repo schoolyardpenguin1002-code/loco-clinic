@@ -20,10 +20,10 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { name: "トップ", href: "/" },
+    { name: "糸リフト", href: "/thread-lift", featured: true },
     { name: "施術メニュー", href: "/menu" },
-    { name: "アートメイク", href: "/artmake", featured: true },
-    { name: "最新情報", href: "/#news" },
+    { name: "料金表", href: "/price" },
+    { name: "アートメイク", href: "/artmake" },
     { name: "よくある質問", href: "/faq" },
     { name: "アクセス", href: "/#access" },
   ];
