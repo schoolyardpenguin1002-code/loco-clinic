@@ -6,6 +6,22 @@ import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
+/* 各グループの実在ページへの飛び先（詳細個別ページは未整備のため、料金表の該当セクション等へ案内する） */
+const GROUP_LINKS: Record<string, string> = {
+  "thread-lift": "/thread-lift",
+  "short-thread": "/price#shopping",
+  "ice-thread": "/price#eye-thread",
+  botox: "/price#botox",
+  hyaluronic: "/price#hyaluronic",
+  "skin-boost-hand": "/price#skin-injection",
+  hycoox: "/price#water-light",
+  slimming: "/price#lipolysis",
+  artmake: "/artmake",
+  peeling: "/price#peeling",
+  "hydra-gentle": "/price#peeling",
+  electroporation: "/price#electro",
+};
+
 export default function TreatmentMenuGrid() {
   const [openId, setOpenId] = useState<string | null>(TREATMENT_MENU_GROUPS[0]?.id ?? null);
 
@@ -66,7 +82,7 @@ export default function TreatmentMenuGrid() {
                       {group.children.map((child) => (
                         <li key={child.id}>
                           <Link
-                            href={`/menu/${group.id}/${child.id}`}
+                            href={GROUP_LINKS[group.id] ?? "/price"}
                             className="block px-4 py-4 text-center text-sm font-light text-[#1a1a1a] transition-colors hover:bg-[#fdfbf8] hover:text-[#d4af37] md:px-6 md:py-4 md:text-base"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                           >

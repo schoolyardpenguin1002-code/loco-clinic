@@ -127,9 +127,12 @@ export default function Home() {
             </div>
             <div className="order-1 md:order-2">
               <div className="aspect-[3/4] bg-gradient-to-br from-[#f5ebe0] to-[#ffecd1] rounded-sm overflow-hidden shadow-2xl">
-                <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-gray-400 text-sm font-light">院長写真</span>
-                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/director-felt.jpg"
+                  alt="LOCO CLINIC 院長とスタッフ"
+                  className="w-full h-full object-cover motion-safe:transition-transform motion-safe:duration-[2000ms] hover:scale-105"
+                />
               </div>
             </div>
           </div>

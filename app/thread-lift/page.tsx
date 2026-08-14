@@ -67,6 +67,37 @@ export default function ThreadLiftPage() {
         </SlowReveal>
       </section>
 
+      {/* 糸リフトの仕組み */}
+      <section className="px-6" style={{ paddingTop: "88px", paddingBottom: "88px" }}>
+        <SlowReveal className="w-full max-w-4xl mx-auto px-5 sm:px-8 text-center">
+          <p className="text-[11px] tracking-[0.35em] text-[#b9a77e] mb-5">MECHANISM</p>
+          <h2 className="font-serif tracking-[0.12em] font-light" style={{ marginBottom: "40px" }}>糸リフトの仕組み</h2>
+          <div className="grid sm:grid-cols-3 gap-8 text-left">
+            <div className="border-t border-[#d8cfc0] pt-6">
+              <p className="font-serif text-base mb-3 text-[#3a352e]">① 引き上げる</p>
+              <p className="text-sm leading-loose text-[#6b635a]">
+                「コグ」と呼ばれる小さな突起のついた医療用の糸を皮下に挿入し、たるんだ組織を物理的に引き上げます。メスを使わないため、傷跡はほとんど残りません。
+              </p>
+            </div>
+            <div className="border-t border-[#d8cfc0] pt-6">
+              <p className="font-serif text-base mb-3 text-[#3a352e]">② 肌の土台を育てる</p>
+              <p className="text-sm leading-loose text-[#6b635a]">
+                挿入した糸の周囲では、体の反応としてコラーゲンの生成が促されます。引き上げ効果に加えて、ハリ・肌質の変化が期待できるのはこのためです。
+              </p>
+            </div>
+            <div className="border-t border-[#d8cfc0] pt-6">
+              <p className="font-serif text-base mb-3 text-[#3a352e]">③ 体内で溶けてなくなる</p>
+              <p className="text-sm leading-loose text-[#6b635a]">
+                当院で使う糸（PDO・PLLA・PCL）はすべて吸収性で、時間をかけて体内で分解・吸収されます。糸が残り続ける心配はありません。素材によって吸収までの期間が異なり、これが「持続の違い」になります。
+              </p>
+            </div>
+          </div>
+          <p className="text-xs leading-relaxed text-[#9a917f]" style={{ marginTop: "40px" }}>
+            ダウンタイムの目安：腫れ・むくみは数日〜1週間程度、引きつれ感は徐々になじみます。効果の程度・持続には個人差があります。
+          </p>
+        </SlowReveal>
+      </section>
+
       {/* 4種類の比較 */}
       <section className="px-6" style={{ paddingTop: "96px", paddingBottom: "40px" }}>
         <SlowReveal className="w-full max-w-5xl mx-auto px-5 sm:px-8 text-center" >
