@@ -337,14 +337,14 @@ export default function Home() {
             <SlowReveal delay={120}>
               <div className="aspect-[4/3] w-full overflow-hidden bg-[#f3ede2]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3207.8471889687447!2d139.00551831531514!3d36.32485798005356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601ef3144c7e9e8b%3A0x1234567890abcdef!2z44CSMzcwLTAwMDUg576k6aas55yM6auY5bSO5biC5rWc5bC777yS77yQ77yZ4oiS77yV!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp"
+                  src="https://maps.google.com/maps?q=%E3%83%AD%E3%82%B3%E3%82%AF%E3%83%AA%E3%83%8B%E3%83%83%E3%82%AF%20%E7%BE%A4%E9%A6%AC%E7%9C%8C%E9%AB%98%E5%B4%8E%E5%B8%82%E6%B5%9C%E5%B0%BB%E7%94%BA209-5&ll=36.3520809,139.0134531&z=16&hl=ja&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0, minHeight: 280 }}
                   allowFullScreen
                   loading="lazy"
                   title="LOCO CLINIC 地図"
-                  className="grayscale transition-all duration-700 hover:grayscale-0"
+                  className=""
                 />
               </div>
             </SlowReveal>
