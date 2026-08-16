@@ -3,7 +3,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import { CONSULTATION_FEE_SENTENCE } from "@/lib/consultation-fee";
-import Header from "../components/Header";
+import BotanicalArt from "../components/site/BotanicalArt";
+import SiteHeader from "../components/site/SiteHeader";
+import SiteFooter from "../components/site/SiteFooter";
+import FixedCta from "../components/site/FixedCta";
 
 type FAQItem = {
   question: string;
@@ -90,7 +93,7 @@ const faqs: FAQCategory[] = [
       },
       {
         question: "男性でも施術は受けられますか？",
-        answer: `もちろん可能です。近年、男性の方のご利用も増えています。お気軽にご相談ください。${CONSULTATION_FEE_SENTENCE}`,
+        answer: "もちろん可能です。近年、男性の方のご利用も増えています。お気軽にご相談ください。",
       },
     ],
   },
@@ -107,145 +110,88 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fdfbf8]">
-      <Header />
-
-      {/* ヒーローセクション */}
-      <section className="relative pt-32 pb-20 px-6 bg-gradient-to-br from-[#ffecd1] via-[#f5ebe0] to-white">
-        <div className="w-full max-w-6xl mx-auto px-5 sm:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold font-heading text-gray-800 mb-6 leading-tight tracking-wide">
-            よくある質問
-          </h1>
-          <p className="text-lg md:text-xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed">
-            お客様からよくいただくご質問をまとめました。<br />
-            その他ご不明点がございましたら、お気軽にお問い合わせください。
+    <div className="price-page min-h-screen w-full bg-[#fffbf6] text-[#70645c]">
+      <SiteHeader />
+      <main className="w-full">
+        {/* ページヒーロー */}
+        <section className="relative overflow-hidden bg-white px-6 text-center" style={{ paddingTop: "160px", paddingBottom: "100px" }}>
+          <BotanicalArt className="pointer-events-none absolute -left-14 -top-6 h-[130%] text-[#2d4c44]" />
+          <BotanicalArt className="pointer-events-none absolute -right-20 top-0 h-[120%] scale-x-[-1] text-[#b9a05a]" />
+          <h1 className="sec-en">FAQ</h1>
+          <p className="sec-ja">よくある質問</p>
+          <p className="mx-auto mt-12 max-w-xl text-[16px] font-light leading-[2.1]">
+            お客様からよくいただくご質問をまとめました。
             <br />
-            <span className="text-base text-gray-600">{CONSULTATION_FEE_SENTENCE}</span>
+            その他ご不明点は、LINEからお気軽にどうぞ。
           </p>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQ */}
-      <section className="py-20 px-6 bg-white">
-        <div className="w-full max-w-4xl mx-auto px-5 sm:px-8 space-y-16">
-          {faqs.map((faqCategory, categoryIndex) => (
-            <div key={categoryIndex}>
-              <h2 className="text-3xl font-bold font-heading text-gray-800 mb-8 pb-4 border-b-2 border-[#d4af37]">
-                {faqCategory.category}
-              </h2>
-              <div className="space-y-4">
-                {faqCategory.items.map((faq, faqIndex) => (
-                  <div
-                    key={faqIndex}
-                    className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition border border-[#d4af37]/10"
-                  >
-                    <button
-                      onClick={() => toggleFAQ(faqCategory.category, faqIndex)}
-                      className="w-full text-left p-6 md:p-8 flex items-start justify-between gap-4 hover:bg-[#fdfbf8] transition"
-                    >
-                      <div className="flex items-start gap-4 flex-1">
-                        <span className="w-10 h-10 bg-[#d4af37] text-white rounded-full flex items-center justify-center font-bold font-heading flex-shrink-0 text-sm">
-                          Q
-                        </span>
-                        <span className="text-lg font-bold text-gray-800 pt-1.5">{faq.question}</span>
-                      </div>
-                      <span
-                        className={`text-2xl text-[#d4af37] transform transition-transform flex-shrink-0 ${
-                          openIndex[faqCategory.category] === faqIndex ? "rotate-180" : ""
+        {/* FAQ本体 */}
+        <section className="px-6" style={{ paddingTop: "100px", paddingBottom: "140px" }}>
+          <div className="mx-auto w-full max-w-3xl space-y-24">
+            {faqs.map((faqCategory) => (
+              <div key={faqCategory.category}>
+                <h2
+                  className="mb-12 text-center text-[clamp(20px,2.8vw,26px)] font-light tracking-[0.14em]"
+                  style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
+                >
+                  {faqCategory.category}
+                </h2>
+                <div className="space-y-5">
+                  {faqCategory.items.map((faq, faqIndex) => {
+                    const isOpen = openIndex[faqCategory.category] === faqIndex;
+                    return (
+                      <div
+                        key={faq.question}
+                        className={`overflow-hidden rounded-[22px] border bg-white transition-all duration-500 ${
+                          isOpen ? "border-[#d2b388] shadow-md" : "border-[#e9e6e6]"
                         }`}
                       >
-                        ▼
-                      </span>
-                    </button>
-                    {openIndex[faqCategory.category] === faqIndex && (
-                      <div className="px-6 md:px-8 pb-6 md:pb-8 pl-[88px] md:pl-[104px]">
-                        <div className="flex items-start gap-4">
-                          <span className="w-10 h-10 bg-[#c19b2f] text-white rounded-full flex items-center justify-center font-bold font-heading flex-shrink-0 text-sm">
-                            A
+                        <button
+                          onClick={() => toggleFAQ(faqCategory.category, faqIndex)}
+                          className="flex w-full items-center justify-between gap-5 px-7 py-6 text-left transition hover:bg-[#fffbf6] sm:px-10"
+                        >
+                          <span className="flex items-baseline gap-5">
+                            <span className="font-heading shrink-0 text-[17px] text-[#b9a05a]">Q</span>
+                            <span className="text-[16px] leading-[1.9]">{faq.question}</span>
                           </span>
-                          <div className="text-gray-700 leading-relaxed pt-1.5">
-                            {faq.answer}
-                            {faq.hasLink && (
-                              <Link
-                                href="/cancel-policy"
-                                className="block mt-2 text-[#d4af37] font-semibold hover:underline"
-                              >
-                                キャンセルポリシーを見る →
-                              </Link>
-                            )}
+                          <span
+                            className={`shrink-0 text-xl font-light text-[#b9a05a] transition-transform duration-500 ${
+                              isOpen ? "rotate-45" : ""
+                            }`}
+                          >
+                            ＋
+                          </span>
+                        </button>
+                        {isOpen && (
+                          <div className="border-t border-[#f0ebe2] px-7 py-6 sm:px-10">
+                            <div className="flex items-baseline gap-5">
+                              <span className="font-heading shrink-0 text-[17px] text-[#2d4c44]">A</span>
+                              <div className="text-[15.5px] font-light leading-[2.1]">
+                                {faq.answer}
+                                {faq.hasLink && (
+                                  <Link
+                                    href="/cancel-policy"
+                                    className="mt-3 block text-[#b9a05a] underline decoration-[#d2b388] underline-offset-4 hover:text-[#8a7a55]"
+                                  >
+                                    キャンセルポリシーを見る →
+                                  </Link>
+                                )}
+                              </div>
+                            </div>
                           </div>
-                        </div>
+                        )}
                       </div>
-                    )}
-                  </div>
-                ))}
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 px-6 bg-[#f5ebe0]">
-        <div className="w-full max-w-3xl mx-auto px-5 sm:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">
-            その他ご不明点がございましたら
-          </h2>
-          <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-            お気軽にお問い合わせください。<br />
-            専門スタッフが丁寧にお答えいたします。<br />
-            <span className="text-base text-gray-600">{CONSULTATION_FEE_SENTENCE}</span>
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/contact"
-              className="w-full sm:w-auto px-12 py-4 bg-[#d4af37] text-white rounded-full text-base font-semibold hover:bg-[#c19b2f] transition shadow-lg"
-            >
-              お問い合わせ
-            </Link>
-            <a
-              href="tel:027-395-0443"
-              className="w-full sm:w-auto px-12 py-4 bg-white text-[#d4af37] border-2 border-[#d4af37] rounded-full text-base font-semibold hover:bg-[#d4af37] hover:text-white transition"
-            >
-              電話で問い合わせる
-            </a>
+            ))}
           </div>
-        </div>
-      </section>
-
-      {/* フッター */}
-      <footer className="bg-gray-900 text-white py-12 px-6">
-        <div className="w-full max-w-6xl mx-auto px-5 sm:px-8">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <h3 className="text-xl font-bold text-[#d4af37] mb-4">LOCO CLINIC</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                あなたが選ぶ、理想のあなた。<br />
-                LOCO CLINICで、新しい自分に出会いませんか。
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">メニュー</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/artmake" className="hover:text-[#d4af37] transition">アートメイク</Link></li>
-                <li><Link href="/price" className="hover:text-[#d4af37] transition">料金表</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">インフォメーション</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/faq" className="hover:text-[#d4af37] transition">よくある質問</Link></li>
-                <li><Link href="/contact" className="hover:text-[#d4af37] transition">お問い合わせ</Link></li>
-                <li><Link href="/cancel-policy" className="hover:text-[#d4af37] transition">キャンセルポリシー</Link></li>
-                <li><Link href="/privacy-policy" className="hover:text-[#d4af37] transition">プライバシーポリシー</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
-            <p>&copy; 2026 LOCO CLINIC. All Rights Reserved.</p>
-          </div>
-        </div>
-      </footer>
+        </section>
+      </main>
+      <SiteFooter />
+      <FixedCta />
     </div>
   );
 }

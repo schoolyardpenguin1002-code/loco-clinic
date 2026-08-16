@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import ArtmakeLanding from "../components/artmake/ArtmakeLanding";
 
 export const metadata: Metadata = {
-  title: "アートメイク | LOCO CLINIC",
+  title: "アートメイク",
   description:
     "LOCO CLINIC のアートメイク。医師管理のもと、眉・リップ・ラインなど自然な仕上がりを。群馬県高崎市。",
 };

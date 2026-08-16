@@ -1,547 +1,374 @@
-import { Instagram } from "lucide-react";
 import Link from "next/link";
-import { CONSULTATION_FEE_SENTENCE } from "@/lib/consultation-fee";
-import Header from "./components/Header";
-import PickUpSlider from "./components/PickUpSlider";
-import Reveal from "./components/Reveal";
+import SiteHeader from "./components/site/SiteHeader";
+import SiteFooter from "./components/site/SiteFooter";
+import FixedCta from "./components/site/FixedCta";
+import SlowReveal from "./components/SlowReveal";
+import HeroSlider from "./components/site/HeroSlider";
+
+const MENU_CARDS = [
+  {
+    title: "糸リフト",
+    en: "THREAD LIFT",
+    desc: "当院の専門領域。素材と持続の異なる4種類の糸から、「どれくらい持たせたいか」で選べます。",
+    href: "/thread-lift",
+    img: "/images/hero/hero-2.jpg",
+    featured: true,
+  },
+  {
+    title: "注入・美肌治療",
+    en: "INJECTION / SKIN",
+    desc: "ボトックス・ヒアルロン酸・肌育注射・水光注射・ピーリングなど。肌の土台から整えます。",
+    href: "/menu",
+    img: "/images/hero/hero-1.jpg",
+  },
+  {
+    title: "アートメイク",
+    en: "ART MAKE",
+    desc: "眉・リップ・ヘアライン。毎朝の時間と、素顔の印象を変えていきます。",
+    href: "/artmake",
+    img: "/images/message-1.jpg",
+  },
+];
+
+const NEWS = [
+  { date: "2026.08.16", title: "ホームページをリニューアルしました" },
+  { date: "2026.08.14", title: "糸リフトのご案内ページを公開しました" },
+  { date: "2026.08.14", title: "料金表を「お悩みからさがせる」形にリニューアルしました" },
+];
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white w-full max-w-[100vw] overflow-x-hidden">
-      <Header />
-      <main className="marketing-layout w-full">
-      {/* Hero */}
-      <section className="section-bleed relative h-screen min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <div
-            className="absolute inset-0 bg-cover bg-center scale-105 motion-safe:transition-transform motion-safe:duration-[3000ms] motion-safe:hover:scale-100"
-            style={{
-              backgroundImage:
-                "url('/images/uniquemarfa-morning-1369446.jpg'), url('/images/hero-fallback.svg')",
-            }}
-            role="img"
-            aria-label="LOCO CLINIC メインビジュアル"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-[#fdfbf8]/60 to-white/30 backdrop-blur-[2px]" />
-        </div>
-
-        <div className="section-inner relative z-10 w-full">
-          <h1
-            className="text-6xl md:text-8xl font-bold font-japanese text-[#1a1a1a] mb-8 leading-tight tracking-wider animate-fadeIn"
-            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
-          >
-            美しさの
-            <br />
-            その先へ
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-700 font-light mb-16 max-w-3xl mx-auto leading-relaxed tracking-wide">
-            一人ひとりの個性を尊重し、
-            <br className="md:hidden" />
-            本質的な美しさを引き出す
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link
-              href="/contact"
-              className="group px-12 py-5 bg-[#1a1a1a] text-white font-heading text-sm tracking-widest uppercase rounded-none hover:bg-[#d4af37] transition-all duration-500 shadow-2xl hover:shadow-[#d4af37]/50 hover:-translate-y-1"
-            >
-              <span>ご予約</span>
-            </Link>
-            <Link
-              href="#concept"
-              className="px-12 py-5 bg-white/80 backdrop-blur-md text-[#1a1a1a] font-heading text-sm tracking-widest uppercase rounded-none hover:bg-white transition-all duration-500 border border-[#1a1a1a]/20 hover:border-[#1a1a1a] hover:-translate-y-1"
-            >
-              詳しく見る
-            </Link>
-          </div>
-        </div>
-
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-px h-16 bg-gradient-to-b from-[#d4af37] to-transparent" />
-        </div>
-      </section>
-
-      {/* Concept */}
-      <section id="concept" className="section-bleed py-32 md:py-48 bg-[#fdfbf8]">
-        <Reveal className="section-inner !max-w-5xl !mx-auto flex flex-col items-center">
-          <h2
-            className="text-5xl md:text-7xl font-light font-japanese mb-16 text-[#1a1a1a] tracking-wider text-center w-full"
-            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
-          >
-            Concept
-          </h2>
-          <div className="space-y-8 text-lg md:text-xl text-gray-700 font-light leading-loose max-w-3xl mx-auto">
-            <p>
-              美容医療は、単なる外見の変化ではなく、
-              <br />
-              あなた自身と向き合う、大切な時間です。
+    <div className="price-page min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-[#fffbf6] text-[#70645c]">
+      <SiteHeader />
+      <main className="w-full">
+        {/* ===== FV ===== */}
+        <section className="relative flex min-h-[92svh] items-center justify-center overflow-hidden">
+          <HeroSlider />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/40 to-[#fffbf6]/85" />
+          <div className="relative z-10 w-full max-w-5xl px-6 text-center" style={{ paddingTop: "90px" }}>
+            <p className="mb-6 text-[12.5px] tracking-[0.4em] text-[#8a7a55]">
+              TAKASAKI GUNMA ─ THREAD LIFT SPECIALTY
             </p>
-            <p>
-              私たちは、一人ひとりの個性を尊重し、
-              <br />
-              本質的な美しさを引き出すことを使命としています。
+            <h1
+              className="font-light leading-[1.5] tracking-[0.14em] text-[clamp(34px,6vw,64px)]"
+              style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
+            >
+              美しさの、
+              <br className="sm:hidden" />
+              その先へ。
+            </h1>
+            <p className="mx-auto mt-8 max-w-xl text-[16px] font-light leading-loose text-[#70645c]">
+              高崎の、美のかかりつけ。糸リフト専門クリニック。
             </p>
-            <p className="text-[#d4af37] font-medium">「美しさのその先へ」</p>
           </div>
-          <div className="w-32 h-px bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mt-16" />
-        </Reveal>
-      </section>
+          <div className="absolute bottom-10 left-1/2 h-16 w-px -translate-x-1/2 bg-gradient-to-b from-[#b9a05a] to-transparent" />
+        </section>
 
-      {/* Director */}
-      <section className="section-bleed py-32 md:py-48 bg-white">
-        <Reveal className="section-inner w-full">
-          <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center md-grid-left">
-            <div className="order-2 md:order-1 md-text-left-panel max-w-xl mx-auto md:max-w-none md:mx-0 w-full">
-              <span className="text-xs font-heading tracking-[0.3em] text-[#d4af37] uppercase mb-4 block">
-                Director
-              </span>
-              <h2
-                className="text-4xl md:text-5xl font-light font-japanese mb-8 text-[#1a1a1a]"
+        {/* ===== 予約CTA（FV直下・銀座美容クリニック型） ===== */}
+        <section className="px-0">
+          <div className="mx-auto grid w-full max-w-4xl grid-cols-1 sm:grid-cols-2">
+            <a
+              href="https://lin.ee/Q8CPXPZ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-3 bg-[#06C755] py-6 text-white transition hover:brightness-105"
+            >
+              <span className="grid h-9 w-9 place-items-center rounded bg-white text-[10px] font-black text-[#06C755]">LINE</span>
+              <span className="text-[19px] font-bold tracking-[0.1em]">LINE予約・ご相談</span>
+            </a>
+            <a href="tel:027-395-0443" className="flex flex-col items-center justify-center bg-[#8a7a55] py-4 text-white transition hover:brightness-110">
+              <span className="rounded bg-white/90 px-3 py-0.5 text-[12px] tracking-wider text-[#8a7a55]">受付時間 9:00〜21:00</span>
+              <span className="mt-1 font-heading text-[21px] tracking-wider">☎ 027-395-0443</span>
+            </a>
+          </div>
+        </section>
+
+        {/* ===== MESSAGE（CLINIC W型） ===== */}
+        <section className="bg-white px-6" style={{ paddingTop: "140px", paddingBottom: "140px" }}>
+          <div className="mx-auto w-full max-w-5xl">
+            <SlowReveal className="text-center">
+              <h2 className="sec-en">MESSAGE</h2>
+              <p className="sec-ja">メッセージ</p>
+            </SlowReveal>
+
+            {/* 写真3枚横並び（角丸） */}
+            <div className="mt-20 grid grid-cols-3 gap-4 sm:gap-6">
+              {[
+                { src: "/images/message-3.jpg", alt: "施術ルーム", dir: "left" as const },
+                { src: "/images/message-2.jpg", alt: "院内の照明", dir: "up" as const },
+                { src: "/images/message-1.jpg", alt: "待合スペース", dir: "right" as const },
+              ].map((img, i) => (
+                <SlowReveal key={img.src} direction={img.dir} delay={i * 150}>
+                  <div
+                    className={`group aspect-[3/4] overflow-hidden rounded-[28px] bg-[#f3ede2] shadow-md ${i === 1 ? "mt-10" : ""}`}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={img.src} alt={img.alt} className="h-full w-full object-cover transition-transform duration-[2500ms] ease-out group-hover:scale-110" />
+                  </div>
+                </SlowReveal>
+              ))}
+            </div>
+
+            {/* 本文 */}
+            <div className="mx-auto mt-24 w-full max-w-3xl">
+              <h3
+                className="mb-10 text-center text-[clamp(22px,3vw,30px)] font-light leading-[1.8] tracking-[0.1em]"
                 style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
               >
-                院長ご挨拶
-              </h2>
-              <div className="space-y-6 text-base md:text-lg text-gray-700 font-light leading-loose">
+                高崎の、美のかかりつけへ。
+              </h3>
+              <div className="space-y-6 text-[16px] font-light leading-[2.2]">
+                <p>はじめまして。LOCO CLINIC院長の狩野遊太です。</p>
                 <p>
-                  数多くの患者様と向き合う中で、確信したことがあります。
+                  勤務医として多くの患者さんを診るなかで、もっと一人ひとりに向き合った診療がしたい。
+                  そして、質の良い美容医療を、もっと手の届く価格で届けたい。
+                  そう思うようになり、高崎でこのクリニックを開きました。
                 </p>
                 <p>
-                  それは、「美しさ」とは、画一的なものではなく、
-                  <br />
-                  一人ひとりの内面から輝き出るものだということ。
+                  美容医療には、なんとなく怖い、高いものを勧められそう、というイメージがあると思います。
+                  そう感じさせてしまうクリニックがあるのも、残念ながら事実です。
+                  だから当院は、逆のことを決めました。無理におすすめしない。料金は先に全部見せる。
+                  リスクも先に話す。その日に決めなくていい。
                 </p>
                 <p>
-                  当院では、最新の技術と豊富な経験を持つスタッフが、
-                  <br />
-                  あなたらしい美しさを、丁寧に引き出します。
+                  数ある施術のなかで糸リフトを専門に選んだのは、切らないから仕上がりが自然で、
+                  長期的に体へ害を及ぼす心配がとても少ないからです。
+                  メリットばかりが強調されがちな美容医療の世界で、
+                  糸リフトは効果とリスクのバランスが本当に取れている、数少ない施術だと思っています。
+                  だからこそ、自信を持っておすすめできます。
+                </p>
+                <p>
+                  目指しているのは、高崎の「美のかかりつけ」です。
+                  困ったときに、ちょっと相談してみようと思い出してもらえる場所でありたい。
+                  まずはご相談だけでも構いません。
+                  美容院を変えてみる、くらいの気軽さでいらしてください。
                 </p>
               </div>
-              <div className="mt-12">
-                <p className="text-sm text-gray-600 font-light mb-2">LOCO CLINIC 院長</p>
-                <p
-                  className="text-2xl font-japanese"
-                  style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
-                >
+              <div className="mt-10 text-right">
+                <p className="text-[13px] text-[#9a8f7d]">LOCO CLINIC 院長</p>
+                <p className="mt-1 text-2xl" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
                   狩野 遊太
                 </p>
               </div>
+              <div className="mt-10 text-center">
+                <Link
+                  href="/doctor"
+                  className="inline-block rounded-full border border-[#2d4c44] px-16 py-5 text-[15.5px] tracking-[0.25em] text-[#2d4c44] transition-all duration-500 hover:bg-[#2d4c44] hover:text-white"
+                >
+                  MORE
+                </Link>
+              </div>
             </div>
-            <div className="order-1 md:order-2">
-              <div className="aspect-[3/4] bg-gradient-to-br from-[#f5ebe0] to-[#ffecd1] rounded-sm overflow-hidden shadow-2xl">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/director-felt.jpg"
-                  alt="LOCO CLINIC 院長とスタッフ"
-                  className="w-full h-full object-cover motion-safe:transition-transform motion-safe:duration-[2000ms] hover:scale-105"
+          </div>
+        </section>
+
+        {/* ===== DOCTOR（CLINIC W型） ===== */}
+        <section className="px-6" style={{ paddingTop: "140px", paddingBottom: "140px" }}>
+          <div className="mx-auto w-full max-w-5xl">
+            <SlowReveal className="text-center">
+              <h2 className="sec-en">DOCTOR</h2>
+              <p className="sec-ja">ドクター</p>
+            </SlowReveal>
+            <div className="mt-24 grid items-start gap-14 md:grid-cols-[1fr_1.35fr] md:gap-20">
+              <div>
+                <div className="group overflow-hidden rounded-[28px] bg-[#f3ede2] shadow-lg">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/doctor.jpg" alt="LOCO CLINIC 院長 狩野遊太" className="h-auto w-full object-cover" />
+                </div>
+                <p className="mt-8 text-center text-[14px] text-[#9a8f7d]">LOCO CLINIC 院長</p>
+                <p className="mt-1 text-center text-[26px]" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
+                  狩野 遊太
+                </p>
+              </div>
+              <div>
+                <h3
+                  className="mb-12 text-[clamp(22px,3vw,30px)] font-light leading-[1.9] tracking-[0.1em]"
+                  style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
+                >
+                  あなたの、
+                  <br />
+                  かかりつけになるために。
+                </h3>
+                <div className="space-y-7 text-[16px] font-light leading-[2.2]">
+                  <p>
+                    美容クリニックがたくさんあるいま、きちんとしたカウンセリングと適切な治療を受けたくても、
+                    どこを選べばいいか分からない。そんな声をよく聞きます。
+                  </p>
+                  <p>
+                    当院に来ていただければ、もうそのお悩みは持たなくていい。
+                    あなたの「かかりつけ」になれるクリニックでありたいと思っています。
+                  </p>
+                  <p>
+                    カウンセリングでは、お一人おひとりの思いと丁寧に向き合い、
+                    ご予算の範囲内で、妥協のない治療プランをご提案します。
+                    画一的な、売上重視の治療はいたしません。
+                  </p>
+                  <p>
+                    専門は糸リフト。痛みとダウンタイムに最大限配慮しながら、仕上がりには妥協しません。
+                    はじめての方、ご相談だけの方も歓迎です。
+                  </p>
+                </div>
+                <div className="mt-14">
+                  <Link
+                    href="/doctor"
+                    className="inline-block rounded-full border border-[#2d4c44] px-16 py-5 text-[15.5px] tracking-[0.25em] text-[#2d4c44] transition-all duration-500 hover:bg-[#2d4c44] hover:text-white"
+                  >
+                    MORE
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== 当院の特長 ===== */}
+        <section className="px-6" style={{ paddingTop: "140px", paddingBottom: "140px" }}>
+          <div className="mx-auto w-full max-w-6xl">
+            <SlowReveal className="mb-24 text-center">
+              <h2 className="sec-en">FEATURES</h2>
+              <p className="sec-ja">当院の特長</p>
+            </SlowReveal>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+              {[
+                { n: "01", t: "糸リフト専門", b: "4種類の糸から「どれくらい持たせたいか」で選べます。" },
+                { n: "02", t: "無理にすすめない", b: "必要な分だけをご提案。その日に決めなくて大丈夫です。" },
+                { n: "03", t: "痛みへの配慮", b: "麻酔を丁寧に効かせてから施術します。不安はカウンセリングでご相談ください。" },
+                { n: "04", t: "税込・明朗会計", b: "料金はすべて税込で公開。当日の想定外の費用はありません。" },
+                { n: "05", t: "夜21時まで・完全予約制", b: "お仕事帰りでも通えます。待合で人と顔を合わせにくい環境です。" },
+              ].map((f, i) => (
+                <SlowReveal key={f.n} direction={i % 2 === 0 ? "left" : "right"} delay={i * 100}>
+                  <div className="h-full rounded-[24px] border border-[#e9e6e6] bg-white p-8 transition-all duration-500 hover:-translate-y-2 hover:border-[#d2b388] hover:shadow-xl">
+                    <p className="font-heading text-[15.5px] tracking-[0.25em] text-[#b9a05a]">{f.n}</p>
+                    <h3 className="mt-3 text-[18px] leading-snug text-[#2d4c44]" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
+                      {f.t}
+                    </h3>
+                    <p className="mt-4 text-[14.5px] font-light leading-[2]">{f.b}</p>
+                  </div>
+                </SlowReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ===== OUR MENU ===== */}
+        <section className="bg-white px-6" style={{ paddingTop: "140px", paddingBottom: "140px" }}>
+          <div className="mx-auto w-full max-w-6xl">
+            <SlowReveal className="mb-24 text-center">
+              <h2 className="sec-en">MENU</h2>
+              <p className="sec-ja">診療メニュー</p>
+            </SlowReveal>
+            <div className="grid gap-6 md:grid-cols-3 md:gap-8">
+              {MENU_CARDS.map((c, i) => (
+                <SlowReveal key={c.title} direction={i === 0 ? "left" : i === 2 ? "right" : "up"} delay={i * 120}>
+                  <Link
+                    href={c.href}
+                    className={`group block h-full overflow-hidden rounded-[24px] border bg-white transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${
+                      c.featured ? "border-[#b9a05a]" : "border-[#e9e6e6]"
+                    }`}
+                  >
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={c.img} alt={c.title} className="h-full w-full object-cover transition-transform duration-[2500ms] ease-out group-hover:scale-110" />
+                      {c.featured && (
+                        <span className="absolute left-4 top-4 rounded-full bg-[#b9a05a]/95 px-4 py-1.5 text-[12px] tracking-[0.2em] text-white">
+                          当院の専門
+                        </span>
+                      )}
+                    </div>
+                    <div className="p-8">
+                    <p className="text-[12px] tracking-[0.3em] text-[#b9a05a]">{c.en}</p>
+                    <h3
+                      className="mt-3 text-xl tracking-[0.1em] transition-colors group-hover:text-[#b9a05a]"
+                      style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
+                    >
+                      {c.title}
+                    </h3>
+                    <p className="mt-4 text-[15px] font-light leading-[1.95] text-[#70645c]">{c.desc}</p>
+                    <span className="mt-6 inline-block text-[12.5px] tracking-[0.25em] text-[#2d4c44] transition-colors group-hover:text-[#b9a05a]">
+                      MORE →
+                    </span>
+                    </div>
+                  </Link>
+                </SlowReveal>
+              ))}
+            </div>
+            <SlowReveal className="mt-20 flex flex-col items-center justify-center gap-6 sm:flex-row">
+              <Link
+                href="/concerns"
+                className="w-80 rounded-full border border-[#2d4c44] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] transition-all duration-500 hover:bg-[#2d4c44] hover:text-white"
+              >
+                お悩みからさがす
+              </Link>
+              <Link
+                href="/price"
+                className="w-80 rounded-full border border-[#2d4c44] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] transition-all duration-500 hover:bg-[#2d4c44] hover:text-white"
+              >
+                料金を見る
+              </Link>
+            </SlowReveal>
+          </div>
+        </section>
+
+        {/* ===== ACCESS ===== */}
+        <section className="px-6" style={{ paddingTop: "140px", paddingBottom: "140px" }}>
+          <div className="mx-auto grid w-full max-w-5xl items-start gap-12 md:grid-cols-2">
+            <SlowReveal>
+              <h2 className="sec-en">ACCESS</h2>
+              <p className="sec-ja mb-12">アクセス</p>
+              <dl className="space-y-6 text-base font-light leading-relaxed text-[#70645c]">
+                <div>
+                  <dt className="mb-1 text-[10px] tracking-[0.3em] text-[#b9a05a]">ADDRESS</dt>
+                  <dd>〒370-0005 群馬県高崎市浜尻町209-5</dd>
+                </div>
+                <div>
+                  <dt className="mb-1 text-[10px] tracking-[0.3em] text-[#b9a05a]">HOURS</dt>
+                  <dd>9:00〜21:00（完全予約制・不定休）</dd>
+                </div>
+                <div>
+                  <dt className="mb-1 text-[10px] tracking-[0.3em] text-[#b9a05a]">TEL</dt>
+                  <dd>
+                    <a href="tel:027-395-0443" className="font-heading text-xl tracking-wider hover:text-[#b9a05a]">
+                      027-395-0443
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+            </SlowReveal>
+            <SlowReveal delay={120}>
+              <div className="aspect-[4/3] w-full overflow-hidden bg-[#f3ede2]">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3207.8471889687447!2d139.00551831531514!3d36.32485798005356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601ef3144c7e9e8b%3A0x1234567890abcdef!2z44CSMzcwLTAwMDUg576k6aas55yM6auY5bSO5biC5rWc5bC777yS77yQ77yZ4oiS77yV!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, minHeight: 280 }}
+                  allowFullScreen
+                  loading="lazy"
+                  title="LOCO CLINIC 地図"
+                  className="grayscale transition-all duration-700 hover:grayscale-0"
                 />
               </div>
-            </div>
+            </SlowReveal>
           </div>
-        </Reveal>
-      </section>
+        </section>
 
-      {/* Treatment — 3大メニュー */}
-      <section id="treatment" className="section-bleed py-32 md:py-48 bg-[#fdfbf8]">
-        <div className="section-inner flex flex-col items-center">
-          <Reveal className="text-center mb-24 w-full max-w-4xl mx-auto">
-            <h2
-              className="text-5xl md:text-7xl font-light font-japanese mb-8 text-[#1a1a1a] tracking-wider text-center"
-              style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
-            >
-              Treatment
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600 font-light text-center max-w-2xl mx-auto">
-              あなたの理想を叶える、3つの柱
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 w-full justify-items-center md:justify-items-stretch">
-            {[
-              {
-                title: "糸リフト",
-                subtitle: "Thread Lift",
-                desc: "メスを使わない、自然なリフトアップ",
-                link: "/thread-lift",
-              },
-              {
-                title: "アートメイク",
-                subtitle: "Art Make",
-                desc: "すっぴん美人を叶える、繊細な技術",
-                link: "/artmake",
-              },
-              {
-                title: "注入治療",
-                subtitle: "Injection",
-                desc: "ヒアルロン酸・ボトックスで立体的な美しさを",
-                link: "/menu",
-              },
-            ].map((item, i) => (
-              <Reveal key={item.title} delay={i * 120} className="w-full max-w-md md:max-w-none">
-                <Link href={item.link} className="group block w-full">
-                  <div className="bg-white rounded-sm overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                    <div className="aspect-square relative overflow-hidden bg-gradient-to-br from-[#f5ebe0] via-[#fdfbf8] to-[#ffecd1]">
-                      <div className="absolute inset-0 flex items-center justify-center scale-100 motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-110">
-                        <span className="text-6xl text-[#d4af37]/30 font-heading">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                      </div>
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/[0.06] transition-all duration-500" />
-                      <div className="absolute inset-0 bg-[#d4af37]/0 group-hover:bg-[#d4af37]/10 transition-all duration-500 pointer-events-none" />
-                    </div>
-                    <div className="p-8 balance-center-card text-center">
-                      <span className="text-xs font-heading tracking-[0.3em] text-[#d4af37] uppercase mb-3 block">
-                        {item.subtitle}
-                      </span>
-                      <h3
-                        className="text-2xl font-japanese mb-4 text-[#1a1a1a] group-hover:text-[#d4af37] transition-colors text-center"
-                        style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
-                      >
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-gray-600 font-light leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Thread Lift Special */}
-      <section className="section-bleed py-32 md:py-48 bg-[#1a1a1a] text-white">
-        <Reveal className="section-inner flex flex-col items-center">
-          <span className="text-xs font-heading tracking-[0.3em] text-[#d4af37] uppercase mb-8 block">
-            Featured
-          </span>
-          <h2
-            className="text-5xl md:text-7xl font-light font-japanese mb-12 tracking-wider text-center w-full"
-            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
-          >
-            糸リフト
-          </h2>
-          <p className="text-lg md:text-xl text-gray-300 font-light leading-loose max-w-3xl mx-auto mb-8 text-center">
-            切らずに、たるみを引き上げる。
-            <br />
-            当院は糸リフトを中心とした施術を行っています。
-          </p>
-          <p className="text-base text-gray-400 font-light leading-loose max-w-2xl mx-auto mb-16 text-center">
-            素材と持続期間の異なる4種類の糸から、
-            <br className="md:hidden" />
-            「どれくらい持たせたいか」でお選びいただけます。
-          </p>
-          <Link
-            href="/thread-lift"
-            className="inline-block px-12 py-5 bg-white text-[#1a1a1a] font-heading text-sm tracking-widest uppercase rounded-none hover:bg-[#d4af37] hover:text-white transition-all duration-500 shadow-2xl hover:-translate-y-1"
-          >
-            View more
-          </Link>
-        </Reveal>
-      </section>
-
-      {/* Art Make */}
-      <section className="section-bleed py-32 md:py-48 bg-[#fdfbf8]">
-        <Reveal className="section-inner flex flex-col items-center">
-          <span className="text-xs font-heading tracking-[0.3em] text-[#d4af37] uppercase mb-8 block">
-            Art Make
-          </span>
-          <h2
-            className="text-4xl md:text-6xl font-light font-japanese mb-10 text-[#1a1a1a] tracking-wider text-center w-full"
-            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
-          >
-            アートメイク
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600 font-light leading-loose max-w-3xl mx-auto mb-12 text-center">
-            眉・リップ・ヘアライン。
-            <br />
-            毎朝の時間と、素顔の印象を変えていきます。
-          </p>
-          <Link
-            href="/artmake"
-            className="inline-block px-12 py-5 bg-[#1a1a1a] text-white font-heading text-sm tracking-widest uppercase rounded-none hover:bg-[#d4af37] transition-all duration-500 hover:-translate-y-1"
-          >
-            View more
-          </Link>
-        </Reveal>
-      </section>
-
-      {/* Pick up */}
-      <section id="pickup" className="section-bleed py-32 md:py-48 bg-white border-t border-[#d4af37]/10">
-        <div className="section-inner flex flex-col items-center">
-          <Reveal className="text-center mb-12 w-full md:mb-16">
-            <span className="text-xs font-heading tracking-[0.3em] text-[#d4af37] uppercase mb-6 block text-center">
-              Featured
-            </span>
-            <h2
-              className="text-5xl md:text-7xl font-light font-japanese mb-6 text-[#1a1a1a] tracking-wider text-center"
-              style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
-            >
-              Pick up
-            </h2>
-            <p className="text-lg text-gray-600 font-light text-center max-w-2xl mx-auto">
-              注目のトピック
-            </p>
-          </Reveal>
-          <div className="w-full">
-            <PickUpSlider />
-          </div>
-        </div>
-      </section>
-
-      {/* Blog / 最新情報 */}
-      <section id="news" className="section-bleed py-32 md:py-48 bg-white border-t border-[#d4af37]/10">
-        <div className="section-inner flex flex-col items-center">
-          <Reveal className="text-center mb-20 w-full">
-            <span className="text-xs font-heading tracking-[0.3em] text-[#d4af37] uppercase mb-6 block text-center">
-              Journal
-            </span>
-            <h2
-              className="text-5xl md:text-7xl font-light font-japanese mb-6 text-[#1a1a1a] tracking-wider text-center"
-              style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
-            >
-              最新情報
-            </h2>
-            <p className="text-lg text-gray-600 font-light text-center max-w-2xl mx-auto">
-              クリニックからのお知らせとコラム
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 w-full justify-items-center md:justify-items-stretch">
-            {[
-              {
-                date: "2026.08.14",
-                category: "お知らせ",
-                title: "糸リフトのご案内ページを公開しました",
-                excerpt:
-                  "4種類の糸の違いと選び方、当日の流れ・リスクまでまとめてご覧いただけます。",
-              },
-              {
-                date: "2026.08.14",
-                category: "お知らせ",
-                title: "料金表を見やすくリニューアルしました",
-                excerpt:
-                  "お悩みから探せる料金表になりました。すべて税込表示です。",
-              },
-              {
-                date: "2026.08.01",
-                category: "お知らせ",
-                title: "診療時間のご案内",
-                excerpt:
-                  "9:00〜21:00・完全予約制でお待ちしております。不定休のためご確認ください。",
-              },
-            ].map((post, i) => (
-              <Reveal key={post.title} delay={i * 140} className="w-full max-w-md md:max-w-none">
-                <article className="balance-center-card group h-full bg-[#fdfbf8]/80 backdrop-blur-sm border border-[#d4af37]/10 rounded-sm p-8 md:p-10 hover:bg-white hover:border-[#d4af37]/25 hover:shadow-xl transition-all duration-500 hover:-translate-y-1 flex flex-col items-center text-center w-full">
-                  <div className="flex flex-wrap items-baseline justify-center gap-x-6 gap-y-1 mb-6 text-xs font-heading tracking-widest uppercase w-full">
-                    <time className="text-gray-500">{post.date}</time>
-                    <span className="text-[#d4af37]">{post.category}</span>
-                  </div>
-                  <h3
-                    className="text-xl md:text-2xl font-japanese text-[#1a1a1a] mb-4 group-hover:text-[#d4af37] transition-colors leading-snug text-center"
-                    style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
-                  >
-                    {post.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 font-light leading-relaxed flex-1 mb-8">
-                    {post.excerpt}
-                  </p>
-                  <span className="text-xs font-heading tracking-widest text-[#1a1a1a] group-hover:text-[#d4af37] transition-colors inline-flex items-center justify-center gap-2">
-                    Read more
-                    <span
-                      aria-hidden
-                      className="motion-safe:transition-transform motion-safe:group-hover:translate-x-1"
-                    >
-                      →
-                    </span>
-                  </span>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Access */}
-      <section id="access" className="section-bleed py-32 md:py-48 bg-[#fdfbf8]">
-        <div className="section-inner flex flex-col items-center">
-          <Reveal className="text-center mb-24 w-full">
-            <h2
-              className="text-5xl md:text-7xl font-light font-japanese mb-8 text-[#1a1a1a] tracking-wider text-center"
-              style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
-            >
-              Access
-            </h2>
-          </Reveal>
-
-          <Reveal delay={80} className="grid md:grid-cols-2 gap-16 w-full max-w-6xl mx-auto items-start md-grid-left">
-            <div className="space-y-8 md-text-left-panel max-w-lg mx-auto md:max-w-none md:mx-0 w-full">
-              <div>
-                <h3 className="text-sm font-heading tracking-widest text-[#d4af37] uppercase mb-3">
-                  Address
-                </h3>
-                <p className="text-base text-gray-700 font-light">
-                  〒370-0005
-                  <br />
-                  群馬県高崎市浜尻町２０９−５
-                </p>
-              </div>
-              <div>
-                <h3 className="text-sm font-heading tracking-widest text-[#d4af37] uppercase mb-3">
-                  Hours
-                </h3>
-                <p className="text-base text-gray-700 font-light">
-                  9:00〜21:00（不定休）
-                  <br />
-                  完全予約制
-                </p>
-              </div>
-              <div>
-                <h3 className="text-sm font-heading tracking-widest text-[#d4af37] uppercase mb-3">
-                  Tel
-                </h3>
-                <a
-                  href="tel:027-395-0443"
-                  className="text-2xl font-heading text-[#1a1a1a] hover:text-[#d4af37] transition"
-                >
-                  027-395-0443
-                </a>
-              </div>
-            </div>
-            <div className="aspect-[4/3] bg-gray-200 rounded-sm overflow-hidden min-h-[240px] w-full max-w-xl mx-auto md:max-w-none md:mx-0">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3207.8471889687447!2d139.00551831531514!3d36.32485798005356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601ef3144c7e9e8b%3A0x1234567890abcdef!2z44CSMzcwLTAwMDUg576k6aas55yM6auY5bSO5biC5rWc5bC777yS77yQ77yZ4oiS77yV!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                title="LOCO CLINIC 地図"
-                className="grayscale hover:grayscale-0 transition-all duration-500 min-h-[240px]"
-              />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Contact CTA */}
-      <section className="section-bleed py-32 md:py-48 bg-white">
-        <Reveal className="section-inner !max-w-4xl !mx-auto flex flex-col items-center">
-          <h2
-            className="text-4xl md:text-6xl font-light font-japanese mb-12 text-[#1a1a1a] leading-relaxed text-center"
-            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
-          >
-            まずは、お気軽に
-            <br />
-            ご相談ください
-          </h2>
-          <p className="mb-6 text-center text-base font-light text-gray-600 max-w-2xl md:text-lg">
-            {CONSULTATION_FEE_SENTENCE}
-          </p>
-          <p className="text-base md:text-lg text-gray-600 font-light mb-16 leading-loose text-center max-w-2xl">
-            あなたの理想を、お聞かせください。
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-16 py-6 bg-[#1a1a1a] text-white font-heading text-sm tracking-widest uppercase rounded-none hover:bg-[#d4af37] transition-all duration-500 shadow-2xl hover:shadow-[#d4af37]/50 hover:-translate-y-1"
-          >
-            Contact Us
-          </Link>
-        </Reveal>
-      </section>
-
-      {/* Footer */}
-      <footer className="section-bleed bg-[#1a1a1a] text-white py-20">
-        <div className="section-inner w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-16 justify-items-center md:justify-items-stretch text-center md:text-left">
-            <div className="w-full max-w-sm md:max-w-none">
-              <h3
-                className="text-2xl font-japanese mb-6 text-[#d4af37]"
-                style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
-              >
-                LOCO CLINIC
-              </h3>
-              <p className="text-sm text-gray-400 font-light leading-relaxed">美しさのその先へ</p>
-            </div>
-            <div className="w-full max-w-sm md:max-w-none">
-              <h4 className="text-xs font-heading tracking-widest uppercase mb-4 text-gray-400">
-                Menu
-              </h4>
-              <ul className="space-y-3 text-sm font-light flex flex-col items-center md:items-start">
-                <li>
-                  <Link href="/thread-lift" className="hover:text-[#d4af37] transition">
-                    糸リフト
-                  </Link>
+        {/* ===== NEWS ===== */}
+        <section className="border-t border-[#f0ebe2] px-6" style={{ paddingTop: "100px", paddingBottom: "140px" }}>
+          <SlowReveal className="mx-auto w-full max-w-3xl">
+            <div className="text-center"><h2 className="sec-en">NEWS</h2>
+            <p className="sec-ja mb-14">お知らせ</p></div>
+            <ul className="divide-y divide-[#f0ebe2] border-y border-[#f0ebe2]">
+              {NEWS.map((n) => (
+                <li key={n.title} className="flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:gap-8">
+                  <time className="shrink-0 font-heading text-xs tracking-wider text-[#9a8f7d]">{n.date}</time>
+                  <p className="text-base font-light text-[#2d4c44]">{n.title}</p>
                 </li>
-                <li>
-                  <Link href="/concerns" className="hover:text-[#d4af37] transition">
-                    お悩みからさがす
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/artmake" className="hover:text-[#d4af37] transition">
-                    アートメイク
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/menu" className="hover:text-[#d4af37] transition">
-                    施術メニュー
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/price" className="hover:text-[#d4af37] transition">
-                    料金表
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="w-full max-w-sm md:max-w-none">
-              <h4 className="text-xs font-heading tracking-widest uppercase mb-4 text-gray-400">
-                Information
-              </h4>
-              <ul className="space-y-3 text-sm font-light flex flex-col items-center md:items-start">
-                <li>
-                  <Link href="/faq" className="hover:text-[#d4af37] transition">
-                    よくある質問
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="hover:text-[#d4af37] transition">
-                    お問い合わせ
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/cancel-policy" className="hover:text-[#d4af37] transition">
-                    キャンセルポリシー
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/privacy-policy" className="hover:text-[#d4af37] transition">
-                    プライバシーポリシー
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="w-full max-w-sm md:max-w-none">
-              <h4 className="text-xs font-heading tracking-widest uppercase mb-4 text-gray-400">
-                Contact
-              </h4>
-              <p className="text-sm font-light leading-relaxed mb-4">
-                〒370-0005
-                <br />
-                群馬県高崎市浜尻町２０９−５
-              </p>
-              <a href="tel:027-395-0443" className="text-base font-heading hover:text-[#d4af37] transition">
-                027-395-0443
-              </a>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 text-center">
-            <p className="text-xs text-gray-500 font-light tracking-wider">
-              &copy; 2026 LOCO CLINIC. All Rights Reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+              ))}
+            </ul>
+          </SlowReveal>
+        </section>
       </main>
+      <SiteFooter />
+      <FixedCta />
     </div>
   );
 }

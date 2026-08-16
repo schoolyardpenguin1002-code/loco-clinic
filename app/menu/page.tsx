@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import MenuBrowseTabs from "../components/menu/MenuBrowseTabs";
 
 export const metadata: Metadata = {
-  title: "施術メニュー | LOCO CLINIC",
+  title: "施術メニュー",
   description:
     "糸リフト・注入・美肌ケアなど、LOCO CLINICの施術メニューをご紹介します。",
 };
