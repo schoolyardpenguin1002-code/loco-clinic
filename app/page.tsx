@@ -92,7 +92,7 @@ export default function Home() {
             </SlowReveal>
 
             {/* 写真3枚横並び（角丸） */}
-            <div className="mt-20 grid grid-cols-3 gap-4 sm:gap-6">
+            <div className="mt-20 grid grid-cols-3 gap-3 sm:gap-6">
               {[
                 { src: "/images/message-3.jpg", alt: "施術ルーム", dir: "left" as const },
                 { src: "/images/message-2.jpg", alt: "院内の照明", dir: "up" as const },
@@ -100,7 +100,7 @@ export default function Home() {
               ].map((img, i) => (
                 <SlowReveal key={img.src} direction={img.dir} delay={i * 150}>
                   <div
-                    className={`group aspect-[3/4] overflow-hidden rounded-[28px] bg-[#f3ede2] shadow-md ${i === 1 ? "mt-10" : ""}`}
+                    className={`group aspect-[3/4] overflow-hidden rounded-[16px] bg-[#f3ede2] shadow-md sm:rounded-[28px] ${i === 1 ? "mt-10" : ""}`}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={img.src} alt={img.alt} className="h-full w-full object-cover transition-transform duration-[2500ms] ease-out group-hover:scale-110" />
@@ -295,13 +295,13 @@ export default function Home() {
             <SlowReveal className="mt-20 flex flex-col items-center justify-center gap-6 sm:flex-row">
               <Link
                 href="/concerns"
-                className="w-80 rounded-full border border-[#2d4c44] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] transition-all duration-500 hover:bg-[#2d4c44] hover:text-white"
+                className="w-full max-w-80 rounded-full border border-[#2d4c44] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] transition-all duration-500 hover:bg-[#2d4c44] hover:text-white"
               >
                 お悩みからさがす
               </Link>
               <Link
                 href="/price"
-                className="w-80 rounded-full border border-[#2d4c44] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] transition-all duration-500 hover:bg-[#2d4c44] hover:text-white"
+                className="w-full max-w-80 rounded-full border border-[#2d4c44] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] transition-all duration-500 hover:bg-[#2d4c44] hover:text-white"
               >
                 料金を見る
               </Link>

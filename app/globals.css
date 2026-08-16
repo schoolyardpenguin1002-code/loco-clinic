@@ -372,7 +372,7 @@ body section[aria-label] { padding: 0 !important; margin: 0 !important; }
 /* CLINIC W実測：欧文セクション見出し（Cormorant 64px級） */
 .sec-en { font-family: var(--font-cormorant), "Cormorant", serif; font-weight: 400;
   color: #2d4c44; letter-spacing: 0.08em; line-height: 1.1;
-  font-size: clamp(38px, 5.5vw, 64px); }
+  font-size: clamp(33px, 5.5vw, 64px); }
 .sec-ja { font-size: 13.5px; letter-spacing: 0.3em; color: #b9a05a; margin-top: 22px; }
 /* CSSだけの「ゆっくり現れる」──JS不要・必ず表示される */
 @keyframes lcRevealUp   { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }

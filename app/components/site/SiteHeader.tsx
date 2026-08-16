@@ -202,7 +202,7 @@ export default function SiteHeader() {
             </div>
 
             {/* 右：2列メニュー */}
-            <div className="grid grid-cols-2 gap-x-8">
+            <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
               {[NAV_LEFT, NAV_RIGHT].map((col, ci) => (
                 <ul key={ci}>
                   {col.map((item) => (
@@ -210,7 +210,7 @@ export default function SiteHeader() {
                       <Link
                         href={item.href}
                         onClick={() => setOpen(false)}
-                        className={`block border-b border-white/50 py-[13px] text-[14.5px] tracking-[0.08em] transition-colors hover:text-[#e8cfa0] ${
+                        className={`block border-b border-white/50 py-[12px] text-[14px] sm:py-[13px] sm:text-[14.5px] tracking-[0.08em] transition-colors hover:text-[#e8cfa0] ${
                           "featured" in item && item.featured ? "font-semibold text-[#e8cfa0]" : ""
                         }`}
                       >
