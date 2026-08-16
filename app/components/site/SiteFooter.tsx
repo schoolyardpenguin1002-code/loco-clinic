@@ -42,6 +42,22 @@ export default function SiteFooter() {
         <a href="tel:027-395-0443" className="mt-6 inline-block font-heading text-xl tracking-wider text-white/80 hover:text-white">
           TEL. 027-395-0443
         </a>
+        <div className="mt-5 flex items-center justify-center gap-4">
+          <a
+            href="https://www.instagram.com/loco_clinic_________/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="flex items-center gap-2 text-[14px] text-white/70 transition hover:text-[#d5c08a]"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <rect x="3" y="3" width="18" height="18" rx="5.5" stroke="currentColor" strokeWidth="1.5" />
+              <circle cx="12" cy="12" r="4.2" stroke="currentColor" strokeWidth="1.5" />
+              <circle cx="17.2" cy="6.8" r="1.3" fill="currentColor" />
+            </svg>
+            Instagram
+          </a>
+        </div>
         <p className="mt-1 text-xs text-white/40">受付 9:00〜21:00（完全予約制・不定休）</p>
       </div>
 

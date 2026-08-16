@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { LINE_ADD_FRIEND_URL } from "@/lib/line";
 
 /* 公式Instagramができたらここに入れる（空なら非表示） */
-const INSTAGRAM_URL = "";
+const INSTAGRAM_URL = "https://www.instagram.com/loco_clinic_________/";
 
 const NAV_LEFT = [
   { name: "HOME", href: "/" },
