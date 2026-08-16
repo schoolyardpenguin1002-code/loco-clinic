@@ -40,14 +40,29 @@ export default function CasePage() {
               </strong>
               を必ず併記します。
             </p>
-            <div className="mx-auto mt-12 max-w-xl border border-dashed border-[#d2b388] bg-white px-8 py-14">
-              <p className="text-[15.5px] tracking-[0.25em] text-[#b9a05a]">COMING SOON</p>
-              <p className="mt-4 text-[15px] font-light leading-loose">
-                現在、掲載の準備を進めています。
-                <br />
-                施術の詳しい内容は糸リフトのページをご覧ください。
-              </p>
+            <div className="mx-auto mt-16 grid max-w-4xl gap-8 sm:grid-cols-2">
+              {["症例 01", "症例 02"].map((label) => (
+                <div key={label} className="overflow-hidden rounded-[24px] border border-[#e9e6e6] bg-white">
+                  <p className="border-b border-[#f0ebe2] py-4 text-[15px] tracking-[0.1em]" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
+                    糸リフト {label}
+                  </p>
+                  <div className="grid grid-cols-2">
+                    {["BEFORE", "AFTER"].map((ba) => (
+                      <div key={ba} className="relative aspect-[3/4] bg-[#f4f0e8]">
+                        <span className="absolute left-0 right-0 top-0 bg-[#e9e3d5] py-1.5 text-[12.5px] tracking-[0.2em] text-[#8a7a55]">{ba}</span>
+                        <span className="absolute inset-0 grid place-items-center text-[13px] tracking-[0.35em] text-[#c9bda3]" style={{ transform: "rotate(-18deg)" }}>
+                          SAMPLE
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="py-4 text-[13.5px] font-light text-[#9a8f7d]">症例写真は準備中です</p>
+                </div>
+              ))}
             </div>
+            <p className="mx-auto mt-10 max-w-xl text-[13.5px] font-light leading-[2] text-[#9a8f7d]">
+              掲載時は、施術内容（糸の種類・本数）・費用・リスクを必ず併記します。
+            </p>
           </SlowReveal>
         </section>
 
