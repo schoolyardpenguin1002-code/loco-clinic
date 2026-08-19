@@ -10,7 +10,7 @@ export default function SiteFooter() {
         style={{ backgroundImage: "url('/images/footer-forest.jpg')" }}
         aria-hidden
       />
-      <div className="absolute inset-0 bg-[#26382e]/82" aria-hidden />
+      <div className="absolute inset-0 bg-[#33261b]/82" aria-hidden />
       <div className="relative">
       {/* 予約CTA帯 */}
       <div className="border-b border-white/10 px-6 pt-28 pb-24 text-center">
@@ -28,7 +28,7 @@ export default function SiteFooter() {
             href={LINE_ADD_FRIEND_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 rounded-full bg-[#06C755] px-8 py-4 text-base font-bold text-white transition hover:bg-[#05b34c]"
+            className="flex-1 rounded-full bg-[#3e7a52] px-8 py-4 text-base font-bold text-white transition hover:bg-[#05b34c]"
           >
             LINEで予約・相談
           </a>

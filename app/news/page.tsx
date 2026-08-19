@@ -37,7 +37,7 @@ export default function NewsPage() {
       <SiteHeader />
       <main className="w-full">
         <section className="relative overflow-hidden bg-white px-6 text-center" style={{ paddingTop: "150px", paddingBottom: "80px" }}>
-          <BotanicalArt className="pointer-events-none absolute -left-14 -top-6 h-[130%] text-[#2d4c44]" />
+          <BotanicalArt className="pointer-events-none absolute -left-14 -top-6 h-[130%] text-[#6f4e2f]" />
           <BotanicalArt className="pointer-events-none absolute -right-20 top-0 h-[120%] scale-x-[-1] text-[#b9a05a]" />
           <p className="mb-4 text-[12.5px] tracking-[0.35em] text-[#b9a05a]">NEWS</p>
           <h1

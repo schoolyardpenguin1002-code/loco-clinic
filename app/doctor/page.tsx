@@ -7,7 +7,7 @@ import BotanicalArt from "../components/site/BotanicalArt";
 import SlowReveal from "../components/SlowReveal";
 
 export const metadata: Metadata = {
-  title: "ドクター",
+  title: "院長挨拶",
   description: "LOCO CLINIC（高崎）院長・狩野遊太のごあいさつと、診療で大切にしている考え方をご紹介します。",
 };
 
@@ -17,14 +17,14 @@ export default function DoctorPage() {
       <SiteHeader />
       <main className="w-full">
         <section className="relative overflow-hidden bg-white px-6 text-center" style={{ paddingTop: "150px", paddingBottom: "80px" }}>
-          <BotanicalArt className="pointer-events-none absolute -left-14 -top-6 h-[130%] text-[#2d4c44]" />
+          <BotanicalArt className="pointer-events-none absolute -left-14 -top-6 h-[130%] text-[#6f4e2f]" />
           <BotanicalArt className="pointer-events-none absolute -right-20 top-0 h-[120%] scale-x-[-1] text-[#b9a05a]" />
-          <p className="mb-4 text-[12.5px] tracking-[0.35em] text-[#b9a05a]">DOCTOR</p>
+          <p className="mb-4 text-[12.5px] tracking-[0.35em] text-[#b9a05a]">GREETING</p>
           <h1
             className="text-[clamp(26px,4vw,40px)] font-light tracking-[0.14em]"
             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
           >
-            ドクター
+            院長挨拶
           </h1>
         </section>
 
@@ -72,7 +72,7 @@ export default function DoctorPage() {
                 <ul className="space-y-3 text-[15px] font-light leading-relaxed text-[#70645c]">
                   <li>・カウンセリングで無理におすすめしない</li>
                   <li>・リスクとダウンタイムを先に説明する</li>
-                  <li>・「どれくらい持たせたいか」から一緒に選ぶ</li>
+                  <li>・お悩みと状態に合わせて、必要な分だけ提案する</li>
                   <li>・その日に決めなくていい</li>
                 </ul>
               </div>
@@ -80,13 +80,13 @@ export default function DoctorPage() {
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <Link
                   href="/thread-lift"
-                  className="border border-[#2d4c44] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] transition-all duration-500 hover:bg-[#2d4c44] hover:text-white"
+                  className="border border-[#6f4e2f] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] transition-all duration-500 hover:bg-[#6f4e2f] hover:text-white"
                 >
                   糸リフトについて
                 </Link>
                 <Link
                   href="/guide"
-                  className="border border-[#2d4c44]/30 px-10 py-5 text-center text-[15.5px] tracking-[0.2em] text-[#70645c] transition-all duration-500 hover:border-[#2d4c44] hover:text-[#1a1a1a]"
+                  className="border border-[#6f4e2f]/30 px-10 py-5 text-center text-[15.5px] tracking-[0.2em] text-[#70645c] transition-all duration-500 hover:border-[#6f4e2f] hover:text-[#1a1a1a]"
                 >
                   はじめての方へ
                 </Link>

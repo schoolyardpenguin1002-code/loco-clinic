@@ -9,9 +9,9 @@ const MENU_CARDS = [
   {
     title: "糸リフト",
     en: "THREAD LIFT",
-    desc: "当院の専門領域。素材と持続の異なる4種類の糸から、「どれくらい持たせたいか」で選べます。",
+    desc: "当院の専門領域。お客様のお悩みと状態に合わせて、最適な糸リフト治療をご提案します。",
     href: "/thread-lift",
-    img: "/images/hero/hero-2.jpg",
+    img: "/images/stock/thread-pink.jpg",
     featured: true,
   },
   {
@@ -19,14 +19,14 @@ const MENU_CARDS = [
     en: "INJECTION / SKIN",
     desc: "ボトックス・ヒアルロン酸・肌育注射・水光注射・ピーリングなど。肌の土台から整えます。",
     href: "/menu",
-    img: "/images/hero/hero-1.jpg",
+    img: "/images/stock/injection.jpg",
   },
   {
     title: "アートメイク",
     en: "ART MAKE",
     desc: "眉・リップ・ヘアライン。毎朝の時間と、素顔の印象を変えていきます。",
     href: "/artmake",
-    img: "/images/message-1.jpg",
+    img: "/images/stock/artmake-brow.jpg",
   },
 ];
 
@@ -50,12 +50,12 @@ export default function Home() {
               TAKASAKI GUNMA ─ THREAD LIFT SPECIALTY
             </p>
             <h1
-              className="font-light leading-[1.5] tracking-[0.14em] text-[clamp(34px,6vw,64px)]"
-              style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
+              className="font-light leading-[1.6] tracking-[0.12em]"
+              style={{ fontFamily: "var(--font-shippori-mincho), serif", fontSize: "clamp(26px, 4.6vw, 52px)" }}
             >
-              美しさの、
-              <br className="sm:hidden" />
-              その先へ。
+              リーズナブルに誠実に、
+              <br />
+              質の良い糸リフト治療を。
             </h1>
             <p className="mx-auto mt-8 max-w-xl text-[16px] font-light leading-loose text-[#70645c]">
               高崎の、美のかかりつけ。糸リフト専門クリニック。
@@ -66,19 +66,15 @@ export default function Home() {
 
         {/* ===== 予約CTA（FV直下・銀座美容クリニック型） ===== */}
         <section className="px-0">
-          <div className="mx-auto grid w-full max-w-4xl grid-cols-1 sm:grid-cols-2">
+          <div className="mx-auto w-full max-w-2xl">
             <a
               href="https://lin.ee/Q8CPXPZ"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 bg-[#06C755] py-6 text-white transition hover:brightness-105"
+              className="flex items-center justify-center gap-3 bg-[#3e7a52] py-6 text-white transition hover:brightness-105"
             >
-              <span className="grid h-9 w-9 place-items-center rounded bg-white text-[10px] font-black text-[#06C755]">LINE</span>
-              <span className="text-[19px] font-bold tracking-[0.1em]">LINE予約・ご相談</span>
-            </a>
-            <a href="tel:027-395-0443" className="flex flex-col items-center justify-center bg-[#8a7a55] py-4 text-white transition hover:brightness-110">
-              <span className="rounded bg-white/90 px-3 py-0.5 text-[12px] tracking-wider text-[#8a7a55]">受付時間 9:00〜21:00</span>
-              <span className="mt-1 font-heading text-[21px] tracking-wider">☎ 027-395-0443</span>
+              <span className="grid h-9 w-9 place-items-center rounded bg-white text-[10px] font-black text-[#3e7a52]">LINE</span>
+              <span className="text-[19px] font-bold tracking-[0.1em]">LINE予約・ご相談（24時間受付）</span>
             </a>
           </div>
         </section>
@@ -153,7 +149,7 @@ export default function Home() {
               <div className="mt-10 text-center">
                 <Link
                   href="/doctor"
-                  className="inline-block rounded-full border border-[#2d4c44] px-16 py-5 text-[15.5px] tracking-[0.25em] text-[#2d4c44] transition-all duration-500 hover:bg-[#2d4c44] hover:text-white"
+                  className="inline-block rounded-full border border-[#6f4e2f] px-16 py-5 text-[15.5px] tracking-[0.25em] text-[#6f4e2f] transition-all duration-500 hover:bg-[#6f4e2f] hover:text-white"
                 >
                   MORE
                 </Link>
@@ -166,8 +162,8 @@ export default function Home() {
         <section className="px-6" style={{ paddingTop: "140px", paddingBottom: "140px" }}>
           <div className="mx-auto w-full max-w-5xl">
             <SlowReveal className="text-center">
-              <h2 className="sec-en">DOCTOR</h2>
-              <p className="sec-ja">ドクター</p>
+              <h2 className="sec-en">GREETING</h2>
+              <p className="sec-ja">院長挨拶</p>
             </SlowReveal>
             <div className="mt-24 grid items-start gap-14 md:grid-cols-[1fr_1.35fr] md:gap-20">
               <div>
@@ -175,21 +171,21 @@ export default function Home() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="/images/doctor.jpg" alt="LOCO CLINIC 院長 狩野遊太" className="h-auto w-full object-cover" />
                 </div>
-                <p className="mt-8 text-center text-[14px] text-[#9a8f7d]">LOCO CLINIC 院長</p>
-                <p className="mt-1 text-center text-[26px]" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
+                <p className="mt-6 text-center text-[13px] leading-tight text-[#9a8f7d]">LOCO CLINIC 院長</p>
+                <p className="mt-2 text-center text-[26px] leading-tight" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
                   狩野 遊太
                 </p>
               </div>
               <div>
                 <h3
-                  className="mb-12 text-[clamp(22px,3vw,30px)] font-light leading-[1.9] tracking-[0.1em]"
-                  style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
+                  className="mb-12 font-light leading-[1.8] tracking-[0.1em]"
+                  style={{ fontFamily: "var(--font-shippori-mincho), serif", fontSize: "clamp(26px, 3.4vw, 36px)" }}
                 >
                   あなたの、
                   <br />
                   かかりつけになるために。
                 </h3>
-                <div className="space-y-7 text-[16px] font-light leading-[2.2]">
+                <div className="space-y-6 text-[16px] font-light leading-[2]">
                   <p>
                     美容クリニックがたくさんあるいま、きちんとしたカウンセリングと適切な治療を受けたくても、
                     どこを選べばいいか分からない。そんな声をよく聞きます。
@@ -211,7 +207,7 @@ export default function Home() {
                 <div className="mt-14">
                   <Link
                     href="/doctor"
-                    className="inline-block rounded-full border border-[#2d4c44] px-16 py-5 text-[15.5px] tracking-[0.25em] text-[#2d4c44] transition-all duration-500 hover:bg-[#2d4c44] hover:text-white"
+                    className="inline-block rounded-full border border-[#6f4e2f] px-16 py-5 text-[15.5px] tracking-[0.25em] text-[#6f4e2f] transition-all duration-500 hover:bg-[#6f4e2f] hover:text-white"
                   >
                     MORE
                   </Link>
@@ -224,22 +220,23 @@ export default function Home() {
         {/* ===== 当院の特長 ===== */}
         <section className="px-6" style={{ paddingTop: "140px", paddingBottom: "140px" }}>
           <div className="mx-auto w-full max-w-6xl">
-            <SlowReveal className="mb-24 text-center">
+            <SlowReveal className="text-center" style={{ marginBottom: "110px" }}>
               <h2 className="sec-en">FEATURES</h2>
               <p className="sec-ja">当院の特長</p>
             </SlowReveal>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {[
-                { n: "01", t: "糸リフト専門", b: "4種類の糸から「どれくらい持たせたいか」で選べます。" },
-                { n: "02", t: "無理にすすめない", b: "必要な分だけをご提案。その日に決めなくて大丈夫です。" },
-                { n: "03", t: "痛みへの配慮", b: "麻酔を丁寧に効かせてから施術します。不安はカウンセリングでご相談ください。" },
-                { n: "04", t: "税込・明朗会計", b: "料金はすべて税込で公開。当日の想定外の費用はありません。" },
-                { n: "05", t: "夜21時まで・完全予約制", b: "お仕事帰りでも通えます。待合で人と顔を合わせにくい環境です。" },
+                { n: "01", t: "糸リフト専門", b: "最高品質の糸リフト治療をリーズナブルな価格で提供します。" },
+                { n: "02", t: "リピーターの多さ", b: "真面目に良い治療を積み重ねてきた結果、多くの方が繰り返し通ってくださっています。" },
+                { n: "03", t: "無理にすすめない", b: "必要な分だけをご提案。その日に決めなくて大丈夫です。" },
+                { n: "04", t: "痛みへの配慮", b: "麻酔を丁寧に効かせてから施術します。不安はカウンセリングでご相談ください。" },
+                { n: "05", t: "税込・明朗会計", b: "料金はすべて税込で公開。当日の想定外の費用はありません。" },
+                { n: "06", t: "夜21時まで・完全予約制", b: "お仕事帰りでも通えます。待合で人と顔を合わせにくい環境です。" },
               ].map((f, i) => (
                 <SlowReveal key={f.n} direction={i % 2 === 0 ? "left" : "right"} delay={i * 100}>
                   <div className="h-full rounded-[24px] border border-[#e9e6e6] bg-white p-8 transition-all duration-500 hover:-translate-y-2 hover:border-[#d2b388] hover:shadow-xl">
                     <p className="font-heading text-[15.5px] tracking-[0.25em] text-[#b9a05a]">{f.n}</p>
-                    <h3 className="mt-3 text-[18px] leading-snug text-[#2d4c44]" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
+                    <h3 className="mt-3 text-[18px] leading-snug text-[#6f4e2f]" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
                       {f.t}
                     </h3>
                     <p className="mt-4 text-[14.5px] font-light leading-[2]">{f.b}</p>
@@ -284,7 +281,7 @@ export default function Home() {
                       {c.title}
                     </h3>
                     <p className="mt-4 text-[15px] font-light leading-[1.95] text-[#70645c]">{c.desc}</p>
-                    <span className="mt-6 inline-block text-[12.5px] tracking-[0.25em] text-[#2d4c44] transition-colors group-hover:text-[#b9a05a]">
+                    <span className="mt-6 inline-block text-[12.5px] tracking-[0.25em] text-[#6f4e2f] transition-colors group-hover:text-[#b9a05a]">
                       MORE →
                     </span>
                     </div>
@@ -292,16 +289,16 @@ export default function Home() {
                 </SlowReveal>
               ))}
             </div>
-            <SlowReveal className="mt-20 flex flex-col items-center justify-center gap-6 sm:flex-row">
+            <SlowReveal className="flex flex-col items-center justify-center gap-6 sm:flex-row" style={{ marginTop: "110px" }}>
               <Link
                 href="/concerns"
-                className="w-full max-w-80 rounded-full border border-[#2d4c44] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] transition-all duration-500 hover:bg-[#2d4c44] hover:text-white"
+                className="w-full max-w-80 rounded-full border border-[#6f4e2f] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] transition-all duration-500 hover:bg-[#6f4e2f] hover:text-white"
               >
                 お悩みからさがす
               </Link>
               <Link
                 href="/price"
-                className="w-full max-w-80 rounded-full border border-[#2d4c44] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] transition-all duration-500 hover:bg-[#2d4c44] hover:text-white"
+                className="w-full max-w-80 rounded-full border border-[#6f4e2f] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] transition-all duration-500 hover:bg-[#6f4e2f] hover:text-white"
               >
                 料金を見る
               </Link>
@@ -324,14 +321,7 @@ export default function Home() {
                   <dt className="mb-1 text-[10px] tracking-[0.3em] text-[#b9a05a]">HOURS</dt>
                   <dd>9:00〜21:00（完全予約制・不定休）</dd>
                 </div>
-                <div>
-                  <dt className="mb-1 text-[10px] tracking-[0.3em] text-[#b9a05a]">TEL</dt>
-                  <dd>
-                    <a href="tel:027-395-0443" className="font-heading text-xl tracking-wider hover:text-[#b9a05a]">
-                      027-395-0443
-                    </a>
-                  </dd>
-                </div>
+
               </dl>
             </SlowReveal>
             <SlowReveal delay={120}>
@@ -360,7 +350,7 @@ export default function Home() {
               {NEWS.map((n) => (
                 <li key={n.title} className="flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:gap-8">
                   <time className="shrink-0 font-heading text-xs tracking-wider text-[#9a8f7d]">{n.date}</time>
-                  <p className="text-base font-light text-[#2d4c44]">{n.title}</p>
+                  <p className="text-base font-light text-[#6f4e2f]">{n.title}</p>
                 </li>
               ))}
             </ul>

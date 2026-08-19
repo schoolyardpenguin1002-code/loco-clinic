@@ -5,6 +5,8 @@ import { useState } from "react";
 import Header from "../components/Header";
 import SlowReveal from "../components/SlowReveal";
 import { CONCERN_SECTIONS } from "@/lib/menu-data";
+import SiteFooter from "@/app/components/site/SiteFooter";
+import FixedCta from "@/app/components/site/FixedCta";
 
 const serif = { fontFamily: "var(--font-shippori-mincho), serif" };
 
@@ -165,22 +167,9 @@ export default function ConcernsPage() {
         </section>
 
         {/* フッター簡易 */}
-        <footer className="bg-[#1a1a1a] text-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
-          <div className="text-center px-5">
-            <p className="text-xl text-[#d4af37]" style={{ ...serif, marginBottom: "12px" }}>
-              LOCO CLINIC
-            </p>
-            <p className="text-xs text-gray-400 font-light leading-loose">
-              群馬県高崎市浜尻町２０９−５　TEL 027-395-0443
-              <br />
-              9:00〜21:00（不定休）・完全予約制
-            </p>
-            <p className="text-[10px] text-gray-500 font-light tracking-wider" style={{ marginTop: "24px" }}>
-              &copy; 2026 LOCO CLINIC. All Rights Reserved.
-            </p>
-          </div>
-        </footer>
       </main>
+      <SiteFooter />
+      <FixedCta />
     </div>
   );
 }

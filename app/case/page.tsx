@@ -18,7 +18,7 @@ export default function CasePage() {
       <SiteHeader />
       <main className="w-full">
         <section className="relative overflow-hidden bg-white px-6 text-center" style={{ paddingTop: "150px", paddingBottom: "80px" }}>
-          <BotanicalArt className="pointer-events-none absolute -left-14 -top-6 h-[130%] text-[#2d4c44]" />
+          <BotanicalArt className="pointer-events-none absolute -left-14 -top-6 h-[130%] text-[#6f4e2f]" />
           <BotanicalArt className="pointer-events-none absolute -right-20 top-0 h-[120%] scale-x-[-1] text-[#b9a05a]" />
           <p className="mb-4 text-[12.5px] tracking-[0.35em] text-[#b9a05a]">CASE</p>
           <h1
@@ -35,31 +35,28 @@ export default function CasePage() {
               症例写真は、ご本人の同意をいただいたものから順次掲載していきます。
               <br className="hidden sm:block" />
               掲載の際は、医療広告ガイドラインに沿って
-              <strong className="font-semibold text-[#2d4c44]">
+              <strong className="font-semibold text-[#6f4e2f]">
                 施術の内容・リスク・副作用・費用
               </strong>
               を必ず併記します。
             </p>
-            <div className="mx-auto mt-16 grid max-w-4xl gap-8 sm:grid-cols-2">
-              {["症例 01", "症例 02"].map((label) => (
-                <div key={label} className="overflow-hidden rounded-[24px] border border-[#e9e6e6] bg-white">
-                  <p className="border-b border-[#f0ebe2] py-4 text-[15px] tracking-[0.1em]" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
-                    糸リフト {label}
+            <div className="mx-auto mt-16 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {["01", "02", "03", "04", "05", "06"].map((n) => (
+                <div key={n} className="overflow-hidden rounded-[24px] border border-[#e9e6e6] bg-white">
+                  <p className="border-b border-[#f0ebe2] py-3.5 text-[14px] tracking-[0.1em]" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
+                    糸リフト 症例 {n}
                   </p>
-                  <div className="grid grid-cols-2">
-                    {["BEFORE", "AFTER"].map((ba) => (
-                      <div key={ba} className="relative aspect-[3/4] bg-[#f4f0e8]">
-                        <span className="absolute left-0 right-0 top-0 bg-[#e9e3d5] py-1.5 text-[12.5px] tracking-[0.2em] text-[#8a7a55]">{ba}</span>
-                        <span className="absolute inset-0 grid place-items-center text-[13px] tracking-[0.35em] text-[#c9bda3]" style={{ transform: "rotate(-18deg)" }}>
-                          SAMPLE
-                        </span>
-                      </div>
-                    ))}
+                  <div className="relative aspect-[4/3] bg-[#f4f0e8]">
+                    <span className="absolute inset-0 grid place-items-center text-[13px] tracking-[0.35em] text-[#c9bda3]">
+                      COMING SOON
+                    </span>
                   </div>
-                  <p className="py-4 text-[13.5px] font-light text-[#9a8f7d]">症例写真は準備中です</p>
                 </div>
               ))}
             </div>
+            <p className="mt-10 text-[13.5px] font-light leading-[2] text-[#9a8f7d]">
+              症例写真は現在準備中です。順次掲載していきます。
+            </p>
             <p className="mx-auto mt-10 max-w-xl text-[13.5px] font-light leading-[2] text-[#9a8f7d]">
               掲載時は、施術内容（糸の種類・本数）・費用・リスクを必ず併記します。
             </p>
@@ -70,13 +67,13 @@ export default function CasePage() {
           <SlowReveal className="mx-auto flex w-full max-w-xl flex-col gap-4 sm:flex-row">
             <Link
               href="/thread-lift"
-              className="flex-1 bg-[#2d4c44] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] text-white transition-all duration-500 hover:bg-[#8a9e8f]"
+              className="flex-1 bg-[#6f4e2f] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] text-white transition-all duration-500 hover:bg-[#b98a55]"
             >
               糸リフトについて
             </Link>
             <Link
               href="/concerns"
-              className="flex-1 border border-[#2d4c44] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] text-[#2d4c44] transition-all duration-500 hover:bg-[#2d4c44] hover:text-white"
+              className="flex-1 border border-[#6f4e2f] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] text-[#6f4e2f] transition-all duration-500 hover:bg-[#6f4e2f] hover:text-white"
             >
               お悩みからさがす
             </Link>

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 import Header from "../components/Header";
 import ArtmakeLanding from "../components/artmake/ArtmakeLanding";
+import SiteFooter from "@/app/components/site/SiteFooter";
+import FixedCta from "@/app/components/site/FixedCta";
 
 export const metadata: Metadata = {
   title: "アートメイク",
@@ -16,6 +18,8 @@ export default function ArtmakePage() {
       <main className="marketing-layout w-full bg-[#fdfbf8] text-[#1a1a1a]">
         <ArtmakeLanding />
       </main>
+      <SiteFooter />
+      <FixedCta />
     </div>
   );
 }

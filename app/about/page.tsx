@@ -18,7 +18,7 @@ export default function AboutPage() {
       <SiteHeader />
       <main className="w-full">
         <section className="relative overflow-hidden bg-white px-6 text-center" style={{ paddingTop: "150px", paddingBottom: "80px" }}>
-          <BotanicalArt className="pointer-events-none absolute -left-14 -top-6 h-[130%] text-[#2d4c44]" />
+          <BotanicalArt className="pointer-events-none absolute -left-14 -top-6 h-[130%] text-[#6f4e2f]" />
           <BotanicalArt className="pointer-events-none absolute -right-20 top-0 h-[120%] scale-x-[-1] text-[#b9a05a]" />
           <p className="mb-4 text-[12.5px] tracking-[0.35em] text-[#b9a05a]">ABOUT</p>
           <h1
@@ -35,7 +35,7 @@ export default function AboutPage() {
           <SlowReveal direction="left">
             <div className="overflow-hidden rounded-[28px] shadow-lg">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/stock/stone-bamboo.jpg" alt="施術イメージ" className="h-full w-full object-cover" />
+              <img src="/images/stock/counseling.jpg" alt="カウンセリングの様子" className="h-full w-full object-cover" />
             </div>
           </SlowReveal>
           <SlowReveal direction="right" className="text-center md:text-left">
@@ -71,7 +71,7 @@ export default function AboutPage() {
             </SlowReveal>
             <div className="grid gap-6 md:grid-cols-2">
               {[
-                { t: "糸リフト専門", b: "素材と持続の異なる4種類の糸を扱い、「どれくらい持たせたいか」でお選びいただけます。" },
+                { t: "糸リフト専門", b: "最高品質の糸リフト治療を、リーズナブルな価格で皆様に提供します。" },
                 { t: "完全予約制・夜21時まで", b: "お仕事帰りにも通えます。待合で他の患者様と顔を合わせにくい環境です。" },
                 { t: "税込・明朗会計", b: "料金はすべて税込で公開。当日に想定外の費用が発生することはありません。" },
                 { t: "医師によるカウンセリング", b: "医師が直接お悩みを伺い、リスクまで説明した上でご提案します。無理におすすめしません。" },
@@ -131,12 +131,12 @@ export default function AboutPage() {
                 />
               </div>
               <p className="mt-4 text-xs font-light leading-relaxed text-[#9a8f7d]">
-                お車でお越しの方：駐車場あり。詳しくはご予約時にご案内します。
+                お車でお越しの方：クリニック前に無料駐車場8台分あり。
               </p>
               <div className="mt-8">
                 <Link
                   href="/guide"
-                  className="inline-block border border-[#2d4c44] px-12 py-5 text-[15.5px] tracking-[0.2em] transition-all duration-500 hover:bg-[#2d4c44] hover:text-white"
+                  className="inline-block border border-[#6f4e2f] px-12 py-5 text-[15.5px] tracking-[0.2em] transition-all duration-500 hover:bg-[#6f4e2f] hover:text-white"
                 >
                   はじめての方へ
                 </Link>

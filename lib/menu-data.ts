@@ -133,7 +133,7 @@ export const PRICE_GROUPS: PriceGroup[] = [
   },
   {
     id: "peeling",
-    title: "ピーリング・ハイドラ",
+    title: "ピーリング・ハイドラジェントル",
     lead: "古い角質や毛穴の汚れにアプローチします。",
     rows: [
       { name: "ハイドラジェントル", price: "8,000円", note: "単回" },

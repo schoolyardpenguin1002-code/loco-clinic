@@ -42,7 +42,7 @@ const artists = [
 const faqItems: FaqItem[] = [
   {
     q: "カウンセリング料はかかりますか？",
-    a: `はい。${CONSULTATION_FEE_SENTENCE}`,
+    a: CONSULTATION_FEE_SENTENCE,
   },
   {
     q: "施術の持続期間はどのくらいですか？",
@@ -79,10 +79,9 @@ export default function ArtmakeLanding() {
     <div>
       {/* 1. Hero */}
       <section className="section-bleed relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#f5f5f0] via-[#fdfbf8] to-[#ebe6df]" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Sparkles className="h-40 w-40 text-[#d4af37]/25 md:h-48 md:w-48" strokeWidth={0.8} aria-hidden />
-        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/stock/artmake-room.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-[#fdfbf8]/90" />
         <RevealOnScroll className="section-inner relative z-10 flex w-full flex-col items-center">
           <p className="mb-6 font-heading text-[10px] tracking-[0.4em] text-[#d4af37] md:text-xs">
             ART MAKE

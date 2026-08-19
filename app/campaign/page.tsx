@@ -17,7 +17,7 @@ export default function CampaignPage() {
       <SiteHeader />
       <main className="w-full">
         <section className="relative overflow-hidden bg-white px-6 text-center" style={{ paddingTop: "150px", paddingBottom: "80px" }}>
-          <BotanicalArt className="pointer-events-none absolute -left-14 -top-6 h-[130%] text-[#2d4c44]" />
+          <BotanicalArt className="pointer-events-none absolute -left-14 -top-6 h-[130%] text-[#6f4e2f]" />
           <BotanicalArt className="pointer-events-none absolute -right-20 top-0 h-[120%] scale-x-[-1] text-[#b9a05a]" />
           <p className="mb-4 text-[12.5px] tracking-[0.35em] text-[#b9a05a]">MONTHLY</p>
           <h1
@@ -70,13 +70,13 @@ export default function CampaignPage() {
           <div className="mx-auto flex w-full max-w-xl flex-col gap-4 sm:flex-row">
             <Link
               href="/price"
-              className="flex-1 bg-[#2d4c44] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] text-white transition-all duration-500 hover:bg-[#8a9e8f]"
+              className="flex-1 bg-[#6f4e2f] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] text-white transition-all duration-500 hover:bg-[#b98a55]"
             >
               料金表を見る
             </Link>
             <Link
               href="/guide"
-              className="flex-1 border border-[#2d4c44] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] text-[#2d4c44] transition-all duration-500 hover:bg-[#2d4c44] hover:text-white"
+              className="flex-1 border border-[#6f4e2f] px-10 py-5 text-center text-[15.5px] tracking-[0.2em] text-[#6f4e2f] transition-all duration-500 hover:bg-[#6f4e2f] hover:text-white"
             >
               はじめての方へ
             </Link>

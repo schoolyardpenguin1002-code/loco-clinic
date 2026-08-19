@@ -11,7 +11,7 @@ import FixedCta from "../components/site/FixedCta";
 type FAQItem = {
   question: string;
   answer: string;
-  hasLink?: boolean;
+  link?: { href: string; label: string };
 };
 
 type FAQCategory = {
@@ -25,12 +25,21 @@ const faqs: FAQCategory[] = [
     items: [
       {
         question: "予約方法を教えてください",
-        answer: "公式LINEから御予約いただけます。難しい場合はInstagramのメッセージや公式LINEのチャット、お電話でも承ります。",
+        answer: "ご予約は公式LINEから承っております。ご不明な点やご相談も、公式LINEのトークからお気軽にお送りください。順番にお返事いたします。",
+      },
+      {
+        question: "予約はいつから取れますか？",
+        answer: "翌月分のご予約枠は、前月の25日前後に1ヶ月分まとめて公開しております。公式LINEでもご案内しますので、友だち登録してお待ちください。",
       },
       {
         question: "キャンセル料はかかりますか？",
         answer: "キャンセルポリシーをご参照ください。",
-        hasLink: true,
+        link: { href: "/cancel-policy", label: "キャンセルポリシーを見る →" },
+      },
+      {
+        question: "料金はどこを見れば分かりますか？",
+        answer: "料金表ページに、すべてのメニューを税込価格で公開しています。カウンセリング後に追加費用が発生することはありません。",
+        link: { href: "/price", label: "料金表を見る →" },
       },
       {
         question: "支払い方法は何がありますか？",
@@ -38,7 +47,7 @@ const faqs: FAQCategory[] = [
       },
       {
         question: "カウンセリング料はかかりますか？",
-        answer: `はい。${CONSULTATION_FEE_SENTENCE}`,
+        answer: CONSULTATION_FEE_SENTENCE,
       },
     ],
   },
@@ -47,7 +56,7 @@ const faqs: FAQCategory[] = [
     items: [
       {
         question: "駐車場はありますか？",
-        answer: "はい、ございます。",
+        answer: "はい、ございます。クリニックの前に無料駐車場が8台分ございますので、お車でも余裕を持ってお越しいただけます。",
       },
       {
         question: "アクセス方法を教えてください",
@@ -77,15 +86,106 @@ const faqs: FAQCategory[] = [
     ],
   },
   {
+    category: "糸リフトについて",
+    items: [
+      {
+        question: "入れた糸はどうなりますか？",
+        answer: "体内で少しずつ分解・吸収される素材です。糸そのものが無くなった後も、糸のまわりに生成されたコラーゲンによって、肌のハリが保たれます。",
+      },
+      {
+        question: "メイクはいつからできますか？",
+        answer: "挿入部位を避けていただければ、当日から可能です。ただし2週間ほどは、強く擦る洗顔やフェイスマッサージはお控えください。",
+      },
+      {
+        question: "入浴・運動はいつからですか？",
+        answer: "シャワーは当日から、洗髪は翌日から可能です。湯船も数日後からお入りいただけます。激しい運動・サウナは5日後ごろからを目安にしてください。",
+      },
+      {
+        question: "ダウンタイムはどのくらいですか？",
+        answer: "個人差があるため一概には言えませんが、実際に受けられた方からは「痛みがなかった」「ダウンタイムが本当に軽かった」と言っていただくことが多いです。腫れ・内出血・引きつれ感が出た場合も、多くは1〜2週間で落ち着きます。ただし当院では、カウンセリングであえてデメリットをしっかりご説明しています。「ダウンタイムが全くない」というつもりで受けることは、おすすめしません。",
+      },
+      {
+        question: "何本くらい入れるものですか？",
+        answer: "たるみの程度やご希望によって変わります。片側3〜5本から始める方が多いですが、まずカウンセリングでお顔を拝見し、必要な本数をご提案します。",
+      },
+      {
+        question: "痛みはありますか？",
+        answer: "局所麻酔を行ったうえで施術します。挿入時に引っぱられる感覚はありますが、強い痛みが続くことは通常ありません。",
+      },
+      {
+        question: "顔に傷は残りますか？",
+        answer: "生え際やもみあげの裏など、目立ちにくい位置から糸を挿入します。傷は針穴程度のため、術直後からほとんど気づかれないくらいです。",
+      },
+    ],
+  },
+  {
+    category: "注入治療（ボトックス・ヒアルロン酸）について",
+    items: [
+      {
+        question: "ボトックスとヒアルロン酸は何が違いますか？",
+        answer: "ボトックスは筋肉の働きを和らげることで、表情ジワやエラの張りにアプローチします。ヒアルロン酸は足りないボリュームを補うことで、こけ・凹み・しわを整えます。お悩みによって適した治療が異なりますので、カウンセリングでご提案します。",
+      },
+      {
+        question: "ボトックスの効果はどのくらい持ちますか？",
+        answer: "個人差はありますが、3〜4ヶ月程度が目安です。繰り返し打つことで効果が安定してくる方も多いです。",
+      },
+      {
+        question: "ヒアルロン酸はどのくらい持ちますか？",
+        answer: "注入する部位や製剤によりますが、半年〜1年程度が目安です。体内で少しずつ吸収される安全性の高い製剤を使用しています。",
+      },
+      {
+        question: "注入した日から普段どおり過ごせますか？",
+        answer: "はい、当日からほぼ普段どおりお過ごしいただけます。飲酒・激しい運動・サウナ・注入部位への強いマッサージは、当日はお控えください。",
+      },
+      {
+        question: "不自然な仕上がりにならないか心配です",
+        answer: "当院では少量から様子を見ながら調整し、やりすぎない自然な仕上がりを大切にしています。不要と判断した場合は「不要です」とお伝えする方針です。",
+      },
+      {
+        question: "注入治療のリスク・副作用はありますか？",
+        answer: "内出血・腫れ・左右差などが生じることがあります。多くは1〜2週間で落ち着きます。まれに重い合併症の報告もあるため、当院では医師が解剖を熟知したうえで慎重に注入し、術後の経過も拝見します。",
+      },
+    ],
+  },
+  {
+    category: "肌育・美肌治療について",
+    items: [
+      {
+        question: "肌育治療とは何ですか？",
+        answer: "ヒアルロン酸やアミノ酸などの美容成分をお肌の浅い層に注入し、肌そのものの水分量・ハリを育てていく治療の総称です。しわを埋めるのではなく、肌質を底上げすることが目的です。",
+      },
+      {
+        question: "水光注射と肌育注射は違うものですか？",
+        answer: "大きくは同じ「肌育」の仲間で、使う製剤と入れ方が異なります。お肌の状態とご希望に合わせて、カウンセリングで適したものをご提案します。",
+      },
+      {
+        question: "何回くらい受けると効果を感じますか？",
+        answer: "1回でも潤い・ツヤの変化を感じる方が多いですが、肌質の変化を目指すなら2〜4週間隔で3回程度を1クールとするのが目安です。効果には個人差があります。",
+      },
+      {
+        question: "肌育治療にダウンタイムはありますか？",
+        answer: "針を使うため、赤み・ぷつぷつとした膨らみ・内出血が出ることがありますが、多くは数日で落ち着きます。メイクは翌日から可能です。",
+      },
+      {
+        question: "ピーリングやハイドラジェントルとは何が違いますか？",
+        answer: "ピーリング・ハイドラジェントルは、古い角質や毛穴の汚れに外側からアプローチする治療です。内側から潤いを足す肌育治療と組み合わせると、相乗効果が期待できます。",
+      },
+      {
+        question: "どんな人に向いていますか？",
+        answer: "乾燥・ハリ不足・毛穴・化粧ノリの悪さが気になる方に向いています。糸リフト後の肌質維持としてもおすすめです。",
+      },
+    ],
+  },
+  {
     category: "施術について",
     items: [
       {
         question: "カウンセリング当日に施術はできますか？",
-        answer: "はい、可能です。ただし、施術内容によっては別日をご案内する場合もございます。ご希望の方は予約時にお伝えください。",
+        answer: "はい、可能です。実際、ほとんどの方がカウンセリング当日にそのまま施術を受けられています。ただし、施術内容によっては別日をご案内する場合もございます。ご希望の方は予約時にお伝えください。",
       },
       {
         question: "施術後、すぐにメイクはできますか？",
-        answer: "施術部位以外は当日からメイク可能です。施術部位は1週間ほどメイクを控えていただくことをおすすめしています。",
+        answer: "施術内容によりますが、当院の施術はいずれもお肌に大きなダメージを与えるものではないため、おおむね翌日にはメイクしていただけることが多いです。詳しくは施術ごとにご案内いたします。",
       },
       {
         question: "未成年でも施術は受けられますか？",
@@ -115,7 +215,7 @@ export default function FAQPage() {
       <main className="w-full">
         {/* ページヒーロー */}
         <section className="relative overflow-hidden bg-white px-6 text-center" style={{ paddingTop: "160px", paddingBottom: "100px" }}>
-          <BotanicalArt className="pointer-events-none absolute -left-14 -top-6 h-[130%] text-[#2d4c44]" />
+          <BotanicalArt className="pointer-events-none absolute -left-14 -top-6 h-[130%] text-[#6f4e2f]" />
           <BotanicalArt className="pointer-events-none absolute -right-20 top-0 h-[120%] scale-x-[-1] text-[#b9a05a]" />
           <h1 className="sec-en">FAQ</h1>
           <p className="sec-ja">よくある質問</p>
@@ -166,15 +266,15 @@ export default function FAQPage() {
                         {isOpen && (
                           <div className="border-t border-[#f0ebe2] px-7 py-6 sm:px-10">
                             <div className="flex items-baseline gap-5">
-                              <span className="font-heading shrink-0 text-[17px] text-[#2d4c44]">A</span>
+                              <span className="font-heading shrink-0 text-[17px] text-[#6f4e2f]">A</span>
                               <div className="text-[15.5px] font-light leading-[2.1]">
                                 {faq.answer}
-                                {faq.hasLink && (
+                                {faq.link && (
                                   <Link
-                                    href="/cancel-policy"
+                                    href={faq.link.href}
                                     className="mt-3 block text-[#b9a05a] underline decoration-[#d2b388] underline-offset-4 hover:text-[#8a7a55]"
                                   >
-                                    キャンセルポリシーを見る →
+                                    {faq.link.label}
                                   </Link>
                                 )}
                               </div>

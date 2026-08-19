@@ -22,7 +22,7 @@ const NAV_RIGHT = [
   { name: "はじめての方へ", href: "/guide" },
   { name: "糸リフト", href: "/thread-lift", featured: true },
   { name: "アートメイク", href: "/artmake" },
-  { name: "ドクター", href: "/doctor" },
+  { name: "院長挨拶", href: "/doctor" },
   { name: "料金表", href: "/price" },
   { name: "よくある質問", href: "/faq" },
   { name: "コラム", href: "/column" },
@@ -49,7 +49,7 @@ function BotanicalArt({ className }: { className?: string }) {
 
 function LineIcon() {
   return (
-    <span className="grid h-9 w-9 place-items-center rounded-full bg-white/90 text-[9px] font-black tracking-tighter text-[#2d4c44]">
+    <span className="grid h-9 w-9 place-items-center rounded-full bg-white/90 text-[9px] font-black tracking-tighter text-[#6f4e2f]">
       LINE
     </span>
   );
@@ -59,9 +59,9 @@ function InstaIcon() {
   return (
     <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden>
       <circle cx="18" cy="18" r="17" fill="rgba(255,255,255,.9)" />
-      <rect x="10.5" y="10.5" width="15" height="15" rx="4.5" stroke="#2d4c44" strokeWidth="1.4" />
-      <circle cx="18" cy="18" r="3.6" stroke="#2d4c44" strokeWidth="1.4" />
-      <circle cx="22.6" cy="13.4" r="1.1" fill="#2d4c44" />
+      <rect x="10.5" y="10.5" width="15" height="15" rx="4.5" stroke="#6f4e2f" strokeWidth="1.4" />
+      <circle cx="18" cy="18" r="3.6" stroke="#6f4e2f" strokeWidth="1.4" />
+      <circle cx="22.6" cy="13.4" r="1.1" fill="#6f4e2f" />
     </svg>
   );
 }
@@ -99,7 +99,7 @@ export default function SiteHeader() {
           {/* ロゴ */}
           <Link href="/" className="block leading-tight">
             <span
-              className="block text-2xl sm:text-[30px] tracking-[0.2em] text-[#2d4c44]"
+              className="block text-2xl sm:text-[30px] tracking-[0.2em] text-[#6f4e2f]"
               style={{ fontFamily: "var(--font-shippori-mincho), serif", fontWeight: 500 }}
             >
               LOCO CLINIC
@@ -117,10 +117,6 @@ export default function SiteHeader() {
             >
               access
             </Link>
-            <a href="tel:027-395-0443" className="hidden md:block leading-tight text-[#2d4c44]">
-              <span className="block font-heading text-[17px] tracking-wider">TEL.027-395-0443</span>
-              <span className="block text-[10.5px] text-[#8a7a55]">受付時間 09:00-21:00</span>
-            </a>
             <a
               href={LINE_ADD_FRIEND_URL}
               target="_blank"
@@ -135,8 +131,8 @@ export default function SiteHeader() {
               className="flex h-11 w-11 flex-col items-center justify-center gap-[7px]"
               aria-label="メニューを開く"
             >
-              <span className="h-px w-8 bg-[#2d4c44]" />
-              <span className="h-px w-8 bg-[#2d4c44]" />
+              <span className="h-px w-8 bg-[#6f4e2f]" />
+              <span className="h-px w-8 bg-[#6f4e2f]" />
             </button>
           </div>
         </div>
@@ -145,7 +141,7 @@ export default function SiteHeader() {
       {/* 右端の縦SNSアイコン（PC） */}
       <div className="fixed right-4 top-24 z-40 hidden flex-col items-center gap-3 lg:flex">
         <a href={LINE_ADD_FRIEND_URL} target="_blank" rel="noopener noreferrer" aria-label="LINE" className="transition-transform hover:-translate-y-0.5 drop-shadow">
-          <span className="grid h-9 w-9 place-items-center rounded-full bg-[#06C755] text-[9px] font-black tracking-tighter text-white">LINE</span>
+          <span className="grid h-9 w-9 place-items-center rounded-full bg-[#3e7a52] text-[9px] font-black tracking-tighter text-white">LINE</span>
         </a>
         {INSTAGRAM_URL && (
           <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-transform hover:-translate-y-0.5 drop-shadow">
@@ -156,7 +152,7 @@ export default function SiteHeader() {
 
       {/* ===== 全画面メニュー（深緑×線画の草花） ===== */}
       <div
-        className={`fixed inset-0 z-[70] bg-[#3a4f43] text-white transition-all duration-500 ${
+        className={`fixed inset-0 z-[70] bg-[#4a3629] text-white transition-all duration-500 ${
           open ? "visible opacity-100" : "invisible opacity-0"
         }`}
       >
@@ -227,16 +223,14 @@ export default function SiteHeader() {
           <div className="mx-auto mb-8 mt-10 w-full max-w-5xl">
             <div className="flex flex-col items-center justify-between gap-5 bg-white px-8 py-6 sm:flex-row sm:px-12">
               <p
-                className="text-[26px] tracking-[0.3em] text-[#2d4c44]"
+                className="text-[26px] tracking-[0.3em] text-[#6f4e2f]"
                 style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
               >
                 ・ RESERVE ・
               </p>
-              <div className="text-center leading-tight text-[#2d4c44] sm:text-left">
+              <div className="text-center leading-tight text-[#6f4e2f] sm:text-left">
                 <p className="text-[12px] text-[#70645c]">受付時間 9:00-21:00（完全予約制・不定休）</p>
-                <a href="tel:027-395-0443" className="font-heading text-[20px] tracking-wider hover:text-[#b9a05a]">
-                  TEL.027-395-0443
-                </a>
+                <p className="text-[13px] text-[#8a7a55]">ご予約・ご相談は公式LINEから</p>
               </div>
               <a
                 href={LINE_ADD_FRIEND_URL}

@@ -3,6 +3,8 @@ import Link from "next/link";
 import { CONSULTATION_FEE_SENTENCE } from "@/lib/consultation-fee";
 import Header from "../components/Header";
 import MenuBrowseTabs from "../components/menu/MenuBrowseTabs";
+import SiteFooter from "@/app/components/site/SiteFooter";
+import FixedCta from "@/app/components/site/FixedCta";
 
 export const metadata: Metadata = {
   title: "施術メニュー",
@@ -62,6 +64,8 @@ export default function MenuPage() {
           </div>
         </section>
       </main>
+      <SiteFooter />
+      <FixedCta />
     </div>
   );
 }

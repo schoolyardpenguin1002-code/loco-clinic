@@ -48,7 +48,7 @@ export default function GuidePage() {
       <main className="w-full">
         {/* ページヒーロー */}
         <section className="relative overflow-hidden bg-white px-6 text-center" style={{ paddingTop: "150px", paddingBottom: "80px" }}>
-          <BotanicalArt className="pointer-events-none absolute -left-14 -top-6 h-[130%] text-[#2d4c44]" />
+          <BotanicalArt className="pointer-events-none absolute -left-14 -top-6 h-[130%] text-[#6f4e2f]" />
           <BotanicalArt className="pointer-events-none absolute -right-20 top-0 h-[120%] scale-x-[-1] text-[#b9a05a]" />
           <p className="mb-4 text-[12.5px] tracking-[0.35em] text-[#b9a05a]">GUIDE</p>
           <h1
@@ -64,7 +64,7 @@ export default function GuidePage() {
           </p>
           <div className="relative mx-auto mt-16 max-w-3xl overflow-hidden rounded-[28px] shadow-lg">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/stock/facial-warm.jpg" alt="フェイシャルトリートメント" className="h-[300px] w-full object-cover object-[center_30%] sm:h-[380px]" />
+            <img src="/images/stock/counseling.jpg" alt="カウンセリングの様子" className="h-[300px] w-full object-cover object-[center_30%] sm:h-[380px]" />
           </div>
         </section>
 
@@ -144,7 +144,7 @@ export default function GuidePage() {
             <div className="mt-12 text-center">
               <Link
                 href="/concerns"
-                className="inline-block border border-[#2d4c44] px-12 py-5 text-[15.5px] tracking-[0.2em] transition-all duration-500 hover:bg-[#2d4c44] hover:text-white"
+                className="inline-block border border-[#6f4e2f] px-12 py-5 text-[15.5px] tracking-[0.2em] transition-all duration-500 hover:bg-[#6f4e2f] hover:text-white"
               >
                 お悩みからさがしてみる
               </Link>

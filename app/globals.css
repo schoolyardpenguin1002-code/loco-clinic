@@ -338,19 +338,22 @@ p.text-left-balance,
   line-height: inherit !important;
   font-size: inherit !important;
 }
-/* 料金ページ：グローバルの太字・特大見出しを上書きし、細く上品に */
-.price-page h1, .price-page h2, .price-page h3 {
-  font-weight: 300 !important;
+/* 料金ページ系：グローバルの太字・特大見出しを上書きし、細く上品に。
+   :where で詳細度を落とし、各ページの text-[clamp(...)] 指定が勝てるようにする。
+   階層＝ sec-en(33-64px) ＞ h1(28-40px) ＞ h2(24-32px) ＞ h3(18-22px) ＞ 本文(16-18px) */
+:where(.price-page) h1, :where(.price-page) h2, :where(.price-page) h3 {
+  font-weight: 300;
   letter-spacing: 0.12em;
 }
-.price-page h1 { font-size: clamp(26px, 3.4vw, 34px) !important; }
-.price-page h2 { font-size: clamp(18px, 2.2vw, 21px) !important; }
-.price-page h3 { font-size: 16px !important; }
+:where(.price-page) h1 { font-size: clamp(28px, 3.8vw, 40px); }
+:where(.price-page) h2 { font-size: clamp(24px, 3.2vw, 32px); }
+:where(.price-page) h3 { font-size: clamp(18px, 2.4vw, 22px); }
 
-/* 料金ページ：グローバルの section 巨大パディングを解除（クラス指定を活かす） */
-.price-page section {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+/* 料金ページ系：グローバルの section 巨大パディングを解除しつつ、
+   :where で詳細度を落として Tailwind の py-* やインライン style の余白指定が勝てるようにする */
+:where(.price-page) section {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 /* 中央寄せコンテナを確実に効かせる */
@@ -362,7 +365,7 @@ p.text-left-balance,
 /* ==== 2026-08-16 リニューアル：銀座美容クリニック実測のタイポグラフィ ==== */
 .price-page { font-size: 17px; line-height: 2.1; letter-spacing: 0.05em;
   font-family: var(--font-shippori-mincho), "Hiragino Mincho ProN", serif; }
-.price-page h1, .price-page h2, .price-page h3 { color: #2d4c44; }
+.price-page h1, .price-page h2, .price-page h3 { color: #6f4e2f; }
 .price-page main p + p { margin-top: 1.4em; }   /* 段落間の呼吸 */
 .price-page main a { -webkit-tap-highlight-color: transparent; }
 @media (min-width: 1600px) { .price-page { font-size: 18px; } }
@@ -371,7 +374,7 @@ p.text-left-balance,
 body section[aria-label] { padding: 0 !important; margin: 0 !important; }
 /* CLINIC W実測：欧文セクション見出し（Cormorant 64px級） */
 .sec-en { font-family: var(--font-cormorant), "Cormorant", serif; font-weight: 400;
-  color: #2d4c44; letter-spacing: 0.08em; line-height: 1.1;
+  color: #6f4e2f; letter-spacing: 0.08em; line-height: 1.1;
   font-size: clamp(33px, 5.5vw, 64px); }
 .sec-ja { font-size: 13.5px; letter-spacing: 0.3em; color: #b9a05a; margin-top: 22px; }
 /* CSSだけの「ゆっくり現れる」──JS不要・必ず表示される */

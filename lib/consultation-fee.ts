@@ -1,2 +1,2 @@
 /** カウンセリング料の統一表記（サイト内ではこの定数を参照する）。 */
-export const CONSULTATION_FEE_SENTENCE = "カウンセリング料は5,000円（税別）です。";
+export const CONSULTATION_FEE_SENTENCE = "施術をお受けいただく場合、カウンセリング料はかかりません。カウンセリングのみの場合は、5,000円（税別）を頂戴しております。";
