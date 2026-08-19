@@ -28,7 +28,7 @@ export default function SiteFooter() {
             href={LINE_ADD_FRIEND_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 rounded-full bg-[#3e7a52] px-8 py-4 text-base font-bold text-white transition hover:bg-[#05b34c]"
+            className="flex-1 rounded-full bg-[#3e7a52] px-8 py-4 text-base font-bold text-white transition hover:brightness-110"
           >
             LINEで予約・相談
           </a>
@@ -62,17 +62,28 @@ export default function SiteFooter() {
       </div>
 
       {/* リンク */}
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-10 px-8 py-20 sm:grid-cols-4">
-        <div className="col-span-2 sm:col-span-1">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-10 px-8 py-20 sm:grid-cols-5">
+        <div className="col-span-2">
           <p className="text-lg tracking-[0.18em]" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
             LOCO CLINIC
           </p>
-          <p className="mt-3 text-xs font-light leading-relaxed text-white/50">
-            〒370-0005
-            <br />
-            群馬県高崎市浜尻町209-5
-            <br />
-            9:00〜21:00／完全予約制・不定休
+          <div className="mt-4 space-y-1 text-[13px] font-light leading-[1.9] text-white/60">
+            <p>〒370-0005 群馬県高崎市浜尻町209-5</p>
+            <p>診療時間 9:00〜21:00</p>
+            <p>完全予約制・不定休</p>
+          </div>
+          <div className="mt-5 aspect-[16/9] w-full max-w-sm overflow-hidden rounded-xl border border-white/15">
+            <iframe
+              src="https://maps.google.com/maps?q=%E3%83%AD%E3%82%B3%E3%82%AF%E3%83%AA%E3%83%8B%E3%83%83%E3%82%AF%20%E7%BE%A4%E9%A6%AC%E7%9C%8C%E9%AB%98%E5%B4%8E%E5%B8%82%E6%B5%9C%E5%B0%BB%E7%94%BA209-5&ll=36.3520809,139.0134531&z=16&hl=ja&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              title="LOCO CLINIC 地図"
+            />
+          </div>
+          <p className="mt-3 text-[12.5px] font-light text-white/50">
+            高崎問屋町駅 徒歩8分／クリニック前に無料駐車場8台分
           </p>
         </div>
         <div>
@@ -89,7 +100,7 @@ export default function SiteFooter() {
           <p className="mb-4 text-[10px] tracking-[0.25em] text-white/40">GUIDE</p>
           <ul className="space-y-2.5 text-[15px] font-light">
             <li><Link href="/guide" className="hover:text-[#d5c08a]">はじめての方へ</Link></li>
-            <li><Link href="/doctor" className="hover:text-[#d5c08a]">ドクター</Link></li>
+            <li><Link href="/doctor" className="hover:text-[#d5c08a]">院長挨拶</Link></li>
             <li><Link href="/case" className="hover:text-[#d5c08a]">症例</Link></li>
             <li><Link href="/about" className="hover:text-[#d5c08a]">クリニックについて</Link></li>
             <li><Link href="/campaign" className="hover:text-[#d5c08a]">今月のご案内</Link></li>
