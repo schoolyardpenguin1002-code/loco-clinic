@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import SiteHeader from "../../components/site/SiteHeader";
 import SiteFooter from "../../components/site/SiteFooter";
 import FixedCta from "../../components/site/FixedCta";
+import SlowReveal from "../../components/SlowReveal";
 import { COLUMNS, getColumn } from "@/lib/columns";
 
 export function generateStaticParams() {
@@ -42,17 +43,19 @@ export default async function ColumnArticlePage({ params }: { params: Promise<{ 
               <span className="text-[13px] text-[#9a8f7d]">LOCO CLINIC 院長 狩野遊太</span>
             </div>
 
-            <div className="mt-10 space-y-8 text-[15.5px] font-light leading-[2.2]">
-              {col.lead.map((p) => (
-                <p key={p.slice(0, 24)}>{p}</p>
-              ))}
+            <div className="mt-10 text-[15px] font-light leading-[2.05] tracking-[0.02em]">
+              <SlowReveal className="space-y-7">
+                {col.lead.map((p) => (
+                  <p key={p.slice(0, 24)}>{p}</p>
+                ))}
+              </SlowReveal>
 
-              {col.sections.map((sec) => (
-                <div key={sec.h ?? sec.ps[0].slice(0, 24)} className="space-y-6">
+              {col.sections.map((sec, i) => (
+                <SlowReveal key={sec.h ?? sec.ps[0].slice(0, 24)} delay={80 + (i % 3) * 90} className="space-y-6">
                   {sec.h && (
                     <h2
-                      className="border-l-2 border-[#d2b388] pl-4 text-lg"
-                      style={{ fontFamily: "var(--font-shippori-mincho), serif", marginTop: "48px" }}
+                      className="border-l-2 border-[#d2b388] pl-4 text-[18px] leading-[1.7]"
+                      style={{ fontFamily: "var(--font-shippori-mincho), serif", marginTop: "56px", marginBottom: "20px" }}
                     >
                       {sec.h}
                     </h2>
@@ -60,11 +63,13 @@ export default async function ColumnArticlePage({ params }: { params: Promise<{ 
                   {sec.ps.map((p) => (
                     <p key={p.slice(0, 24)}>{p}</p>
                   ))}
-                </div>
+                </SlowReveal>
               ))}
 
               {col.note && (
-                <p className="border-t border-[#e9e6e6] pt-8 text-[13.5px] leading-[2] text-[#9a8f7d]">{col.note}</p>
+                <SlowReveal delay={120}>
+                  <p className="border-t border-[#e9e6e6] pt-8 text-[13px] leading-[1.95] text-[#9a8f7d]" style={{ marginTop: "56px" }}>{col.note}</p>
+                </SlowReveal>
               )}
             </div>
 
