@@ -5,6 +5,7 @@ import SiteFooter from "../components/site/SiteFooter";
 import FixedCta from "../components/site/FixedCta";
 import BotanicalArt from "../components/site/BotanicalArt";
 import SlowReveal from "../components/SlowReveal";
+import { COLUMNS } from "@/lib/columns";
 
 export const metadata: Metadata = {
   title: "コラム",
@@ -33,27 +34,26 @@ export default function ColumnPage() {
         </section>
 
         <section className="px-6" style={{ paddingTop: "100px", paddingBottom: "140px" }}>
-          <SlowReveal className="mx-auto w-full max-w-2xl text-center">
-            <div className="border border-[#e9e6e6] bg-white px-10 py-20">
-              <p className="font-heading text-[13px] tracking-[0.4em] text-[#b9a05a]">COMING SOON</p>
-              <p
-                className="mt-6 text-lg leading-[1.9]"
-                style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
-              >
-                コラムは現在準備中です。
-              </p>
-              <p className="mt-4 text-[14.5px] font-light leading-[2]">
-                糸リフトと美容医療のことを、院長が一つずつ丁寧に書いていきます。
-                <br />
-                公開まで、いましばらくお待ちください。
-              </p>
+          <SlowReveal className="mx-auto grid w-full max-w-5xl gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {COLUMNS.map((c) => (
               <Link
-                href="/thread-lift"
-                className="mt-10 inline-block border border-[#6f4e2f] px-10 py-4 text-[14px] tracking-[0.2em] text-[#6f4e2f] transition-all duration-500 hover:bg-[#6f4e2f] hover:text-white"
+                key={c.slug}
+                href={`/column/${c.slug}`}
+                className="group flex h-full flex-col border border-[#e9e6e6] bg-white p-8 transition-all duration-500 hover:-translate-y-1 hover:border-[#d2b388] hover:shadow-lg"
               >
-                糸リフトのご案内を見る
+                <time className="font-heading text-[12.5px] tracking-wider text-[#9a8f7d]">{c.date}</time>
+                <h2
+                  className="mt-3 text-[16.5px] leading-[1.8] transition-colors group-hover:text-[#b9a05a]"
+                  style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
+                >
+                  {c.title}
+                </h2>
+                <p className="mt-4 flex-1 text-[13.5px] font-light leading-[1.95]">{c.excerpt}</p>
+                <span className="mt-5 inline-block text-[12px] tracking-[0.25em] text-[#6f4e2f] group-hover:text-[#b9a05a]">
+                  READ MORE →
+                </span>
               </Link>
-            </div>
+            ))}
           </SlowReveal>
         </section>
       </main>
