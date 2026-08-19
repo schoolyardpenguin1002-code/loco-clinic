@@ -31,6 +31,10 @@ export default function ColumnPage() {
           <p className="mx-auto mt-6 max-w-xl text-[15px] font-light leading-loose">
             糸リフトと美容医療のこと、院長が分かりやすく書いていきます。
           </p>
+          <div className="mx-auto mt-14 w-full max-w-4xl overflow-hidden rounded-[24px] shadow-lg">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/column-hero.jpg" alt="院長の戯言コラム" className="h-auto w-full object-cover" />
+          </div>
         </section>
 
         <section className="px-6" style={{ paddingTop: "100px", paddingBottom: "140px" }}>
