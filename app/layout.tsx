@@ -35,6 +35,7 @@ const shipporiMincho = Shippori_Mincho({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.lococlinic.com"),
+  verification: { google: "eOEgDX0JhKWtP8BVyrdl0XK0B12axLytA-iFLZl23u8" },
   title: {
     default: "LOCO CLINIC（ロコクリニック）｜高崎の美容クリニック・糸リフト専門",
     template: "%s｜LOCO CLINIC 高崎・糸リフト専門",
