@@ -49,9 +49,24 @@ function LineButton() {
   );
 }
 
+const SCOPED_CSS = `
+/* 美容サイトのglobals.css（h1のclamp・sectionの巨大余白・hover浮き上がり等）をこのページ内だけ打ち消す */
+.gairai { font-family: var(--font-noto-sans-jp), "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; }
+.gairai h1, .gairai h2, .gairai h3, .gairai h4 { font-family: inherit; color: #1a1a1a; }
+.gairai h1 { font-size: clamp(1.5rem, 4.6vw, 1.9rem); font-weight: 700; letter-spacing: .04em; line-height: 1.9; }
+.gairai h2 { font-size: 1.15rem; font-weight: 700; letter-spacing: .05em; line-height: 1.6; }
+.gairai h3 { font-size: 1.02rem; font-weight: 700; letter-spacing: .02em; line-height: 1.7; }
+.gairai p { font-size: 15.5px !important; line-height: 2 !important; }
+.gairai section { padding: 3.5rem 0; }
+.gairai main > section:first-of-type { padding-top: 4.5rem; }
+.gairai a:hover, .gairai button:hover { transform: none; }
+.gairai li { line-height: 2; }
+`;
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-[15px] leading-loose text-neutral-800 sm:text-base">
+    <div className="gairai min-h-screen bg-white text-[15px] leading-loose text-neutral-800 sm:text-base">
+      <style dangerouslySetInnerHTML={{ __html: SCOPED_CSS }} />
       {/* ヘッダー */}
       <header className="border-b border-neutral-200">
         <div className="mx-auto flex max-w-2xl items-baseline justify-between px-5 py-4">
@@ -273,6 +288,39 @@ export default function Home() {
           <p className="mt-8 text-neutral-700">
             ロコクリニック 院長　狩野遊太（医師）
           </p>
+
+          <h3 className="mt-12 mb-3 text-neutral-900">経歴</h3>
+          <ul className="space-y-1 text-neutral-700">
+            <li>群馬県出身</li>
+            <li>埼玉大学教育学部 卒業</li>
+            <li>高知大学医学部 卒業</li>
+            <li>SUBARU健康保険組合太田記念病院 勤務</li>
+            <li>三枚橋病院 勤務</li>
+            <li>福田病院 勤務（小児新生児科・NICU）</li>
+            <li>伊勢崎クリニック 勤務</li>
+          </ul>
+
+          <h3 className="mt-10 mb-4 text-neutral-900">院長の治療方針</h3>
+          <div className="space-y-6">
+            <div>
+              <p className="text-neutral-900">1. 病気ではなく、その子まるごとを診ます</p>
+              <p className="mt-1 text-sm leading-relaxed text-neutral-600">
+                症状だけを切り取らず、眠り・食事・学校・ご家族との関係まで含めて一緒に考えます。医師ひとりではなく、看護師やご家族とチームで支えます。
+              </p>
+            </div>
+            <div>
+              <p className="text-neutral-900">2. お薬に頼りすぎません</p>
+              <p className="mt-1 text-sm leading-relaxed text-neutral-600">
+                まず生活を整えることから始めます。お薬が必要なときは、理由をご説明したうえで、少なく・短くを心がけます。
+              </p>
+            </div>
+            <div>
+              <p className="text-neutral-900">3. 本人ががんばるより、まわりを整えます</p>
+              <p className="mt-1 text-sm leading-relaxed text-neutral-600">
+                こどもは、環境が変わると変わります。ご家庭や学校での過ごし方を少し整えるところから、一緒に取り組みます。
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* 予約への誘導（本文末） */}
