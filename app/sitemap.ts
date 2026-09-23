@@ -6,6 +6,7 @@ const BASE = "https://www.lococlinic.com";
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     { path: "", priority: 1.0 },
+    { path: "/mental", priority: 0.9 },
     { path: "/thread-lift", priority: 0.9 },
     { path: "/price", priority: 0.9 },
     { path: "/column", priority: 0.8 },
