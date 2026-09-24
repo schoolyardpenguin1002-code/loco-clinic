@@ -65,7 +65,7 @@ export default function Home() {
   return (
     <div className="price-page min-h-screen w-full bg-[#fffbf6] text-[#70645c]">
       <GairaiHeader
-        subtitle="こころとくらしの相談外来｜群馬県高崎市"
+        subtitle="こころとくらしの相談外来｜群馬県高崎市の心療内科"
         nav={NAV}
         cross={{ name: "おとなのメンタル外来", href: "/mental" }}
       />

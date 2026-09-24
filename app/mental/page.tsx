@@ -65,7 +65,7 @@ export default function MentalPage() {
   return (
     <div className="price-page min-h-screen w-full bg-[#fffbf6] text-[#70645c]">
       <GairaiHeader
-        subtitle="こころとくらしの相談外来（おとな）｜群馬県高崎市"
+        subtitle="こころとくらしの相談外来｜群馬県高崎市の心療内科"
         nav={NAV}
         cross={{ name: "こどもと家族の相談外来", href: "/" }}
       />
