@@ -8,12 +8,12 @@ import { LINE_ADD_FRIEND_URL } from "@/lib/line";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "こころと生活の相談外来（メンタル外来）｜ロコクリニック（高崎市）",
+    absolute: "こころとくらしの相談外来（メンタル外来）｜ロコクリニック（高崎市）",
   },
   description:
-    "群馬県高崎市のロコクリニック、こころと生活の相談外来。眠れない、朝起き上がれない、休職を考えている。その段階から相談できます。保険診療・完全予約制・初診30分。オンライン診療対応。訪問看護と連携し、診察室で終わらない診療を行います。",
+    "群馬県高崎市のロコクリニック、こころとくらしの相談外来。眠れない、朝起き上がれない、休職を考えている。その段階から相談できます。保険診療・完全予約制・初診30分。オンライン診療対応。おひとりおひとりに合わせた、診察室で終わらない支援を行います。",
   openGraph: {
-    title: "こころと生活の相談外来｜ロコクリニック（高崎市）",
+    title: "こころとくらしの相談外来｜ロコクリニック（高崎市）",
     description:
       "休んだほうがいいのは、わかっている。その先を、いっしょに考える外来です。保険診療・完全予約制・オンライン対応。",
     url: "https://www.lococlinic.com/mental",
@@ -65,7 +65,7 @@ export default function MentalPage() {
   return (
     <div className="price-page min-h-screen w-full bg-[#fffbf6] text-[#70645c]">
       <GairaiHeader
-        subtitle="こころと生活の相談外来｜群馬県高崎市"
+        subtitle="こころとくらしの相談外来（おとな）｜群馬県高崎市"
         nav={NAV}
         cross={{ name: "こどもと家族の相談外来", href: "/" }}
       />
@@ -90,7 +90,7 @@ export default function MentalPage() {
             その先を、いっしょに考える外来です。
           </h1>
           <p className="mx-auto mt-8 max-w-xl text-base font-light leading-loose text-[#70645c]">
-            こころと生活の相談外来。
+            こころとくらしの相談外来。
             <br />
             眠れない、朝がつらい、という段階から相談していただけます。
           </p>
@@ -126,7 +126,7 @@ export default function MentalPage() {
                 {
                   n: "04",
                   t: "診察室で終わらせません",
-                  d: "ご希望の方には、看護師がご自宅に伺う訪問看護と組み合わせて、生活の立て直しそのものをお手伝いします。診察と診察のあいだを、ひとりにしない体制です。",
+                  d: "生活の立て直しを、診察の外でもお手伝いします。看護師がご自宅に伺う訪問看護、地域の相談先や居場所へのご紹介など、おひとりおひとりに合う形を一緒に選びます。診察と診察のあいだを、ひとりにしない体制です。",
                 },
               ].map((f) => (
                 <SlowReveal key={f.n} className="text-center">
@@ -201,7 +201,7 @@ export default function MentalPage() {
                 回復も同じです。診察室の15分だけで起こるものではなく、眠れた夜と、食べられた朝と、誰かと話せた昼の積み重ねの中で起こります。
               </p>
               <p>
-                ですからこの外来は、あなたの生活を診ます。そして、診察室で終わらせません。看護師がご自宅に伺う訪問看護、オンライン診療、職場との調整。診察と診察のあいだの毎日を支える体制を、外来の外側につくってあります。
+                ですからこの外来は、あなたの生活を診ます。そして、診察室で終わらせません。オンライン診療、職場との調整、看護師のご自宅訪問、地域の相談先や居場所へのつなぎ。診察と診察のあいだの毎日を支える形を、おひとりおひとりに合わせてつくります。
               </p>
             </div>
           </div>
@@ -508,7 +508,7 @@ export default function MentalPage() {
             <p style={SERIF} className="mb-2 text-sm tracking-[0.2em] text-white/70">
               LOCO CLINIC
             </p>
-            <p>ロコクリニック｜群馬県高崎市｜院長 狩野遊太（医師）</p>
+            <p>ロコクリニック｜群馬県高崎市</p>
             <p className="mt-3">
               <Link href="/" className="underline underline-offset-4 hover:text-white/80">
                 こどもと家族の相談外来

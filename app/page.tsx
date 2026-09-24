@@ -12,7 +12,7 @@ export const metadata: Metadata = {
       "発達障害・不登校のこどもと家族の相談外来｜ロコクリニック（高崎市）",
   },
   description:
-    "群馬県高崎市のロコクリニック。発達障害・不登校のこどもと家族の相談外来。親御さんだけの相談から始められます。保険診療・完全予約制・初診30分。看護師がご自宅に伺う訪問看護と連携し、診察室で終わらない支援を行います。",
+    "群馬県高崎市のロコクリニック。発達障害・不登校のこどもと家族の相談外来。親御さんだけの相談から始められます。保険診療・完全予約制・初診30分。お子さんとご家族に合わせた、診察室で終わらない支援を行います。",
   openGraph: {
     title: "発達障害・不登校のこどもと家族の相談外来｜ロコクリニック（高崎市）",
     description:
@@ -65,7 +65,7 @@ export default function Home() {
   return (
     <div className="price-page min-h-screen w-full bg-[#fffbf6] text-[#70645c]">
       <GairaiHeader
-        subtitle="発達障害・不登校のこどもと家族の相談外来｜群馬県高崎市"
+        subtitle="こころとくらしの相談外来｜群馬県高崎市"
         nav={NAV}
         cross={{ name: "おとなのメンタル外来", href: "/mental" }}
       />
@@ -256,8 +256,8 @@ export default function Home() {
                 },
                 {
                   n: "04",
-                  t: "必要に応じて、訪問看護のご案内",
-                  d: "ご希望の方には、診察の結果をふまえて看護師のご自宅訪問を手配します。",
+                  t: "必要に応じて、その先の支援をご案内",
+                  d: "診察の結果をふまえて、看護師のご自宅訪問、地域の相談先や居場所など、お子さんとご家族に合う形をご提案します。",
                 },
               ].map((s) => (
                 <SlowReveal key={s.n} className="flex items-start gap-8">
@@ -312,14 +312,14 @@ export default function Home() {
           <div className="mx-auto w-full max-w-2xl text-center">
             <Heading en="FOR ADULTS">おとなの方へ</Heading>
             <p className="font-light leading-[2.1] text-left">
-              眠れない、朝がつらい、休職を考えている──働く方のメンタル不調のご相談は、こころと生活の相談外来でお受けしています。オンライン診療に対応し、休職の診断書や傷病手当金などの書類作成も行っています。
+              眠れない、朝がつらい、休職を考えている──働く方のメンタル不調のご相談は、こころとくらしの相談外来でお受けしています。オンライン診療に対応し、休職の診断書や傷病手当金などの書類作成も行っています。
             </p>
             <div className="mt-12">
               <Link
                 href="/mental"
                 className="inline-block border border-[#6f4e2f] px-12 py-5 text-[15.5px] tracking-[0.2em] transition-all duration-500 hover:bg-[#6f4e2f] hover:text-white"
               >
-                こころと生活の相談外来へ
+                こころとくらしの相談外来へ
               </Link>
             </div>
           </div>
@@ -508,13 +508,13 @@ export default function Home() {
             >
               LOCO CLINIC
             </p>
-            <p>ロコクリニック｜〒370-0005 群馬県高崎市浜尻町209-5｜院長 狩野遊太（医師）</p>
+            <p>ロコクリニック｜〒370-0005 群馬県高崎市浜尻町209-5</p>
             <p className="mt-3">
               <Link
                 href="/mental"
                 className="underline underline-offset-4 hover:text-white/80"
               >
-                こころと生活の相談外来（おとな）
+                こころとくらしの相談外来（おとな）
               </Link>
               <span className="mx-3">|</span>
               <Link
