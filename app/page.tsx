@@ -437,7 +437,7 @@ export default function Home() {
             <Heading en="ACCESS">診療時間・アクセス</Heading>
             <dl className="border-y border-[#e8e2d8]">
               {[
-                ["診療科目", "精神科"],
+                ["診療科目", "心療内科・精神科"],
                 ["外来の枠", "火・木曜 16:30〜19:00（完全予約制）"],
                 [
                   "住所",
