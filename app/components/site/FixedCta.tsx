@@ -1,13 +1,13 @@
 import { LINE_ADD_FRIEND_URL } from "@/lib/line";
 
 /* 常設CTA：モバイル＝下部バー／PC＝右下フローティング（ゴールド半透明・CLINIC W型） */
-export default function FixedCta() {
+export default function FixedCta({ lineUrl = LINE_ADD_FRIEND_URL }: { lineUrl?: string }) {
   return (
     <>
       {/* モバイル：下部固定バー（電話｜LINE） */}
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[#e8e2d8] bg-white/90 backdrop-blur-md lg:hidden">
         <a
-          href={LINE_ADD_FRIEND_URL}
+          href={lineUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center justify-center gap-0.5 bg-[#b9a05a]/85 py-3 text-white backdrop-blur-sm"
@@ -20,7 +20,7 @@ export default function FixedCta() {
       {/* PC：右下フローティング */}
       <div className="fixed bottom-6 right-6 z-40 hidden flex-col items-end gap-3 lg:flex">
         <a
-          href={LINE_ADD_FRIEND_URL}
+          href={lineUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-3 border border-[#b9a05a]/70 bg-[#b9a05a]/70 py-3 pl-5 pr-6 text-white shadow-xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#b98a55] hover:shadow-2xl"
