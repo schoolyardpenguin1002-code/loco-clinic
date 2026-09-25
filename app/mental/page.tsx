@@ -353,7 +353,6 @@ export default function MentalPage() {
           <div className="mx-auto w-full max-w-2xl">
             <Heading en="DOCTOR">院長紹介</Heading>
             <div className="font-light leading-[2.1]">
-              <p>院長の狩野遊太です。医師です。</p>
               <p>
                 私が力を入れているのは、診察室を出たあとの生活です。眠れているか、食べられているか、安心して居られる場所があるか。そこを、看護師とともにご自宅まで伺って支える体制をつくりました。産業医として企業の側から働く人の不調に関わってきた経験から、職場との橋渡しも診療の一部だと考えています。
               </p>
@@ -362,7 +361,7 @@ export default function MentalPage() {
               </p>
             </div>
             <p className="mt-10 text-right" style={SERIF}>
-              ロコクリニック 院長　狩野遊太（医師）
+              ロコクリニック 院長　狩野遊太
             </p>
             <SlowReveal className="mt-20 text-center">
               <p className="mb-4 text-[12.5px] tracking-[0.35em] text-[#b9a05a]">
