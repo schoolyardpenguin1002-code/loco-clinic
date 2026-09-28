@@ -1,6 +1,32 @@
 import type { NextConfig } from "next";
 
+const BEAUTY_PATHS = [
+  "about",
+  "artmake",
+  "campaign",
+  "cancel-policy",
+  "case",
+  "column",
+  "concerns",
+  "contact",
+  "doctor",
+  "faq",
+  "guide",
+  "meishi",
+  "menu",
+  "news",
+  "price",
+  "thread-lift",
+];
+
 const nextConfig: NextConfig = {
+  async redirects() {
+    return BEAUTY_PATHS.map((p) => ({
+      source: `/${p}/:path*`,
+      destination: "/",
+      permanent: true,
+    }));
+  },
   images: {
     remotePatterns: [],
     formats: ['image/avif', 'image/webp'],

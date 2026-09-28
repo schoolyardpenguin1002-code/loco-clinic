@@ -37,17 +37,36 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.lococlinic.com"),
   verification: { google: "eOEgDX0JhKWtP8BVyrdl0XK0B12axLytA-iFLZl23u8" },
   title: {
-    default: "LOCO CLINIC（ロコクリニック）｜高崎の美容クリニック・糸リフト専門",
-    template: "%s｜LOCO CLINIC 高崎・糸リフト専門",
+    default:
+      "ロコクリニック｜高崎市の発達障害・不登校のこどもと家族の相談外来",
+    template: "%s｜ロコクリニック（高崎市）",
   },
   description:
-    "群馬県高崎市の美容クリニック。糸リフト専門のLOCO CLINIC（ロコクリニック）。高崎問屋町駅から徒歩8分・完全予約制・夜21時まで。ボトックス・ヒアルロン酸・肌育注射・アートメイクにも対応。",
+    "群馬県高崎市のロコクリニック。発達障害（自閉スペクトラム症・ADHD・学習障害・グレーゾーン）や不登校のお子さんとご家族の相談外来、おとなの心療内科・精神科。親御さんだけの相談から始められます。保険診療・完全予約制。",
+  keywords: [
+    "高崎市",
+    "群馬県",
+    "児童精神科",
+    "発達障害",
+    "自閉スペクトラム症",
+    "ASD",
+    "ADHD",
+    "学習障害",
+    "LD",
+    "グレーゾーン",
+    "不登校",
+    "起立性調節障害",
+    "心療内科",
+    "精神科",
+    "子ども",
+    "思春期",
+  ],
   openGraph: {
-    title: "LOCO CLINIC（ロコクリニック）｜高崎の美容クリニック・糸リフト専門",
+    title: "ロコクリニック｜高崎市の発達障害・不登校のこどもと家族の相談外来",
     description:
-      "高崎問屋町駅徒歩8分。糸リフト専門の美容クリニック。完全予約制・夜21時まで。",
+      "こどもを病院に連れて行けない。そこから、始められます。親御さんだけの相談から始められる外来です。保険診療・完全予約制。",
     url: "https://www.lococlinic.com",
-    siteName: "LOCO CLINIC",
+    siteName: "ロコクリニック",
     locale: "ja_JP",
     type: "website",
   },
@@ -57,9 +76,9 @@ export const metadata: Metadata = {
 const clinicJsonLd = {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
-  name: "LOCO CLINIC（ロコクリニック）",
+  name: "ロコクリニック",
   description:
-    "群馬県高崎市の糸リフト専門美容クリニック。高崎問屋町駅から徒歩8分・完全予約制。",
+    "群馬県高崎市のクリニック。発達障害・不登校のこどもと家族の相談外来、おとなの心療内科・精神科。保険診療・完全予約制。",
   url: "https://www.lococlinic.com",
   telephone: "+81-27-395-0443",
   address: {
@@ -70,8 +89,7 @@ const clinicJsonLd = {
     streetAddress: "浜尻町209-5",
     addressCountry: "JP",
   },
-  openingHours: "Mo-Su 09:00-21:00",
-  medicalSpecialty: "PlasticSurgery",
+  medicalSpecialty: "Psychiatry",
 };
 
 export default function RootLayout({

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import SiteHeader from "@/app/components/site/SiteHeader";
-import SiteFooter from "@/app/components/site/SiteFooter";
+import GairaiHeader from "@/app/components/site/GairaiHeader";
 import FixedCta from "@/app/components/site/FixedCta";
 import BotanicalArt from "@/app/components/site/BotanicalArt";
 
@@ -122,7 +121,11 @@ const SECTIONS: Section[] = [
 export default function PrivacyPolicyPage() {
   return (
     <div className="price-page min-h-screen w-full bg-[#fffbf6] text-[#70645c]">
-      <SiteHeader />
+      <GairaiHeader
+        subtitle="発達障害・不登校のこどもと家族の相談外来"
+        nav={[]}
+        cross={{ name: "おとなのメンタル外来", href: "/mental" }}
+      />
       <main className="w-full">
         <section className="relative overflow-hidden bg-white px-6 text-center" style={{ paddingTop: "150px", paddingBottom: "80px" }}>
           <BotanicalArt className="pointer-events-none absolute -left-14 -top-6 h-[130%] text-[#6f4e2f]" />
@@ -196,7 +199,6 @@ export default function PrivacyPolicyPage() {
           </div>
         </section>
       </main>
-      <SiteFooter />
       <FixedCta />
     </div>
   );
