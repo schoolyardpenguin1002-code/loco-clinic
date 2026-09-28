@@ -85,9 +85,11 @@ export default function MentalPage() {
             className="text-[clamp(26px,4vw,40px)] font-light leading-[1.9] tracking-[0.14em]"
             style={SERIF}
           >
-            休んだほうがいいのは、わかっている。
+            <span className="inline-block">休んだほうがいいのは、</span>
+            <span className="inline-block">わかっている。</span>
             <br />
-            その先を、いっしょに考える外来です。
+            <span className="inline-block">その先を、</span>
+            <span className="inline-block">いっしょに考える外来です。</span>
           </h1>
           <p className="mx-auto mt-8 max-w-xl text-base font-light leading-loose text-[#70645c]">
             こころとくらしの相談外来。

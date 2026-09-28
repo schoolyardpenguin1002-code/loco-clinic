@@ -56,6 +56,7 @@ const NAV = [
   { name: "不登校の相談", href: "#futoukou" },
   { name: "発達障害の相談", href: "#hattatsu" },
   { name: "受診の流れ", href: "#flow" },
+  { name: "費用", href: "#price" },
   { name: "支援者の方へ", href: "#supporters" },
   { name: "院長紹介", href: "#doctor" },
   { name: "アクセス", href: "#access" },
@@ -65,7 +66,7 @@ export default function Home() {
   return (
     <div className="price-page min-h-screen w-full bg-[#fffbf6] text-[#70645c]">
       <GairaiHeader
-        subtitle="こころとくらしの相談外来｜群馬県高崎市の心療内科"
+        subtitle="発達障害・不登校のこどもと家族の相談外来｜群馬県高崎市"
         nav={NAV}
         cross={{ name: "おとなのメンタル外来", href: "/mental" }}
       />
@@ -85,14 +86,17 @@ export default function Home() {
             className="text-[clamp(26px,4vw,40px)] font-light leading-[1.9] tracking-[0.14em]"
             style={SERIF}
           >
-            こどもを病院に連れて行けない。
+            <span className="inline-block">こどもを病院に</span>
+            <span className="inline-block">連れて行けない。</span>
             <br />
-            そこから、始められます。
+            <span className="inline-block">そこから、</span>
+            <span className="inline-block">始められます。</span>
           </h1>
           <p className="mx-auto mt-8 max-w-xl text-base font-light leading-loose text-[#70645c]">
             発達障害・不登校のこどもと家族の相談外来。
             <br />
-            初回は、親御さんおひとりでの相談で大丈夫です。
+            <span className="inline-block">初回は、親御さんおひとりでの相談で</span>
+            <span className="inline-block">大丈夫です。</span>
           </p>
           <p className="mt-8 text-[13.5px] tracking-[0.2em] text-[#8a7a55]">
             保険診療｜完全予約制｜初診30分｜高崎市
@@ -301,6 +305,83 @@ export default function Home() {
             <div className="mt-16 text-center">
               <LineButton />
             </div>
+          </div>
+        </section>
+
+        {/* 6.5 費用について */}
+        <section
+          id="price"
+          className="bg-white px-6"
+          style={{ paddingTop: "120px", paddingBottom: "120px" }}
+        >
+          <div className="mx-auto w-full max-w-2xl">
+            <Heading en="PRICE">費用について</Heading>
+            <p className="text-center font-light leading-loose">
+              保険診療です。予約料やカウンセリング料はいただきません。
+            </p>
+            <div className="mt-12 rounded-2xl border border-[#e8e2d8] bg-[#fffbf6] px-7 py-12 sm:px-12">
+              <p
+                className="mx-auto max-w-md text-center text-[16px] leading-[2.2]"
+                style={SERIF}
+              >
+                群馬県内にお住まいのお子さんは、高校3年生の年度末まで、診察・検査・お薬とも、窓口でのご負担はありません。
+              </p>
+              <p className="mx-auto mt-8 max-w-md text-center text-[13px] font-light leading-[2] text-[#8a7a55]">
+                子ども医療費助成（福祉医療）によるものです。18歳になって最初の3月31日まで対象で、所得制限はありません。
+              </p>
+            </div>
+            <div className="mt-16 border-y border-[#e8e2d8]">
+              {[
+                ["お子さんの診察・検査・お薬", "子ども医療費助成により、自己負担なし"],
+                ["診断書・意見書などの文書料", "保険・助成の対象外のため実費（種類により異なります）"],
+              ].map(([k, v], i) => (
+                <div
+                  key={k}
+                  className={`flex flex-col gap-3 py-10 sm:flex-row sm:items-baseline sm:justify-between sm:gap-10 ${
+                    i > 0 ? "border-t border-[#e8e2d8]" : ""
+                  }`}
+                >
+                  <span className="shrink-0 text-[15.5px]" style={SERIF}>
+                    {k}
+                  </span>
+                  <span className="text-[15px] font-light leading-[1.9] text-[#70645c] sm:text-right">
+                    {v}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-20">
+              <h3 className="mb-8 text-center text-base" style={SERIF}>
+                初診のときにお持ちいただくもの
+              </h3>
+              <ul className="mx-auto max-w-md space-y-5 text-[15px] font-light leading-[1.9] text-[#70645c]">
+                {[
+                  "健康保険証（マイナ保険証）",
+                  "福祉医療費受給資格者証（子ども医療費のピンク色の証）",
+                  "母子健康手帳",
+                  "あれば：発達検査の結果、学校や園からのお手紙、お薬手帳など",
+                ].map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="shrink-0 text-[#b9a05a]">・</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="mx-auto mt-20 max-w-xl space-y-6 border-t border-[#e8e2d8] pt-12 text-[13px] font-light leading-[2] text-[#8a7a55]">
+              <p>
+                群馬県外にお住まいの方は、いったん窓口でお支払いのうえ、お住まいの市町村への申請で払い戻しとなります。
+              </p>
+              <p>
+                訪問看護など医療保険のサービスを組み合わせる場合も、各種の助成により自費のご負担がほとんど発生しないことが大半です。
+              </p>
+              <p>
+                助成が終わる19歳以降も、自立支援医療（精神通院医療）により自己負担を1割に抑えられます。
+              </p>
+            </div>
+            <p className="mt-14 text-center text-[15px] font-light leading-[2]">
+              費用のことが心配で受診をためらっている方こそ、遠慮なくご相談ください。
+            </p>
           </div>
         </section>
 
