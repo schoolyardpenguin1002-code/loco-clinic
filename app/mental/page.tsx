@@ -305,6 +305,14 @@ export default function MentalPage() {
                 復職は、出社した日がゴールではありません。生活リズムが戻り、日中の体力が戻り、働ける状態が続くところまでを、いっしょに見ます。
               </p>
             </div>
+            <p className="mt-10 text-center text-[14px] font-light">
+              <Link
+                href="/mental/documents"
+                className="text-[#3e7a52] underline underline-offset-4"
+              >
+                お書きできる書類と費用の一覧 →
+              </Link>
+            </p>
           </div>
         </section>
 
