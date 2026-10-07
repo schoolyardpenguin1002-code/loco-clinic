@@ -54,6 +54,7 @@ function LineButton({ label = "LINEで予約・ご相談" }: { label?: string })
 const NAV = [
   { name: "こんな方へ", href: "#concerns" },
   { name: "不登校の相談", href: "#futoukou" },
+  { name: "朝起きられない", href: "/morning" },
   { name: "発達障害の相談", href: "#hattatsu" },
   { name: "受診の流れ", href: "#flow" },
   { name: "費用", href: "#price" },
@@ -206,6 +207,14 @@ export default function Home() {
                 お子さんが受診できない場合は、親御さんだけの相談から始めてください。ご希望があれば、看護師がご自宅に伺って、本人と少しずつ関係をつくっていく方法もあります。「病院には行かない」と言っているお子さんにも、届く形を用意しています。
               </p>
             </div>
+            <p className="mt-10 text-center text-[14px] font-light">
+              <Link
+                href="/morning"
+                className="text-[#3e7a52] underline underline-offset-4"
+              >
+                朝起きられない・昼夜逆転のご相談について、くわしくはこちら →
+              </Link>
+            </p>
           </div>
         </section>
 

@@ -180,7 +180,7 @@ export default function MentalDocumentsPage() {
           <div className="mx-auto w-full max-w-2xl">
             <Heading en="DOCUMENTS">お書きできる書類と費用</Heading>
 
-            <h3 className="mb-2 text-center text-base" style={SERIF}>
+            <h3 className="mb-8 text-center text-base" style={SERIF}>
               文書料をいただく書類
             </h3>
             <div className="border-y border-[#e8e2d8]">
@@ -204,7 +204,7 @@ export default function MentalDocumentsPage() {
               ))}
             </div>
 
-            <h3 className="mb-2 mt-16 text-center text-base" style={SERIF}>
+            <h3 className="mb-8 mt-24 text-center text-base" style={SERIF}>
               保険診療の中でお書きする書類
             </h3>
             <div className="border-y border-[#e8e2d8]">

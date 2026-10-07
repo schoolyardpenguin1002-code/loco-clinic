@@ -54,6 +54,7 @@ const NAV = [
   { name: "診療内容", href: "#services" },
   { name: "初めての方へ", href: "#flow" },
   { name: "オンライン診療", href: "#online" },
+  { name: "不眠・眠りの相談", href: "/mental/sleep" },
   { name: "診断書", href: "#documents" },
   { name: "料金", href: "#price" },
   { name: "院長紹介", href: "#doctor" },
@@ -181,7 +182,15 @@ export default function MentalPage() {
               <br />
               診断名がつくかどうかは、相談の条件ではありません。
             </p>
-            <p className="mt-10 text-center text-[14px] font-light text-[#8a7a55]">
+            <p className="mt-10 text-center text-[14px] font-light">
+              <Link
+                href="/mental/sleep"
+                className="text-[#3e7a52] underline underline-offset-4"
+              >
+                不眠・眠りの相談について、くわしくはこちら →
+              </Link>
+            </p>
+            <p className="mt-6 text-center text-[14px] font-light text-[#8a7a55]">
               お子さんの発達・不登校のご相談は{" "}
               <Link href="/" className="text-[#3e7a52] underline underline-offset-4">
                 こどもと家族の相談外来
@@ -274,7 +283,7 @@ export default function MentalPage() {
                 <span aria-hidden className="mt-1 text-[#b9a05a]">
                   ─
                 </span>
-                お薬が必要な場合は、ご自宅近くの薬局で受け取れるよう処方箋を送付します
+                お薬が必要な場合は、ご自宅近くの薬局で受け取れるよう処方箋を送付します。ご自宅のポストに届く配送も選べます
               </li>
               <li className="flex items-start gap-4">
                 <span aria-hidden className="mt-1 text-[#b9a05a]">
