@@ -12,7 +12,7 @@ export const metadata: Metadata = {
       "不眠・眠りの相談｜ロコクリニック こころとくらしの相談外来（高崎市・オンライン対応）",
   },
   description:
-    "眠れない、夜中に何度も目が覚める、朝起きられない。群馬県高崎市のロコクリニックの不眠相談は、薬より先に生活と環境から眠りを立て直します。使う薬は依存性の少ないものを少なく短く。睡眠薬の減薬相談もお受けします。保険診療・完全予約制・初診30分・オンライン診療対応。",
+    "眠れない、夜中に何度も目が覚める、朝起きられない。群馬県高崎市（高崎問屋町駅 徒歩8分）のロコクリニックの不眠相談は、薬より先に生活と環境から眠りを立て直します。使う薬は依存性の少ないものを少なく短く。いま飲んでいる睡眠薬の減薬相談もお受けします。オンライン診療なら、ご自宅から相談できます。保険診療・完全予約制・初診30分。",
   openGraph: {
     title: "不眠・眠りの相談｜ロコクリニック（高崎市）",
     description:
@@ -61,7 +61,7 @@ export default function MentalSleepPage() {
   return (
     <div className="price-page min-h-screen w-full bg-[#fffbf6] text-[#70645c]">
       <GairaiHeader
-        subtitle="こころとくらしの相談外来｜不眠・眠りの相談"
+        subtitle="こころとくらしの相談外来｜高崎市の不眠相談"
         nav={NAV}
         cross={{ name: "こころとくらしの相談外来", href: "/mental" }}
       />
@@ -93,6 +93,9 @@ export default function MentalSleepPage() {
           </p>
           <p className="mt-8 text-[13.5px] tracking-[0.2em] text-[#8a7a55]">
             保険診療｜完全予約制｜初診30分｜オンライン診療対応
+          </p>
+          <p className="mt-3 text-[13px] tracking-[0.15em] text-[#8a7a55]">
+            群馬県高崎市・高崎問屋町駅から徒歩8分。オンラインなら、ご自宅から。
           </p>
           <div className="mt-12">
             <LineButton />
@@ -191,7 +194,7 @@ export default function MentalSleepPage() {
           style={{ paddingTop: "120px", paddingBottom: "120px" }}
         >
           <div className="mx-auto w-full max-w-2xl">
-            <Heading en="MEDICATION">薬との付き合い方</Heading>
+            <Heading en="MEDICATION">薬との付き合い方と、睡眠薬の減薬相談</Heading>
             <div className="font-light leading-[2.1]">
               <p>
                 睡眠薬には、長く使ううちにやめにくくなるタイプと、依存性の少ない新しいタイプがあります。当院で使うのは後者です。眠りのしくみ（覚醒を抑える・体内時計を整える）に沿って働く薬を、少ない量から始めます。
@@ -285,8 +288,12 @@ export default function MentalSleepPage() {
                   "お受けします。長く飲んだ薬を急に止めると、かえって眠れなくなることがあるため、生活の土台を整えながら時間をかけて減らしていきます。いまの処方内容が分かるもの（お薬手帳など）をご用意ください。",
                 ],
                 [
-                  "オンラインだけで大丈夫ですか",
+                  "高崎まで通えなくても、オンラインだけで大丈夫ですか",
                   "はい。初診からオンラインで受けられます。お薬が出た場合は、ご自宅近くの薬局で受け取れるほか、ご自宅のポストに届く配送も選べます。症状や経過によっては、対面での診察をお願いすることがあります。",
+                ],
+                [
+                  "クリニックの場所はどこですか",
+                  "群馬県高崎市浜尻町209-5、高崎問屋町駅から徒歩8分です。お車の方は高崎環状線沿いで、クリニック前に無料駐車場があります。",
                 ],
                 [
                   "眠れないだけで受診していいのでしょうか",
@@ -373,7 +380,7 @@ export default function MentalSleepPage() {
             <p style={SERIF} className="mb-2 text-sm tracking-[0.2em] text-white/70">
               LOCO CLINIC
             </p>
-            <p>ロコクリニック｜群馬県高崎市浜尻町209-5</p>
+            <p>ロコクリニック｜群馬県高崎市浜尻町209-5（高崎問屋町駅 徒歩8分）</p>
             <p className="mt-3">
               <Link
                 href="/mental"

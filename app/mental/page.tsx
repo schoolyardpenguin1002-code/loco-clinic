@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     absolute: "こころとくらしの相談外来（心療内科）｜ロコクリニック（高崎市）",
   },
   description:
-    "群馬県高崎市の心療内科・精神科、ロコクリニック こころとくらしの相談外来。眠れない、朝起き上がれない、休職を考えている。その段階から相談できます。保険診療・完全予約制・初診30分。オンライン診療対応。おひとりおひとりに合わせた、診察室で終わらない支援を行います。",
+    "群馬県高崎市（高崎問屋町駅 徒歩8分）の心療内科・精神科、ロコクリニック こころとくらしの相談外来。眠れない、朝起き上がれない、休職を考えている。その段階から相談できます。保険診療・完全予約制・初診30分。オンライン診療対応。おひとりおひとりに合わせた、診察室で終わらない支援を行います。",
   openGraph: {
     title: "こころとくらしの相談外来｜ロコクリニック（高崎市）",
     description:
@@ -66,7 +66,7 @@ export default function MentalPage() {
   return (
     <div className="price-page min-h-screen w-full bg-[#fffbf6] text-[#70645c]">
       <GairaiHeader
-        subtitle="こころとくらしの相談外来｜群馬県高崎市の心療内科"
+        subtitle="こころとくらしの相談外来｜高崎問屋町の心療内科"
         nav={NAV}
         cross={{ name: "こどもと家族の相談外来", href: "/" }}
       />
@@ -526,7 +526,7 @@ export default function MentalPage() {
             <p style={SERIF} className="mb-2 text-sm tracking-[0.2em] text-white/70">
               LOCO CLINIC
             </p>
-            <p>ロコクリニック｜群馬県高崎市</p>
+            <p>ロコクリニック｜群馬県高崎市浜尻町209-5（高崎問屋町駅 徒歩8分）</p>
             <p className="mt-3">
               <Link href="/" className="underline underline-offset-4 hover:text-white/80">
                 こどもと家族の相談外来
