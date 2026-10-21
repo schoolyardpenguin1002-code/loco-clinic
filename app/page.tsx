@@ -4,7 +4,7 @@ import BotanicalArt from "./components/site/BotanicalArt";
 import FixedCta from "./components/site/FixedCta";
 import GairaiHeader from "./components/site/GairaiHeader";
 import SlowReveal from "./components/SlowReveal";
-import { GAIRAI_LINE_ADD_FRIEND_URL } from "@/lib/line";
+import { GAIRAI_LINE_ADD_FRIEND_URL, GAIRAI_WEB_RESERVE_URL } from "@/lib/line";
 
 export const metadata: Metadata = {
   title: {
@@ -45,6 +45,19 @@ function LineButton({ label = "LINEで予約・ご相談" }: { label?: string })
       target="_blank"
       rel="noopener noreferrer"
       className="inline-block rounded-full bg-[#3e7a52] px-12 py-5 text-[15.5px] font-bold tracking-[0.1em] text-white transition hover:brightness-110"
+    >
+      {label}
+    </a>
+  );
+}
+
+function ReserveButton({ label = "Web予約はこちら" }: { label?: string }) {
+  return (
+    <a
+      href={GAIRAI_WEB_RESERVE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block rounded-full border border-[#3e7a52] px-12 py-5 text-[15.5px] font-bold tracking-[0.1em] text-[#3e7a52] transition hover:bg-[#3e7a52]/10"
     >
       {label}
     </a>
@@ -102,8 +115,9 @@ export default function Home() {
           <p className="mt-8 text-[13.5px] tracking-[0.2em] text-[#8a7a55]">
             保険診療｜完全予約制｜高崎市
           </p>
-          <div className="mt-12">
+          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <LineButton />
+            <ReserveButton />
           </div>
         </section>
 
@@ -311,8 +325,9 @@ export default function Home() {
                 </div>
               ))}
             </dl>
-            <div className="mt-16 text-center">
+            <div className="mt-16 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <LineButton />
+              <ReserveButton />
             </div>
           </div>
         </section>
@@ -591,6 +606,14 @@ export default function Home() {
               >
                 LINEで予約・相談
               </a>
+              <a
+                href={GAIRAI_WEB_RESERVE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 rounded-full border border-white/60 px-8 py-4 text-base font-bold text-white transition hover:bg-white/10"
+              >
+                Web予約はこちら
+              </a>
             </div>
             <a
               href="tel:027-395-0443"
@@ -626,7 +649,7 @@ export default function Home() {
         </div>
       </footer>
 
-      <FixedCta lineUrl={GAIRAI_LINE_ADD_FRIEND_URL} />
+      <FixedCta lineUrl={GAIRAI_LINE_ADD_FRIEND_URL} reserveUrl={GAIRAI_WEB_RESERVE_URL} />
     </div>
   );
 }

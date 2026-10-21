@@ -4,7 +4,7 @@ import BotanicalArt from "../../components/site/BotanicalArt";
 import FixedCta from "../../components/site/FixedCta";
 import GairaiHeader from "../../components/site/GairaiHeader";
 import SlowReveal from "../../components/SlowReveal";
-import { GAIRAI_LINE_ADD_FRIEND_URL } from "@/lib/line";
+import { GAIRAI_LINE_ADD_FRIEND_URL, GAIRAI_WEB_RESERVE_URL } from "@/lib/line";
 
 export const metadata: Metadata = {
   title: {
@@ -44,6 +44,19 @@ function LineButton({ label = "LINEで予約・ご相談" }: { label?: string })
       target="_blank"
       rel="noopener noreferrer"
       className="inline-block rounded-full bg-[#3e7a52] px-12 py-5 text-[15.5px] font-bold tracking-[0.1em] text-white transition hover:brightness-110"
+    >
+      {label}
+    </a>
+  );
+}
+
+function ReserveButton({ label = "Web予約はこちら" }: { label?: string }) {
+  return (
+    <a
+      href={GAIRAI_WEB_RESERVE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block rounded-full border border-[#3e7a52] px-12 py-5 text-[15.5px] font-bold tracking-[0.1em] text-[#3e7a52] transition hover:bg-[#3e7a52]/10"
     >
       {label}
     </a>
@@ -97,8 +110,9 @@ export default function MentalSleepPage() {
           <p className="mt-3 text-[13px] tracking-[0.15em] text-[#8a7a55]">
             群馬県高崎市・高崎問屋町駅から徒歩8分。オンラインなら、ご自宅から。
           </p>
-          <div className="mt-12">
+          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <LineButton />
+            <ReserveButton />
           </div>
         </section>
 
@@ -181,8 +195,9 @@ export default function MentalSleepPage() {
                 </SlowReveal>
               ))}
             </div>
-            <div className="mt-20 text-center">
+            <div className="mt-20 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <LineButton />
+              <ReserveButton />
             </div>
           </div>
         </section>
@@ -368,6 +383,14 @@ export default function MentalSleepPage() {
               >
                 LINEで予約・相談
               </a>
+              <a
+                href={GAIRAI_WEB_RESERVE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 rounded-full border border-white/60 px-8 py-4 text-base font-bold text-white transition hover:bg-white/10"
+              >
+                Web予約はこちら
+              </a>
             </div>
             <a
               href="tel:027-395-0443"
@@ -407,7 +430,7 @@ export default function MentalSleepPage() {
         </div>
       </footer>
 
-      <FixedCta lineUrl={GAIRAI_LINE_ADD_FRIEND_URL} />
+      <FixedCta lineUrl={GAIRAI_LINE_ADD_FRIEND_URL} reserveUrl={GAIRAI_WEB_RESERVE_URL} />
     </div>
   );
 }
