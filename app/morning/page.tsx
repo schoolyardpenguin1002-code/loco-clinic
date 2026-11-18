@@ -4,7 +4,6 @@ import BotanicalArt from "../components/site/BotanicalArt";
 import FixedCta from "../components/site/FixedCta";
 import GairaiHeader from "../components/site/GairaiHeader";
 import SlowReveal from "../components/SlowReveal";
-import { GAIRAI_LINE_ADD_FRIEND_URL } from "@/lib/line";
 
 export const metadata: Metadata = {
   title: {
@@ -40,7 +39,7 @@ function Heading({ en, children }: { en: string; children: React.ReactNode }) {
 function LineButton({ label = "LINEで予約・ご相談" }: { label?: string }) {
   return (
     <a
-      href={GAIRAI_LINE_ADD_FRIEND_URL}
+      href="/go/line/morning"
       target="_blank"
       rel="noopener noreferrer"
       className="inline-block rounded-full bg-[#3e7a52] px-12 py-5 text-[15.5px] font-bold tracking-[0.1em] text-white transition hover:brightness-110"
@@ -295,7 +294,7 @@ export default function MorningPage() {
             </p>
             <div className="mx-auto flex max-w-md flex-col items-stretch justify-center gap-3 sm:flex-row">
               <a
-                href={GAIRAI_LINE_ADD_FRIEND_URL}
+                href="/go/line/morning"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 rounded-full bg-[#3e7a52] px-8 py-4 text-base font-bold text-white transition hover:brightness-110"
@@ -341,7 +340,7 @@ export default function MorningPage() {
         </div>
       </footer>
 
-      <FixedCta lineUrl={GAIRAI_LINE_ADD_FRIEND_URL} />
+      <FixedCta lineUrl="/go/line/morning" />
     </div>
   );
 }

@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { GAIRAI_LINE_ADD_FRIEND_URL } from "@/lib/line";
 
 /* 外来ページ共通ヘッダー（固定・白地ブラー）
    subtitle: ロゴ下の一行／nav: ページ内アンカー／cross: もう一方の外来への導線
@@ -54,7 +53,7 @@ export default function GairaiHeader({
             {cross.name}
           </Link>
           <a
-            href={GAIRAI_LINE_ADD_FRIEND_URL}
+            href="/go/line/header"
             target="_blank"
             rel="noopener noreferrer"
             className="whitespace-nowrap rounded-full bg-[#3e7a52] px-4 py-2.5 text-[12.5px] font-bold text-white transition hover:brightness-110 sm:px-6 sm:py-3 sm:text-[13.5px]"
@@ -127,7 +126,7 @@ export default function GairaiHeader({
             </li>
           </ul>
           <a
-            href={GAIRAI_LINE_ADD_FRIEND_URL}
+            href="/go/line/header"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 mb-2 block rounded-full bg-[#3e7a52] py-3.5 text-center text-[14px] font-bold text-white"
